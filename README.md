@@ -35,15 +35,15 @@
 
 ## Configuración de Base de Datos
 
-* Conexión
+* Conexión a Interfaz Postgres
     ```shell
     $ psql -h localhost -U postgres -W
     ```
 
 * Crear archivo /tutos/credentials.py
     ```python
-        DATABASE = {
-            'NAME': 'tutosdb',
+        DEVELOPMENT_DATABASE = {
+            'NAME': 'tutos_dev_db',
             'USER': 'tu-usuario',
             'PASSWORD': 'tu-contraseña',
             'HOST': 'tu-host',
@@ -51,7 +51,7 @@
         }
     ```
 
-* Cargar data
+* Resetear db y cargar data
     ```shell
     $ python load_data.py
     ```
