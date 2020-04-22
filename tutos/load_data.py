@@ -2,9 +2,6 @@ import psycopg2
 import os
 import credentials
 
-from django.core import management
-from django.core.management.commands import loaddata
-
 host = credentials.DEVELOPMENT_DATABASE['HOST']
 dbname = credentials.DEVELOPMENT_DATABASE['NAME']
 user = credentials.DEVELOPMENT_DATABASE['USER']
@@ -29,7 +26,7 @@ def reset_DB():
   cursor = conn.cursor()
   cursor.execute("DROP DATABASE IF EXISTS {dbname}".format(dbname=dbname))
   cursor.execute("CREATE DATABASE {dbname}".format(dbname=dbname))
-  print('\n\tReset database completed!')
+  print('\n -- Reset database completed!')
 
 def load_data():
   input("Press enter to load initial database...")
