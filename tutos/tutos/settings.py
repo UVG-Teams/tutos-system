@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import sys
+sys.path.insert(1, '../')
+import credentials
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -75,8 +78,12 @@ WSGI_APPLICATION = 'tutos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': credentials.DEVELOPMENT_DATABASE['NAME'],
+        'USER': credentials.DEVELOPMENT_DATABASE['USER'],
+        'PASSWORD': credentials.DEVELOPMENT_DATABASE['PASSWORD'],
+        'HOST': credentials.DEVELOPMENT_DATABASE['HOST'],
+        'PORT': credentials.DEVELOPMENT_DATABASE['PORT'],
     }
 }
 
@@ -118,3 +125,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    
+    os.path.join(BASE_DIR, 'static'),
+    
+]
+
+LOGIN_URL = "/"
+
+LOGIN_REDIRECT_URL = "home"
+
+LOGOUT_REDIRECT_URL = "/"
