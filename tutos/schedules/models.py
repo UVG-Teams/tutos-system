@@ -10,4 +10,4 @@ class Schedule(models.Model):
     tutor = models.ForeignKey(
         "tutorias.Tutor", 
         null= False, 
-        on_delete=models.SET_NULL)
+        on_delete=models.CASCADE)
