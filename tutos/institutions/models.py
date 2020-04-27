@@ -15,4 +15,10 @@ class Career(models.Model):
 
     def __str__(self):
         return self.name
-        
+
+class Course(models.Model):
+    name = models.CharField(max_length=50, null=False, blank=False)
+    institution = models.ForeignKey('institutions.Institution', on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.name
