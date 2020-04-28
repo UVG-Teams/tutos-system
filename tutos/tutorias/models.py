@@ -20,19 +20,30 @@ class Tutoria(models.Model):
         null = False,
         on_delete = models.CASCADE
     )
-    tutorado = modelos.ForeignKey(
+    tutorado = models.ForeignKey(
         'django.contrib.auth.user',
         null = False,
-        on_delete = models.SET_NULL
-    )
-    location = modelos.ForeignKey(
+        on_delete = models.CASCADE 
+    ) #TODO revisar si usaremos el modelo USER u otro custom model
+    location = models.ForeignKey(
         'locations.location',
-        null=False,
+        null=True,
         on_delete=models.SET_NULL
     )
-    status = models.PositiveIntegerField()
-    topic = models.PositiveIntegerField() #TODO ver si es FK hacia modelo topic
-    course = models.PositiveIntegerField() #TODO ver si es FK hacia modelo course
+    status = models.ForeignKey(
+        'alguna_app.status',
+        null = False
+    )#TODO ver bien esta FK. No agrego on_delete porque no tiene sentido eliminar un registro de status
+    topic = models.ForeignKey(
+        'alguna_otra_app.topic',
+        null = True,
+        on_delete = models.SET_NULL
+    ) #TODO ver bien est FK
+    course = models.ForeignKey(
+        'alguna_otra_2_app.course',
+        null = True,
+        on_delete = models.SET_NULL
+    ) #TODO ver si es FK hacia modelo course
     datetime = models.TimeField(auto_now=False, auto_now_add=False)
     hours = models.PositiveIntegerField()
     total_price = models.DecimalField(max_digits = 6, decimal_places = 2)
