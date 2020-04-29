@@ -9,7 +9,7 @@ class Location(models.Model):
     location_type = models.CharField(max_length=20, null=False, blank=False)
     parent = models.ForeignKey('locations.Location', on_delete=models.SET_NULL)
     latitude = models.FloatField(max_length=20, null=False, blank=False)
-    longitude = models.BigIntegerField(max_length=20, null=False, blank=False)
+    longitude = models.FloatField(max_length=20, null=False, blank=False)
 
 
 class Language(models.Model):
