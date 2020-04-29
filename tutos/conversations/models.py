@@ -16,7 +16,7 @@ class Message(models.Model):
 	message = models.CharField(max_length=500)
 	date = models.DateTimeField(default=datetime.now)
 	conversation=models.ForeignKey(
-		'conversation.Conversation',
+		'conversations.Conversation',
 		null = False,
 		on_delete=models.CASCADE)
 
