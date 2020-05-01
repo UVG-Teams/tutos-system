@@ -1,13 +1,49 @@
 from django.db import models
-
-# Create your models here.
+from django.utils.translation import gettext_lazy as _
 
 
 class Schedule(models.Model):
-    day = models.CharField(max_length = 20, null = False)
-    start_time = models.TimeField(auto_now = False, auto_now_add = False)
-    end_time = models.TimeField(auto_now=False, auto_now_add=False)
-    tutor = models.ForeignKey(
-        "tutorias.Tutor", 
-        null= False, 
-        on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        "django.contrib.auth.models.User", 
+        null = False,
+        on_delete = models.CASCADE,
+    )
+
+    def __str__(self):
+        return "Schedule of: {}".format(self.user)
+
+
+class Period(models.Model):
+
+    class Day(models.TextChoices):
+        monday    = 'MON',  _('Monday')
+        tuesday   = 'TUE',  _('Tuesday')
+        wednesday = 'WED',  _('Wednesday')
+        thursday  = 'THU',  _('Thursday')
+        friday    = 'FRI',  _('Friday')
+        saturday  = 'SAT',  _('Saturday')
+        sunday    = 'SUN',  _('Sunday')
+
+    day = models.CharField(
+        choices = Day.choices,
+        max_length = 25,
+        # default = Day.Monday,
+        editable = False,
+        null = False,
+    )
+    start_time = models.TimeField(
+        auto_now = False,
+        auto_now_add = False,
+    )
+    end_time = models.TimeField(
+        auto_now = False,
+        auto_now_add = False,
+    )
+    schedule = models.ForeignKey(
+        "schedules.Schedule",
+        null = False,
+        on_delete = models.CASCADE,
+    )
+
+    def __str__(self):
+        return self
