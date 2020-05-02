@@ -14,10 +14,38 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.conf.urls import url, include
 from rest_framework import routers
+from django.conf.urls import url, include
+
+from users.views import UserDetailViewSet
+from subjects.views import SubjectViewSet, TopicViewSet
+from tutorias.views import TutoriaViewSet, TutorViewSet
+from schedules.views import ScheduleViewSet, PeriodViewSet
+from workflows.views import WorkflowViewSet, StatusViewSet
+from locations.views import LocationViewSet, LanguageViewSet
+from conversations.views import ConversationViewSet, MessageViewSet
+from institutions.views import InstitutionViewSet, CareerViewSet, CourseViewSet
+
+router = routers.DefaultRouter()
+router.register(r'userdetails', UserDetailViewSet)
+router.register(r'subjects', SubjectViewSet)
+router.register(r'topics', TopicViewSet)
+router.register(r'tutorias', TutoriaViewSet)
+router.register(r'tutores', TutorViewSet)
+router.register(r'schedules', ScheduleViewSet)
+router.register(r'periods', PeriodViewSet)
+router.register(r'workflows', WorkflowViewSet)
+router.register(r'statuses', StatusViewSet)
+router.register(r'locations', LocationViewSet)
+router.register(r'languages', LanguageViewSet)
+router.register(r'conversations', ConversationViewSet)
+router.register(r'messages', MessageViewSet)
+router.register(r'institutions', InstitutionViewSet)
+router.register(r'careers', CareerViewSet)
+router.register(r'courses', CourseViewSet)
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace = 'rest_framework')),
+    url(r'^api/', include(router.urls)),
 ]

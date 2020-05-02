@@ -6,5 +6,5 @@ from users.serializers import UserDetailSerializer
 
 
 class UserDetailViewSet(viewsets.ModelViewSet):
-    query = UserDetail.objects.all()
+    queryset = UserDetail.objects.all()
     serializer_class = UserDetailSerializer

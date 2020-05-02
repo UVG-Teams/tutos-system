@@ -6,10 +6,10 @@ from tutorias.serializers import TutoriaSerializer, TutorSerializer
 
 
 class TutoriaViewSet(viewsets.ModelViewSet):
-    query = Tutoria.objects.all()
+    queryset = Tutoria.objects.all()
     serializer_class = TutoriaSerializer
 
 
 class TutorViewSet(viewsets.ModelViewSet):
-    query = Tutor.objects.all()
+    queryset = Tutor.objects.all()
     serializer_class = TutorSerializer

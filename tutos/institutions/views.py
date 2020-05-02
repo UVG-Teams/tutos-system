@@ -6,16 +6,16 @@ from institutions.serializers import InstitutionSerializer, CareerSerializer, Co
 
 
 class InstitutionViewSet(viewsets.ModelViewSet):
-    query = Institution.objects.all()
+    queryset = Institution.objects.all()
     serializer_class = InstitutionSerializer
 
 
 class CareerViewSet(viewsets.ModelViewSet):
-    query = Career.objects.all()
+    queryset = Career.objects.all()
     serializer_class = CareerSerializer
 
 
 class CourseViewSet(viewsets.ModelViewSet):
-    query = Course.objects.all()
+    queryset = Course.objects.all()
     serializer_class = CourseSerializer
 

@@ -6,10 +6,10 @@ from schedules.serializers import ScheduleSerializer, PeriodSerializer
 
 
 class ScheduleViewSet(viewsets.ModelViewSet):
-    query = Schedule.objects.all()
+    queryset = Schedule.objects.all()
     serializer_class = ScheduleSerializer
 
 
 class PeriodViewSet(viewsets.ModelViewSet):
-    query = Period.objects.all()
+    queryset = Period.objects.all()
     serializer_class = PeriodSerializer
