@@ -4,14 +4,16 @@ from django.contrib.auth.models import User
 
 class Conversation(models.Model):
 	user1 = models.ForeignKey(
-		'django.contrib.auth.models.User',
+		User,
 		null = False, 
         on_delete = models.CASCADE,
+		related_name = 'user1',
 	)
 	user2 = models.ForeignKey(
-		'django.contrib.auth.models.User',
+		User,
         null = False,
         on_delete = models.CASCADE,
+		related_name = 'user2',
 	)
 
 	def __str__(self):
@@ -23,16 +25,17 @@ class Conversation(models.Model):
 
 class Message(models.Model):
 	transmitter = models.ForeignKey(
-		'django.contrib.auth.models.User',
+		User,
 		null = False,
 		on_delete = models.CASCADE,
 	)
 	message = models.CharField(
 		max_length = 500,
+		null = False,
 	)
 	date = models.DateTimeField(
-		auto_now = True,
 		auto_now_add = True,
+		null = False,
 	)
 	conversation = models.ForeignKey(
 		'conversations.Conversation',

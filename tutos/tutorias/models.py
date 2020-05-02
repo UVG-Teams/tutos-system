@@ -9,7 +9,7 @@ class Tutoria(models.Model):
         on_delete = models.CASCADE,
     )
     tutorado = models.ForeignKey(
-        'django.contrib.auth.models.User',
+        User,
         null = False,
         on_delete = models.CASCADE,
     )
@@ -62,6 +62,7 @@ class Tutor(models.Model):
         max_digits = 5,
         decimal_places = 2,
         default = 5.0,
+        null = False,
     )
     description = models.CharField(
         max_length = 200, 
@@ -69,6 +70,7 @@ class Tutor(models.Model):
     )
     hours_done = models.PositiveIntegerField(
         default = 0,
+        null = False,
     )
     individual_price = models.DecimalField(
         max_digits = 6, 
@@ -83,7 +85,7 @@ class Tutor(models.Model):
         null = False,
     )
     user = models.ForeignKey(
-        'django.contrib.auth.models.User',
+        User,
         null = False,
         on_delete = models.CASCADE,
     )

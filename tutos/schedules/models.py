@@ -1,10 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
 
 class Schedule(models.Model):
     user = models.ForeignKey(
-        "django.contrib.auth.models.User", 
+        User, 
         null = False,
         on_delete = models.CASCADE,
     )
@@ -34,10 +35,12 @@ class Period(models.Model):
     start_time = models.TimeField(
         auto_now = False,
         auto_now_add = False,
+        null = False,
     )
     end_time = models.TimeField(
         auto_now = False,
         auto_now_add = False,
+        null = False,
     )
     schedule = models.ForeignKey(
         "schedules.Schedule",
