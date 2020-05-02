@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+
     'conversations.apps.ConversationsConfig',
     'institutions.apps.InstitutionsConfig',
     'locations.apps.LocationsConfig',
@@ -142,7 +144,11 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_URL = "/"
-
 LOGIN_REDIRECT_URL = "home"
-
 LOGOUT_REDIRECT_URL = "/"
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+}
