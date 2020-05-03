@@ -3,6 +3,7 @@ from rest_framework import viewsets
 
 from schedules.models import Schedule, Period
 from schedules.serializers import ScheduleSerializer, PeriodSerializer
+from permissions.services import APIPermissionClassFactory
 
 
 class ScheduleViewSet(viewsets.ModelViewSet):
