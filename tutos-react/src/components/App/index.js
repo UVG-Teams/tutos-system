@@ -10,13 +10,13 @@ const store = configureStore();
 
 const App = () => (
     <div className = "App">
-    <Provider store = {store}>
-        <Router>
-            <Switch>
-                <Route path = '/' component = { Index } />
-            </Switch>
-        </Router>
-    </Provider>
+        <Provider store = {store}>
+            <Router>
+                <Switch>
+                    <Route path = '/' component = { Index } />
+                </Switch>
+            </Router>
+        </Provider>
     </div>
 );
 
