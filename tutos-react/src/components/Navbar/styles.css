@@ -31,12 +31,11 @@ html, body {
 .links {
     color: white;
     text-decoration: none;
-    /* padding: 10px; */
+    padding: 5px;
     font-size: 18px;
 }
 
 .linksU {
-
     color: white;
     text-decoration: none;
     padding: 5px;
@@ -49,4 +48,8 @@ html, body {
     border-radius: 10px;
     border-color: #449DD1;
     padding: 8px;
+}
+
+.user {
+    margin-top: 0.5%;
 }
