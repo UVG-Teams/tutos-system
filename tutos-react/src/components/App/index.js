@@ -9,6 +9,7 @@ import Index from '../Index';
 const store = configureStore();
 
 const App = () => (
+    <div className = "App">
     <Provider store = {store}>
         <Router>
             <Switch>
@@ -16,6 +17,7 @@ const App = () => (
             </Switch>
         </Router>
     </Provider>
+    </div>
 );
 
 export default App;
