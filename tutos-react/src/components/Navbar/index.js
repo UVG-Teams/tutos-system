@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {Link} from 'react-router-dom'
 import './styles.css'; 
 import logo from '../../static/tutoswhite.png'; 
 
@@ -21,8 +22,13 @@ const Navbar = ({state}) => {
                             <></>
                         ) : (
                             <>
-                                <a href="" className="linksU">Ingresar</a>
-                                <a href="" className="linksU register">Registrarse</a>
+                                <Link to='/login'>
+                                    <a className="linksU">Ingresar</a>
+                                </Link>
+
+                                <Link to='/signup'>
+                                    <a className="linksU">Registrarse</a>
+                                </Link>
                             </>
                         ) 
                     }

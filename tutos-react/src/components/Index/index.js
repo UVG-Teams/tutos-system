@@ -1,14 +1,116 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
+import { Fade } from 'react-slideshow-image';
+import slide0 from '../../static/slide0.jpg';
+import slide1 from '../../static/slide1.jpg';
+import school24px from '../../static/baseline_school_black_18dp.png';
+import teacher from '../../static/teacher.png';
+import idea from '../../static/idea.png';
+import money from '../../static/money.png';
+import instagram from '../../static/instagram.png';
+import twitter from '../../static/twitter.png';
 import './styles.css'; 
 
 import Navbar from '../Navbar';
 
+const fadeImages = [
+    '../../static/slide1.jpg',
+    '../../static/slide1.jpg',
+    '../../static/tutos.png'
+];
+
+const fadeProperties = {
+    duration: 5000,
+    transitionDuration: 500,
+    infinite: true,
+    indicators: false,
+    onChange: (oldIndex, newIndex) => {
+        console.log(`fade transition from ${oldIndex} to ${newIndex}`);
+    }
+}
+
+function slides(){
+    return(
+        <div className = "slidesContainer" >
+            <Fade {...fadeProperties}>
+                <div className="each-fade">
+                    <div className="image-container">
+                        <img src={slide0} className = "img"/>
+                    </div>
+                </div>
+                <div className="each-fade">
+                    <div className="image-container">
+                        <img src={slide0} className="img" />
+                    </div>
+                </div>
+                <div className="each-fade">
+                    <div className="image-container">
+                        <img src={slide1} className="img"/>
+                    </div>
+                </div>
+            </Fade>
+        </div>
+    )
+}
+
+function text(){
+    return(
+         < div className = "parrafito" >
+            <h2>
+                {'Hola algo'}
+            </h2>
+            <p>
+                {'Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. '}
+            </p>
+        </div >
+    )
+}
+
+function column(img, header, text) {
+    return(
+        <div className = "column" >
+            <img src = {img} className  = "img0"/>
+            <h3> {header} </h3>
+            <h2>{text}</h2>
+        </div>
+    )
+}
+
+function columns () {
+    return(
+        <div className = "columns">
+            {column(teacher, 'Iimageeeen','hola')}
+            {column(idea, 'tst', 'hola')}
+            {column(money, 'tst', 'hola')}
+        </div>
+    )
+}
+
+function footer() {
+    return (
+        <div className="footer">
+            <div className  ="imgfooter">
+                <img src = {instagram} className = "imgfooter" />
+                <img src={twitter} className="imgfooter" />
+            </div>
+    <a href = "https://www.youtube.com">{'Hola buenas'}</a>
+        </div>
+    )
+}
+
 const Index = ({state}) => {
     return (
-        <div className="full_screen">
-            <Navbar/>
-        </div>
+        <Fragment>
+            <div className="full_screen">
+                <Navbar/>
+            </div>
+            <div className = "Slides">
+                {slides()}
+            </div>
+            {text()}
+            {columns()}
+            {footer()}
+        </Fragment>
     );
 };
 
