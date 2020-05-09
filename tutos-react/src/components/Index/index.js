@@ -7,11 +7,10 @@ import school24px from '../../static/baseline_school_black_18dp.png';
 import teacher from '../../static/teacher.png';
 import idea from '../../static/idea.png';
 import money from '../../static/money.png';
-import instagram from '../../static/instagram.png';
-import twitter from '../../static/twitter.png';
 import './styles.css'; 
 
 import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 const fadeImages = [
     '../../static/slide1.jpg',
@@ -79,21 +78,9 @@ function column(img, header, text) {
 function columns () {
     return(
         <div className = "columns">
-            {column(teacher, 'Iimageeeen','hola')}
+            {column(teacher, 'Imageeeen','hola')}
             {column(idea, 'tst', 'hola')}
             {column(money, 'tst', 'hola')}
-        </div>
-    )
-}
-
-function footer() {
-    return (
-        <div className="footer">
-            <div className  ="imgfooter">
-                <img src = {instagram} className = "imgfooter" />
-                <img src={twitter} className="imgfooter" />
-            </div>
-    <a href = "https://www.youtube.com">{'Hola buenas'}</a>
         </div>
     )
 }
@@ -101,7 +88,7 @@ function footer() {
 const Index = ({state}) => {
     return (
         <Fragment>
-            <div className="full_screen">
+            <div className="front_screen">
                 <Navbar/>
             </div>
             <div className = "Slides">
@@ -109,7 +96,7 @@ const Index = ({state}) => {
             </div>
             {text()}
             {columns()}
-            {footer()}
+            <Footer />
         </Fragment>
     );
 };
