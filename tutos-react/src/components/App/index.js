@@ -7,7 +7,9 @@ import { configureStore } from '../../store';
 import './styles.css';
 import Index from '../Index';
 import Login from '../Login';
-import SignUp from '../SignUp'
+import SignUp from '../SignUp';
+import QuickRecommendationSubject from '../Quick_Recommendation/Subject';
+import QuickRecommendationLocation from '../Quick_Recommendation/Location';
 
 const store = configureStore();
 
@@ -21,6 +23,12 @@ const App = () => (
                     </Route>
                     <Route path='/signup'>
                         <SignUp/>
+                    </Route>
+                    <Route path = '/quick_recommendation/subject'>
+                        <QuickRecommendationSubject/>
+                    </Route>
+                    <Route path = '/quick_recommendation/location'>
+                        <QuickRecommendationLocation/>
                     </Route>
                     <Route path = '/'>
                         <Index/>
