@@ -15,39 +15,62 @@
     margin-top: 40px;
 }
 
-.next{
-    font-size: 20px;
-    margin-top: 20px;
-    width: 25%;
-    padding: 20px 10px 20px 10px;
-    border-radius: 5px;
-    background: #02C39A;
-    color: white;
-    font-weight: bold;
-    margin-left: 62%;
-
-}
-
-.back {
-    align-self: flex-start;
-    font-size: 20px;
-    position: relative;
-}
-
-.morning {
+.container {
     display: flex;
 }
+
 
 .mainLabel {
     font-size: 20px;
     font-weight: bold;
 }
 
-.checkboxes{
-    margin-left: 30%;
-    align-self: center;
-    transform: scale(3);
-
+.labels {
+    display: flex;
+    flex-direction: column;
 }
 
+.monday {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+}
 
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    
+}
+
+.check{
+    transform: scale(3.5);
+    margin-bottom: 50px;
+    margin-right: 45px;
+}
+
+.days {
+    display: flex;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 235px;
+}
+
+.day {
+    margin-right: 28px;
+}
+
+.radioButton {
+    margin-right: 10px;
+    border: 0px;
+    transform: scale(1.3);
+    height: 20px;
+}
+
+.free {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 20px;
+}
