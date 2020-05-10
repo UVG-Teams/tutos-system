@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import './styles.css'; 
 import logo from '../../static/tutoswhite.png'; 
 
+import Login from '../Login';
+
 const Navbar = ({state}) => {
     return (
         <div className="navbar">
@@ -22,9 +24,8 @@ const Navbar = ({state}) => {
                             <></>
                         ) : (
                             <>
-                                <Link to='/login'>
-                                    <a className="linksU">Ingresar</a>
-                                </Link>
+                                <Login>
+                                </Login>
 
                                 <Link to='/signup'>
                                     <a className="linksU">Registrarse</a>
