@@ -10,6 +10,8 @@ import Login from '../Login';
 import SignUp from '../SignUp';
 import QuickRecommendationSubject from '../Quick_Recommendation/Subject';
 import QuickRecommendationLocation from '../Quick_Recommendation/Location';
+import QuickRecommendationEducationLevel from '../Quick_Recommendation/Education_Level';
+import Schedule from '../Schedule';
 
 const store = configureStore();
 
@@ -29,6 +31,12 @@ const App = () => (
                     </Route>
                     <Route path = '/quick_recommendation/location'>
                         <QuickRecommendationLocation/>
+                    </Route>
+                    <Route path = '/quick_recommendation/education_level'>
+                        <QuickRecommendationEducationLevel/>
+                    </Route>
+                    <Route path = '/schedule'>
+                        <Schedule/>
                     </Route>
                     <Route path = '/'>
                         <Index/>

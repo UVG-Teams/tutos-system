@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './styles.css'; 
 
 import Navbar from '../../Navbar';
@@ -9,10 +10,17 @@ const Location = ({state}) => {
     return (
         <div className="page">
         <Navbar/>
-            <div className="subject_form">
-                <h2>sdnakfjkajdfk</h2>
-                <input type="text" className="subject_input" placeholder="Ingresa una materia..." autoFocus></input>
-                <button type="button" className="subject_btn">Siguiente</button>
+            <div className="location_form">
+                <h2>Por favor ingresa la ubicación en donde quieres recibir la tutoría.</h2>
+                <input type="text" className="location_input" placeholder="Ingresa una ubicación..." autoFocus></input>
+                <div className="links">
+                <Link to='/quick_recommendation/subject'>
+                    <a className="back">Atrás</a>
+                </Link>
+                <Link to='/quick_recommendation/education_level'>
+                    <button type="button" className="next">Siguiente</button>
+                </Link>
+                </div>
             </div>
         </div>
     );

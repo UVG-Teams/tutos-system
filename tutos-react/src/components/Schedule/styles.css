@@ -4,24 +4,15 @@
     /* text-align: center; */
 }
 
-.location_form {
+.schedule_form {
     align-self: center;
     background: white;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     padding: 20px 15px 40px 15px;
-    width: 30%;
+    width: 100%;
     margin-top: 40px;
-}
-
-.location_input {
-    align-self: center;
-    font-size: 20px;
-    width: 95%;
-    border-radius: 8px;
-    padding: 10px 0px 10px 5px;
-    border: 1px solid;
 }
 
 .next{
@@ -41,26 +32,22 @@
     align-self: flex-start;
     font-size: 20px;
     position: relative;
-    /* right: 0%; */
 }
 
-h2 {
-    font-size: 35px;
+.morning {
+    display: flex;
 }
 
-.text {
-    width: 30%;
-    align-self: center;
-    font-size: 30px;
-    color: white;
-    word-spacing: 0px;
-    margin-top: 50px;
-}
-
-p {
-    line-height: 2px;
-}
-
-.bold {
+.mainLabel {
+    font-size: 20px;
     font-weight: bold;
 }
+
+.checkboxes{
+    margin-left: 30%;
+    align-self: center;
+    transform: scale(3);
+
+}
+
+

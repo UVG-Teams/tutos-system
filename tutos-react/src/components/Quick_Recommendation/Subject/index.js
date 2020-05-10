@@ -18,7 +18,7 @@ const Subject = ({state}) => {
                 <h2>¿Qué quieres aprender?</h2>
                 <input type="text" className="subject_input" placeholder="Ingresa una materia..." autoFocus></input>
                 <Link to='/quick_recommendation/location'>
-                    <a className="subject_btn">Siguiente</a>
+                    <button type="button" className="subject_btn">Siguiente</button>
                 </Link>
             </div>
         </div>
