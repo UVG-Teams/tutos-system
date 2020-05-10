@@ -16,9 +16,6 @@ const App = () => (
         <Provider store = {store}>
             <Router>
                 <Switch>
-                    <Route path = '/login'>
-                        <Login/>
-                    </Route>
                     <Route path='/signup'>
                         <SignUp/>
                     </Route>

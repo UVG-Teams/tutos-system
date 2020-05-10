@@ -1,19 +1,58 @@
-import React, { Fragment } from 'react';
+import React, { useState, Fragment } from 'react';
 import { connect } from 'react-redux';
+import Popup from 'reactjs-popup';
 
-const Index = ({ state }) => {
+import * as selectors from '../../reducers';
+import * as actions from '../../actions/auth';
+
+import './styles.css';
+
+
+const Login = ({ onSubmit,isLoading, }) => {
+    const [username, changeUsername] = useState('');
+    const [password, changePassword] = useState('');
     return (
-        <Fragment>
-            <div className="full_screen">
-                <h1>{'LOGIN'}</h1>
-                <h2>{'UNDER CONSTRUCTION'}</h2>
-            </div>
-        </Fragment>
+        <Popup  trigger={<button  className="popup">Login</button>} position="bottom center">
+            <p>
+                <input className="input"
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={e => changeUsername(e.target.value)}
+                />
+            </p>
+            <p>
+                <input className="input"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={e => changePassword(e.target.value)}
+                />
+            </p>
+            <p>
+                {
+                isLoading ? (
+                    <strong>{'Cargando...'}</strong>
+                ) : (
+                    <button className="continuar" type="submit" onClick={
+                    () => onSubmit(username, password)
+                    }>
+                    {'Continuar'}
+                    </button>
+                )
+                }
+            </p>
+        </Popup>
     );
 };
 
 export default connect(
     (state) => ({
-        state: state,
-    })
-)(Index);
+        isLoading: selectors.getIsAuthenticating(state),
+    }),
+    dispatch => ({
+        onSubmit(username, password) {
+            dispatch(actions.startLogin(username, password));
+          },
+    }),
+)(Login);
