@@ -4,6 +4,9 @@ from users.models import UserDetail
 from institutions.models import Institution, Career, Course
 from subjects.models import Subject, Topic
 from locations.models import Location, Language
+from schedules.models import Schedule, Period
+from tutorias.models import Tutor
+from workflows.models import Workflow, Status
 
 #LOCATION:
 #Continent:
@@ -1145,13 +1148,60 @@ evapsico = Topic(name= "Evaluación Psicológica", subject= psico)
 evapsico.save()
 
 #USER
-joseblock = UserDetail(birthdate="1999-12-29", language= spanish, phone= 59300498, genre="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
+admin= User(username="admin",email="admin@uvg.edu.gt", is_superuser = True, is_staff = True)
+admin.set_password("admin99")
+admin.save()
+
+jgblock= User(username="JBlock",first_name="José Gabriel", last_name="Block Staackmann",email="blockmann3@gmail.com")
+jgblock.set_password("Contrasena123")
+jgblock.save()
+marcfuents= User(username="marco10c0",first_name="Marco José", last_name="Fuentes Lima",email="fue18188@uvg.edu.gt")
+marcfuents.set_password("Contrasena1234")
+marcfuents.save()
+
+#USER DETAIL
+joseblock = UserDetail(user= jgblock,birthdate="1999-12-29", language= spanish, phone= 59300498, genre="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
 joseblock.save()
-marcofuentes = UserDetail(birthdate="1999-7-16", language= spanish, phone= 59300498, genre="M", is_tutor= True, institution= uvg, career= computerscience, location= mixco)
+marcofuentes = UserDetail(user= marcfuents,birthdate="1999-7-16", language= spanish, phone= 59300498, genre="M", is_tutor= True, institution= uvg, career= computerscience, location= mixco)
 marcofuentes.save()
+
+#TUTOR
+tutormarcfuent= Tutor(user=marcfuents, description="Hola soy Marco", individual_price= 100, grupal_price=50)
+tutormarcfuent.save()
 
 #LANGUAGE
 spanish= Language(name= "Español")
 spanish.save()
 english= Language(name= "English")
 english.save()
+
+#SCHEDULES
+schfuentesmarcos = Schedule(user= "Marco Fuentes")
+schfuentesmarcos.save()
+
+#PERIODS
+periodmarcfuent1 = Period(schedule=schfuentesmarcos, day="Saturday", start_time= "11:00", end_time= "12:00")
+periodmarcfuent1.save()
+periodmarcfuent2 = Period(schedule=schfuentesmarcos, day="Saturday", start_time= "15:00", end_time= "16:00")
+periodmarcfuent2.save()
+periodmarcfuent3 = Period(schedule=schfuentesmarcos, day="Saturday", start_time= "17:00", end_time= "18:00")
+periodmarcfuent3.save()
+periodmarcfuent4 = Period(schedule=schfuentesmarcos, day="Sunday", start_time= "10:00", end_time= "11:00")
+periodmarcfuent4.save()
+periodmarcfuent5 = Period(schedule=schfuentesmarcos, day="Sunday", start_time= "15:00", end_time= "16:00")
+periodmarcfuent5.save()
+
+#WORKFLOW
+wftutoria= Workflow(name= "Tutoría workflow")
+wftutoria.save()
+
+#STATUS
+ststutoria1= Status(name="apartado", is_initial=True, is_final=False, next=ststutoria2, prev= None, workflow=wftutoria)
+ststutoria1.save()
+ststutoria2= Status(name="agendado", is_initial=False, is_final=False, next=ststutoria3, prev=ststutoria1, workflow=wftutoria)
+ststutoria2.save()
+ststutoria3= Status(name="en_proceso", is_initial=False, is_final=False, next=ststutoria4, prev=ststutoria2, workflow=wftutoria)
+ststutoria3.save()
+ststutoria4= Status(name="termiada", is_initial=False, is_final=True, next= None, prev=ststutoria3, workflow=wftutoria)
+ststutoria4.save()
+
