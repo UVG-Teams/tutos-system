@@ -13,7 +13,7 @@ class Subject(models.Model):
 
 class Topic(models.Model):
     name = models.CharField(
-        max_length = 30,
+        max_length = 50,
         null = False,
         blank = False,
     )
