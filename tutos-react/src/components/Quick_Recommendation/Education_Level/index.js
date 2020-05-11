@@ -26,11 +26,10 @@ const Location = ({state}) => {
                 </div>
 
                 <div className="links">
-                    {/* TODO: poner links correctos */}
                 <Link to='/quick_recommendation/location'>
                     <a className="back">Atrás</a>
                 </Link>
-                <Link to=''>
+                <Link to='/quick_recommendation/schedule'>
                     <button type="button" className="next">Siguiente</button>
                 </Link>
                 </div>

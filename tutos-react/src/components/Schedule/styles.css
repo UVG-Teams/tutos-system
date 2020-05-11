@@ -19,46 +19,10 @@
     display: flex;
 }
 
-
-.mainLabel {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.labels {
-    display: flex;
-    flex-direction: column;
-}
-
-.monday {
-    display: flex;
-    flex-direction: column;
-    padding-left: 15%;
-}
-
-.checkboxes {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    
-}
-
-.check{
+.checkbox {
     transform: scale(3.5);
-    margin-bottom: 50px;
-    margin-right: 45px;
 }
 
-.days {
-    display: flex;
-    font-weight: bold;
-    font-size: 20px;
-    margin-left: 235px;
-}
-
-.day {
-    margin-right: 28px;
-}
 
 .radioButton {
     margin-right: 10px;
@@ -68,9 +32,30 @@
 }
 
 .free {
+    align-self: center;
     border: 1px solid black;
     padding: 10px;
     border-radius: 5px;
     text-align: left;
+    font-size: 20px;
+    margin-top: 20px;
+    width: 92%
+}
+
+.row {
+    padding-top: 20px;
+}
+
+.table{
+    width: 100%;
+}
+
+
+td {
+    padding: 0px 10px 20px 10px;
+    font-size: 20px
+}
+
+thead {
     font-size: 20px;
 }
