@@ -1,0 +1,38 @@
+.studentcard {
+  background-color: red;
+  border-radius: 1vh;
+  border-style: solid;
+  border-width: 2px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  margin: 10px;
+  padding: 10px;
+  width: 20vw;
+}
+
+.studentcard:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text{
+  margin: 0px;
+}
+
+.imageStudent{
+  height: 5vh;
+  width: auto;
+  margin: 05px;
+}
+
+.student {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-around; */
+  border-bottom: 2px solid grey;
+  margin : 0px;
+  padding: 0px;
+  height: 100%;
+}

@@ -2,7 +2,7 @@ html, body {
     margin: 0;
 }
 .navbar {
-    width: 100%;
+    width: 100vw;
     height: 10vh;
     background: #061A40;
     display: flex;

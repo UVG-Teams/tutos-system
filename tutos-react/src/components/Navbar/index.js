@@ -22,7 +22,7 @@ const Navbar = ({state}) => {
                             <></>
                         ) : (
                             <>
-                                <Link to='/login'>
+                                <Link to='/mainPageTutor'>
                                     <a className="linksU">Ingresar</a>
                                 </Link>
 

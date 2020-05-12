@@ -8,7 +8,11 @@ import './styles.css';
 import Index from '../Index';
 import Login from '../Login';
 import SignUp from '../SignUp'
-
+import MainPageTutor from '../MainPageTutor'
+import Calendar from '../Calendar'
+import Mensajes from '../Mensajes'
+import Tutores from '../Tutores'
+import MyAccount from '../MyAccount'
 const store = configureStore();
 
 const App = () => (
@@ -16,11 +20,26 @@ const App = () => (
         <Provider store = {store}>
             <Router>
                 <Switch>
+                    <Route path='/mainPageTutor'>
+                        <MainPageTutor />
+                    </Route>
                     <Route path = '/login'>
                         <Login/>
                     </Route>
                     <Route path='/signup'>
                         <SignUp/>
+                    </Route>
+                    <Route path='/calendar'>
+                        <Calendar />
+                    </Route>
+                    <Route path='/mensajes'>
+                        <Mensajes />
+                    </Route>
+                    <Route path='/tutores'>
+                        <Tutores />
+                    </Route>
+                    <Route path='/myAccount'>
+                        <MyAccount />
                     </Route>
                     <Route path = '/'>
                         <Index/>
