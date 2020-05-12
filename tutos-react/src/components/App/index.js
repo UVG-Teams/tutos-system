@@ -29,7 +29,6 @@ const App = () => (
         <Provider store = {store}>
             <Router>
                 <Switch>
-
                     <Route path='/mainPageTutor'>
                         <MainPageTutor />
                     </Route>
@@ -47,7 +46,7 @@ const App = () => (
                     </Route>
                     <Route path='/myAccount'>
                         <MyAccount />
-
+                    </Route>
                     <Route path='/signup'>
                         <SignUp/>
                     </Route>

@@ -26,15 +26,7 @@ const Navbar = ({state}) => {
                             <></>
                         ) : (
                             <>
-
-                                <Link to='/mainPageTutor'>
-                                    <a className="linksU">Ingresar</a>
-                                </Link>
-
-                                <Login>
-                                </Login>
-
-
+                                <Login/>
                                 <Link to='/signup'>
                                     <a className="linksU">Registrarse</a>
                                 </Link>
