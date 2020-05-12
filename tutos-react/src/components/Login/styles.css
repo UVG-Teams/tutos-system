@@ -1,0 +1,17 @@
+.popup {
+    border:none;
+    background:#061A40;
+    color: white;
+    cursor:pointer;
+    font-size: 18px;
+    outline: none;
+    padding-right: 25px;
+    text-decoration: underline;
+}
+.input {
+    margin-left: 30px;
+}
+
+.continuar {
+    margin-left: 65px;
+}
