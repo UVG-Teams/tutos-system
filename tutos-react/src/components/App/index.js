@@ -7,12 +7,20 @@ import { configureStore } from '../../store';
 import './styles.css';
 import Index from '../Index';
 import Login from '../Login';
+
+import MainPageTutor from '../MainPageTutor';
+import Calendar from '../Calendar';
+import Mensajes from '../Mensajes';
+import Tutores from '../Tutores';
+import MyAccount from '../MyAccount';
+
 import SignUp from '../SignUp';
 import QuickRecommendationSubject from '../Quick_Recommendation/Subject';
 import QuickRecommendationLocation from '../Quick_Recommendation/Location';
 import QuickRecommendationEducationLevel from '../Quick_Recommendation/Education_Level';
 import QuickRecommendationSchedule from '../Quick_Recommendation/Schedule';
 import Schedule from '../Schedule';
+
 
 const store = configureStore();
 
@@ -21,6 +29,24 @@ const App = () => (
         <Provider store = {store}>
             <Router>
                 <Switch>
+                    <Route path='/mainPageTutor'>
+                        <MainPageTutor />
+                    </Route>
+                    <Route path = '/login'>
+                        <Login/>
+                    </Route>
+                    <Route path='/calendar'>
+                        <Calendar />
+                    </Route>
+                    <Route path='/mensajes'>
+                        <Mensajes />
+                    </Route>
+                    <Route path='/tutores'>
+                        <Tutores />
+                    </Route>
+                    <Route path='/myAccount'>
+                        <MyAccount />
+                    </Route>
                     <Route path='/signup'>
                         <SignUp/>
                     </Route>
@@ -38,6 +64,7 @@ const App = () => (
                     </Route>
                     <Route path = '/schedule'>
                         <Schedule/>
+
                     </Route>
                     <Route path = '/'>
                         <Index/>

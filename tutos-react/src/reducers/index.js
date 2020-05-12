@@ -1,12 +1,18 @@
 import { combineReducers } from 'redux';
+import mainPage, * as mainPageSelectors from './mainPage'
 
 import auth, * as authSelectors from './auth';
 
 const reducer = combineReducers({ 
-    auth
+  mainPage,
+  auth
 });
 
 export default reducer;
+
+
+export const getMainPageTutos = state => mainPageSelectors.getTutos(state.mainPage)
+export const getMainPageFavStudents = state => mainPageSelectors.getFavStudents(state.mainPage)
 
 export const getToken = state => authSelectors.getToken(state.auth);
 export const getIsAuthenticating = state => authSelectors.getIsAuthenticating(state.auth);

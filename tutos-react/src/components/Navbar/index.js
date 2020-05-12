@@ -26,9 +26,7 @@ const Navbar = ({state}) => {
                             <></>
                         ) : (
                             <>
-                                <Login>
-                                </Login>
-
+                                <Login/>
                                 <Link to='/signup'>
                                     <a className="linksU">Registrarse</a>
                                 </Link>
