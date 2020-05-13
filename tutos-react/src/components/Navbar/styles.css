@@ -45,6 +45,14 @@ html, body {
     font-size: 18px;
 }
 
+.linksF{
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+    font-size: 18px;
+    z-index: 999;
+}
+
 .register {
     /* border: 3px solid #449DD1; */
     border-style: solid;
@@ -55,4 +63,6 @@ html, body {
 
 .user {
     margin-top: 0.5%;
+    color: white;
+    font-size: 18px;
 }

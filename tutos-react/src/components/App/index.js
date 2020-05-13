@@ -8,13 +8,16 @@ import './styles.css';
 import Index from '../Index';
 import Login from '../Login';
 
+import SignUpTutor from '../SignUpTutor';
+import SignUpTutorado from '../SignUpTutorado';
+
+
 import MainPageTutor from '../MainPageTutor';
 import Calendar from '../Calendar';
 import Mensajes from '../Mensajes';
 import Tutores from '../Tutores';
 import MyAccount from '../MyAccount';
 
-import SignUp from '../SignUp';
 import QuickRecommendationSubject from '../Quick_Recommendation/Subject';
 import QuickRecommendationLocation from '../Quick_Recommendation/Location';
 import QuickRecommendationEducationLevel from '../Quick_Recommendation/Education_Level';
@@ -29,6 +32,10 @@ const App = () => (
         <Provider store = {store}>
             <Router>
                 <Switch>
+
+                    <Route path='/signupTutorado'>
+                        <SignUpTutorado/>
+
                     <Route path='/mainPageTutor'>
                         <MainPageTutor />
                     </Route>
@@ -46,9 +53,10 @@ const App = () => (
                     </Route>
                     <Route path='/myAccount'>
                         <MyAccount />
+
                     </Route>
                     <Route path='/signup'>
-                        <SignUp/>
+                        <SignUpTutor/>
                     </Route>
                     <Route path = '/quick_recommendation/subject'>
                         <QuickRecommendationSubject/>
@@ -77,4 +85,3 @@ const App = () => (
 
 export default App;
 
- 
