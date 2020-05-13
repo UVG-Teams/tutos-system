@@ -1,7 +1,14 @@
 import React, { useState, Fragment } from 'react';
 import { connect } from 'react-redux';
 import Popup from 'reactjs-popup';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams
+} from "react-router-dom";
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/auth';
 
@@ -34,11 +41,16 @@ const Login = ({ onSubmit,isLoading, }) => {
                 isLoading ? (
                     <strong>{'Cargando...'}</strong>
                 ) : (
-                    <button className="continuar" type="submit" onClick={
-                    () => onSubmit(username, password)
-                    }>
-                    {'Continuar'}
-                    </button>
+                    <Link to = 'mainPageTutor'>
+                        <button>
+                            Continuar
+                        </button>
+                        {/* <button className="continuar" type="submit" onClick={
+                        () => onSubmit(username, password)
+                        }>
+                        {'Continuar'}
+                        </button> */}
+                    </Link>
                 )
                 }
             </p>

@@ -16,7 +16,9 @@ const Navbar = ({state}) => {
                 <a href="" className="links">¿Cómo funciona?</a>
                 <a href="" className="links">Preguntas frecuentes</a>
                 <a href="" className="links">Acerca de nosotros</a>
-                <a href="" className="links">Otra Funcion</a>
+                <Link to='/quick_recommendation/subject'>
+                    <a className="links">Otra Funcion</a>
+                </Link>
                 <div className="user">
                     {
                         // TODO: Colocar condicion logeado
@@ -24,9 +26,9 @@ const Navbar = ({state}) => {
                             <></>
                         ) : (
                             <>
-                                <Login>
-                                </Login>
                                 <label className='user'>Registro:</label>
+
+                                <Login/>
                                 <Link to='/signup'>
                                     <a className="linksU">Tutor</a>
                                 </Link>

@@ -22,18 +22,18 @@ class Status(models.Model):
     is_final = models.BooleanField(
         null = True,
     )
-    prev = models.ForeignKey(
-        'workflows.Status',
-        null = True,
-        on_delete = models.SET_NULL,
-        related_name = 'prev_status',
-    )
-    next = models.ForeignKey(
-        'workflows.Status',
-        null = True,
-        on_delete = models.SET_NULL,
-        related_name = 'next_status',
-    )
+    # prev = models.ForeignKey(
+    #     'workflows.Status',
+    #     null = True,
+    #     on_delete = models.SET_NULL,
+    #     related_name = 'prev_status',
+    # )
+    # next = models.ForeignKey(
+    #     'workflows.Status',
+    #     null = True,
+    #     on_delete = models.SET_NULL,
+    #     related_name = 'next_status',
+    # )
     workflow = models.ForeignKey(
         'workflows.Workflow',
         null = False,

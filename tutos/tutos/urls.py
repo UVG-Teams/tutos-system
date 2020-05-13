@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
+from django.urls import path
 
 from rest_framework import routers
 from rest_framework_jwt.views import (
@@ -31,6 +32,8 @@ from workflows.views import WorkflowViewSet, StatusViewSet
 from locations.views import LocationViewSet, LanguageViewSet
 from conversations.views import ConversationViewSet, MessageViewSet
 from institutions.views import InstitutionViewSet, CareerViewSet, CourseViewSet
+
+from init import create_initial_data
 
 router = routers.DefaultRouter()
 router.register(r'userdetails', UserDetailViewSet)
@@ -57,4 +60,5 @@ urlpatterns = [
     url(r'^api/token/auth/', obtain_jwt_token),
     url(r'^api/token/refresh/', refresh_jwt_token),
     url(r'^api/token/verify/', verify_jwt_token),
+    path('admin/initial-data/', create_initial_data),
 ]

@@ -1,0 +1,38 @@
+.body{
+    margin-top: 10vh;
+    height: 100%;
+    width: 100%;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px
+}
+
+.cardslist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.studentslist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.options {
+    margin: 10px;
+    padding : 5px;
+    border : 1px solid black;
+    width: 90%;
+    box-shadow: white  5px;
+}
