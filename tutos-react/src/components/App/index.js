@@ -35,7 +35,7 @@ const App = () => (
 
                     <Route path='/signupTutorado'>
                         <SignUpTutorado/>
-
+                    </Route>
                     <Route path='/mainPageTutor'>
                         <MainPageTutor />
                     </Route>
@@ -53,7 +53,6 @@ const App = () => (
                     </Route>
                     <Route path='/myAccount'>
                         <MyAccount />
-
                     </Route>
                     <Route path='/signup'>
                         <SignUpTutor/>
@@ -72,7 +71,6 @@ const App = () => (
                     </Route>
                     <Route path = '/schedule'>
                         <Schedule/>
-
                     </Route>
                     <Route path = '/'>
                         <Index/>
