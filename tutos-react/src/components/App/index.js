@@ -7,7 +7,8 @@ import { configureStore } from '../../store';
 import './styles.css';
 import Index from '../Index';
 import Login from '../Login';
-import SignUp from '../SignUp'
+import SignUpTutor from '../SignUpTutor';
+import SignUpTutorado from '../SignUpTutorado';
 
 const store = configureStore();
 
@@ -16,8 +17,11 @@ const App = () => (
         <Provider store = {store}>
             <Router>
                 <Switch>
+                    <Route path='/signupTutorado'>
+                        <SignUpTutorado/>
+                    </Route>
                     <Route path='/signup'>
-                        <SignUp/>
+                        <SignUpTutor/>
                     </Route>
                     <Route path = '/'>
                         <Index/>

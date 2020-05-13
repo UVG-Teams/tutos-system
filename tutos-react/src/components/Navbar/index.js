@@ -26,9 +26,12 @@ const Navbar = ({state}) => {
                             <>
                                 <Login>
                                 </Login>
-
+                                <label className='user'>Registro:</label>
                                 <Link to='/signup'>
-                                    <a className="linksU">Registrarse</a>
+                                    <a className="linksU">Tutor</a>
+                                </Link>
+                                <Link to='/signupTutorado'>
+                                    <a className="linksU">Tutorado</a>
                                 </Link>
                             </>
                         ) 

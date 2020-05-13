@@ -14,7 +14,7 @@ const Login = ({ onSubmit,isLoading, }) => {
     return (
         <Popup  trigger={<button  className="popup">Login</button>} position="bottom center">
             <p>
-                <input className="input"
+                <input className="input-login"
                 type="text"
                 placeholder="Username"
                 value={username}
@@ -22,7 +22,7 @@ const Login = ({ onSubmit,isLoading, }) => {
                 />
             </p>
             <p>
-                <input className="input"
+                <input className="input-login"
                 type="password"
                 placeholder="Password"
                 value={password}
