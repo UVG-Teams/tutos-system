@@ -7,6 +7,21 @@ import * as actions from '../../actions/signUpTutorado';
 import '../SignUpTutorado/styles.css'; 
 import slide0 from '../../static/slide0.jpg';
 
+const labelInput = (labelText, value, onChange) => {
+	return (
+		<div className="input-container-tutorado">
+      <label className="Label-tutorado">
+				{labelText}
+      </label>
+      <input className="input-tutorado"
+        type="text"
+        placeholder={labelText}
+        value={value}
+        onChange={e => onChange(e.target.value)}/>
+    </div>
+	)
+};
+
 const SignUpTutorado = ({ onSubmit, isLoading }) => {
     const [username, changeUsername] = useState('');
     const [password, changePassword] = useState('');
@@ -16,94 +31,32 @@ const SignUpTutorado = ({ onSubmit, isLoading }) => {
     const [confirmPassword, changeConfirmPassword] = useState('');
     return (
         <Fragment>
-            <div className="front-screen">
+            <div className="front-screen-tutorado">
                 {"Crear cuenta de tutorado"}
-                <Link className="inicio" to='/'>
+                <Link className="inicio-tutorado" to='/'>
                     <a className="linksU">Regresar a inicio</a>
                 </Link>
             </div>
-            <div className="container">
-                <div className="information-container">
-                    <div className="information">
+            <div className="container-tutorado">
+                <div className="information-container-tutorado">
+                    <div className="information-tutorado">
                         {"Información aquí"}
-                        <img src={slide0} className="img-info" />
+                        <img src={slide0} className="img-info-tutorado" />
                     </div>
                 </div>
-                <div className="form-container">
-                    <div className="form">
-                        <p className="p-inputs">
-                            <div className="input-container">
-                            <label className="Label">{"Nombre"}
-                            </label>
-                            <input className="input"
-                            type="text"
-                            placeholder="Nombre"
-                            value={name}
-                            onChange={e => changeName(e.target.value)}
-                            />
-                            </div>
-                        
-                            <div className="input-container">
-                            <label className="Label">
-                                {"Apellido"}
-                            </label>
-                            <input className="input"
-                            type="text"
-                            placeholder="Lastname"
-                            value={lastname}
-                            onChange={e => changeLastname(e.target.value)}
-                            />
-                            </div>
+                <div className="form-container-tutorado">
+                    <div className="form-tutorado">
+                        <p className="p-inputs-tutorado">
+													{labelInput("Nombre",name,changeName)}
+													{labelInput("Apellido",lastname,changeLastname)}
                         </p>
-                        <p className="p-inputs">
-                            <div className="input-container">
-                            <label className="Label">
-                                {"Usuario"}
-                            </label>
-                            <input className="input"
-                            type="text"
-                            placeholder="Username"
-                            value={username}
-                            onChange={e => changeUsername(e.target.value)}
-                            />
-                            </div>
-
-                            <div className="input-container">
-                            <label className="Label">
-                                {"Correo"}
-                            </label>
-                            <input className="input"
-                            type="text"
-                            placeholder="Email"
-                            value={mail}
-                            onChange={e => changeMail(e.target.value)}
-                            />
-                            </div>
+                        <p className="p-inputs-tutorado">
+													{labelInput("Usuario",username,changeUsername)}
+													{labelInput("Correo",mail,changeMail)}
                         </p>
-                        <p className="p-inputs">
-                            <div className="input-container">
-                            <label className="Label">
-                                {"Contraseña"}
-                            </label>
-                            <input className="input"
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={e => changePassword(e.target.value)}
-                            />
-                            </div>
-
-                            <div className="input-container">
-                            <label className="Label">
-                                {"Confirmar contraseña"}
-                            </label>
-                            <input className="input"
-                            type="password"
-                            placeholder="Confirm password"
-                            value={confirmPassword}
-                            onChange={e => changeConfirmPassword(e.target.value)}
-                            />
-                            </div>
+                        <p className="p-inputs-tutorado">
+													{labelInput("Constraseña",password,changePassword)}
+													{labelInput("Confirmar contraseña",confirmPassword,changeConfirmPassword)}
                         </p>
                         <p>
                             <button className="register-tutorado-button" type="submit"

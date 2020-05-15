@@ -7,6 +7,17 @@ import * as selectors from '../../reducers';
 import * as actions from '../../actions/signUpTutor';
 import '../SignUpTutor/styles.css'; 
 
+const labelInput = (labelText, value, onChange) => {
+    return (<p className="p-input-tutor">
+          <div className="div-input-container">
+              <label className="Label-tutor">
+                  {labelText}
+              </label>
+              <input className="input-tutor" type="text" placeholder={labelText} value={value} onChange={e => onChange(e.target.value)}  />
+          </div>
+      </p>)
+};
+
 const SignUpTutor = ({onSubmit, isLoading}) => {
   const [username, changeUsername] = useState('');
   const [password, changePassword] = useState('');
@@ -25,129 +36,45 @@ const SignUpTutor = ({onSubmit, isLoading}) => {
 
   return (
     <Fragment>
-      <div className="front-screen">
+      <div className="front-screen-tutor">
 				{"Crear cuenta de tutor"}
 				<Link className="inicio" to='/'>
-          <a className="linksU">Regresar a inicio</a>
+        	<a className="linksU">Regresar a inicio</a>
         </Link>
       </div>
-      <div className="container">
-			<div className="form-contanier">
-      <div className="form-tutor">
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Nombre"}
-              </label>
-              <input className="input" type="text" placeholder="Nombre" value={name} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Apellido"}
-              </label>
-              <input className="input" type="text" placeholder="Apellido" value={lastname} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Usuario"}
-              </label>
-              <input className="input" type="text" placeholder="Usuario" value={username} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Email"}
-              </label>
-              <input className="input" type="text" placeholder="Email" value={mail} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Contraseña"}
-              </label>
-              <input className="input" type="text" placeholder="Contraseña" value={password} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Confirmar constraseña"}
-              </label>
-              <input className="input" type="text" placeholder="Confirmar contraseña" value={name} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Teléfono"}
-              </label>
-              <input className="input" type="text" placeholder="Teléfono" value={phone} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Carrera"}
-              </label>
-              <input className="input" type="text" placeholder="Carrera" value={career} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-      <p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Precio"}
-              </label>
-              <input className="input" type="text" placeholder="Precio" value={price} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-			<p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Localidad"}
-              </label>
-              <input className="input" type="text" placeholder="Localidad" value={location} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-			<p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Institución"}
-              </label>
-              <input className="input" type="text" placeholder="Institución" value={institution} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-			<p className="p-input">
-          <div className="input-container">
-              <label className="Label">
-                  {"Idioma"}
-              </label>
-              <input className="input" type="text" placeholder="Idioma" value={language} onChange={e => changeName(e.target.value)}  />
-          </div>
-      </p>
-			</div>
-          <div className="date-container">
-						<div className="p-date">
-              <label className="Label">
+      <div className="container-tutor">
+				<div className="form-contanier-tutor">
+      		<div className="form-tutor">
+        		{labelInput("Nombre",name,changeName)}
+        		{labelInput("Apellido",lastname,changeLastname)}
+						{labelInput("Usuario",username,changeUsername)}
+						{labelInput("Email",mail,changeMail)}
+						{labelInput("Contraseña",password,changePassword)}
+						{labelInput("Confirmar contraseña",confirmPassword,changeConfirmPassword)}
+						{labelInput("Teléfono",phone,changePhone)}
+						{labelInput("Carrera",career,changeCareer)}
+						{labelInput("Precio",price,changePrice)}
+						{labelInput("Localidad",location,changeLocation)}
+						{labelInput("Institución",institution,changeInstitution)}
+						{labelInput("Idioma",language,changeLanguage)}
+					</div>
+          <div className="date-container-tutor">
+						<div className="p-date-tutor">
+              <label className="Label-tutor">
                   {"Fecha de nacimiento"}
               </label>
-              <DatePicker  className="input" selected={startDate} value={startDate} onChange={date => setStartDate(date)} />
+              <DatePicker  className="input-tutor" selected={startDate} value={startDate} onChange={date => setStartDate(date)} />
 						</div>
-                <button className="register-button" type="submit"
+                <button className="register-button-tutor" type="submit"
                   onClick = {() => onSubmit(name, lastname,username,mail,password,confirmPassword)}>
-                  	{'Crear cuenta de tutor'}
+                  {'Crear cuenta de tutor'}
                 </button>
 					</div>
-      </div>
+      	</div>
 			</div>
     </Fragment>
   )
-}
+};
 
 export default connect(
     state => ({
