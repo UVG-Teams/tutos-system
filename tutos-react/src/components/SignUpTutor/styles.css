@@ -1,4 +1,4 @@
-.front-screen{
+.front-screen-tutor{
   position: fixed;
   height: 15vh;
   width: 100%;
@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.container {
+.container-tutor {
   margin-top:13vh;
   display: flex;
   flex-direction: row;
@@ -16,7 +16,7 @@
   height: 35rem;
 }
 
-.form-container {
+.form-container-tutor {
   display: flex;
   margin-right: 8rem;
   justify-content: center;
@@ -34,7 +34,7 @@
   height: 80%;
   margin-left: 5rem;
 }
-.input {
+.input-tutor {
   height: 2rem;
   width: 11rem;
   margin: 3rem;
@@ -43,35 +43,40 @@
   border-radius: 5rem;
 }
 
-.Label {
+.Label-tutor {
   margin-left: 3rem;
   font-size: 20px;
+  padding-bottom: 1rem;
 }
 
-.register-button{
+.register-button-tutor{
   height: 3rem;
   width: 10rem;
   border-radius: 3rem;
   margin-left: 31rem;
   z-index: 999;
 }
+.div-input-container{
+  display: flex;
+  flex-direction: column;
+  }
 
-.p-inputs {
+.p-inputs-tutor {
   display: flex;
   flex-direction: row;
 }
 
-.p-date {
+.p-date-tutor {
   display: flex;
   flex-direction: column;
 }
 
-.input-container {
+.input-container-tutor {
   display: flex;
   flex-direction: column;
 }
 
-.date-container {
+.date-container-tutor {
   display: flex;
   flex-direction: row;
   margin-left: 5rem;
