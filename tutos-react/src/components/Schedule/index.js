@@ -1,7 +1,10 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import './styles.css'; 
+import '../../index.css';
+import '../../normalize.css';
 
 
 const Schedule = ({state}) => {

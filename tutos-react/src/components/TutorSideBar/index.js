@@ -3,6 +3,10 @@ import { Link, useRouteMatch } from 'react-router-dom'
 
 // const match = useRouteMatch(); 
 
+import './styles.css'; 
+import '../../index.css';
+import '../../normalize.css';
+
 const sideBar = () => (
 
   <div className='sidebar'>
@@ -12,17 +16,12 @@ const sideBar = () => (
         Calendario
       </div>
     </Link>
-    <Link to = '/mensajes'>
+    <Link to = '/messages'>
       <div className='options'>
         Mensajes
       </div>
     </Link>
-    <Link to = '/tutores'>
-      <div className='options'>
-        Tutores
-      </div>
-    </Link>
-    <Link to = 'myAccount'>
+    <Link to = 'profile'>
     <div className='options'>
       Mi cuenta
     </div>

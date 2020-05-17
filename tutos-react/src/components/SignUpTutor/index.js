@@ -5,7 +5,10 @@ import {Link} from 'react-router-dom'
 
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/signUpTutor';
-import '../SignUpTutor/styles.css'; 
+
+import './styles.css'; 
+import '../../index.css';
+import '../../normalize.css';
 
 const labelInput = (labelText, value, onChange) => {
     return (<p className="p-input-tutor">
