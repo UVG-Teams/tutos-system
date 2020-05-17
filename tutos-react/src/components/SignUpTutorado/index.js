@@ -4,7 +4,11 @@ import {Link} from 'react-router-dom'
 
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/signUpTutorado';
-import '../SignUpTutorado/styles.css'; 
+
+import './styles.css'; 
+import '../../index.css';
+import '../../normalize.css';
+
 import slide0 from '../../static/slide0.jpg';
 
 const labelInput = (labelText, value, onChange) => {

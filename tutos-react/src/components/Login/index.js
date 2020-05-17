@@ -12,10 +12,12 @@ import {
 import * as selectors from '../../reducers';
 import * as actions from '../../actions/auth';
 
-import './styles.css';
+import './styles.css'; 
+import '../../index.css';
+import '../../normalize.css';
 
 
-const Login = ({ onSubmit,isLoading, }) => {
+const Login = ({ onSubmit, isLoading }) => {
     const [username, changeUsername] = useState('');
     const [password, changePassword] = useState('');
     return (
@@ -41,7 +43,7 @@ const Login = ({ onSubmit,isLoading, }) => {
                 isLoading ? (
                     <strong>{'Cargando...'}</strong>
                 ) : (
-                    <Link to = 'mainPageTutor'>
+                    <Link to = 'dashboardTutor'>
                         <button>
                             Continuar
                         </button>

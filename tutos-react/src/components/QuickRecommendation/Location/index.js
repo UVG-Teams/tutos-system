@@ -1,12 +1,15 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import './styles.css'; 
+import '../../../index.css';
+import '../../../normalize.css';
 
 import Navbar from '../../Navbar';
 
 
-const Location = ({state}) => {
+const QuickRecommendationLocation = ({state}) => {
     return (
         <div className="page">
         <Navbar/>
@@ -14,10 +17,10 @@ const Location = ({state}) => {
                 <h2>Por favor ingresa la ubicación en donde quieres recibir la tutoría.</h2>
                 <input type="text" className="location_input" placeholder="Ingresa una ubicación..." autoFocus></input>
                 <div className="links">
-                <Link to='/quick_recommendation/subject'>
+                <Link to='/quick-recommendation/subject'>
                     <a className="back">Atrás</a>
                 </Link>
-                <Link to='/quick_recommendation/education_level'>
+                <Link to='/quick-recommendation/education-level'>
                     <button type="button" className="next">Siguiente</button>
                 </Link>
                 </div>
@@ -30,4 +33,4 @@ export default connect(
     (state) => ({
         state: state,
     })
-)(Location);
+)(QuickRecommendationLocation);

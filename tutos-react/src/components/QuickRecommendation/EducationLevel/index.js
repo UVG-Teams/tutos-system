@@ -1,12 +1,15 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import './styles.css'; 
+import '../../../index.css';
+import '../../../normalize.css';
 
 import Navbar from '../../Navbar';
 
 
-const Location = ({state}) => {
+const QuickRecommendationEducationLevel = ({state}) => {
     return (
         <div className="page">
         <Navbar/>
@@ -26,10 +29,10 @@ const Location = ({state}) => {
                 </div>
 
                 <div className="links">
-                <Link to='/quick_recommendation/location'>
+                <Link to='/quick-recommendation/location'>
                     <a className="back">Atrás</a>
                 </Link>
-                <Link to='/quick_recommendation/schedule'>
+                <Link to='/quick-recommendation/schedule'>
                     <button type="button" className="next">Siguiente</button>
                 </Link>
                 </div>
@@ -42,4 +45,4 @@ export default connect(
     (state) => ({
         state: state,
     })
-)(Location);
+)(QuickRecommendationEducationLevel);

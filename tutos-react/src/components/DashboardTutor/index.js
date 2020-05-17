@@ -1,10 +1,5 @@
 import React , { Fragment } from 'react'
 import { connect } from 'react-redux';
-import Header from './../Header'
-import TutoCard from './../TutoCard'
-import StudentCard from './../StudentCard'
-import './styles.css'
-import Login from './../Login'
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,14 +8,23 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+
+import './styles.css'; 
+import '../../index.css';
+import '../../normalize.css';
+
+import Navbar from '../Navbar'
+import TutoCard from './../TutoCard'
+import StudentCard from './../StudentCard'
+
 import * as selectors from './../../reducers/mainPage';
 import SideBar from './../TutorSideBar'
 
-function MainPageTutor( {recentTutos, favStudents} ){
+function DashboardTutor( {recentTutos, favStudents} ){
   const match = useRouteMatch();
   return (
   <Fragment>
-    <Header/>
+    <Navbar/>
     <div className = 'body'>
       <SideBar/>
       <div className = 'dashboard'>
@@ -88,4 +92,4 @@ export default connect(
   dispatch => ({
 
   })
-) (MainPageTutor);
+)(DashboardTutor);

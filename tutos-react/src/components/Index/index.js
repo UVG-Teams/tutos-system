@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
+
 import { Fade } from 'react-slideshow-image';
 import slide0 from '../../static/slide0.jpg';
 import slide1 from '../../static/slide1.jpg';
@@ -7,7 +8,10 @@ import school24px from '../../static/baseline_school_black_18dp.png';
 import teacher from '../../static/teacher.png';
 import idea from '../../static/idea.png';
 import money from '../../static/money.png';
+
 import './styles.css'; 
+import '../../index.css';
+import '../../normalize.css';
 
 import Navbar from '../Navbar';
 import Footer from '../Footer';
@@ -52,19 +56,6 @@ function slides(){
     )
 }
 
-function text(){
-    return(
-         < div className = "parrafito" >
-            <h2>
-                {'Hola algo'}
-            </h2>
-            <p>
-                {'Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. '}
-            </p>
-        </div >
-    )
-}
-
 function column(img, header, text) {
     return(
         <div className = "column" >
@@ -85,7 +76,7 @@ function columns () {
     )
 }
 
-const Index = ({state}) => {
+const Index = () => {
     return (
         <Fragment>
             <div className="front_screen">
@@ -94,15 +85,18 @@ const Index = ({state}) => {
             <div className = "Slides">
                 {slides()}
             </div>
-            {text()}
+            < div className = "parrafito" >
+                <h2>
+                    {'Hola algo'}
+                </h2>
+                <p>
+                    {'Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. '}
+                </p>
+            </div >
             {columns()}
             <Footer />
         </Fragment>
     );
 };
 
-export default connect(
-    (state) => ({
-        state: state,
-    })
-)(Index);
+export default Index;
