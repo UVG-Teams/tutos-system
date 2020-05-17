@@ -15,7 +15,9 @@ import Login from '../Login';
 const Navbar = ({ state }) => (
     <div className="Navbar">
         <div className="Navbar-logo_container">
-            <img src = {logo} className = "Navbar-logo"></img>
+            <Link to='/'>
+                <img src = {logo} className = "Navbar-logo"></img>
+            </Link>
         </div>
         <div className="Navbar-links_container">
             {
