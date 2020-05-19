@@ -34,18 +34,18 @@ const Navbar = ({ state }) => (
                         <a href="" className="Navbar-links">Preguntas frecuentes</a>
                         <a href="" className="Navbar-links">Acerca de nosotros</a>
                         <Link to='/quick-recommendation/subject'>
-                            <a className="Navbar-links">Otra Funcion</a>
+                            <a className="Navbar-links"> Recomendación rápida </a>
                         </Link>
                         <Login/>
-                        <label className='Navbar-user'>Registro:</label>
-                        <Link to='/signup'>
+                        {/* <label className='Navbar-user'>Registro:</label> */}
+                        {/* <Link to='/signup'>
                             <a className="Navbar-linksU">Tutor</a>
-                        </Link>
+                        </Link>Registro:
+
                         <Link to='/signupTutorado'>
                             <a className="Navbar-linksU">Tutorado</a>
-                        </Link>
-                    </>
-                ) 
+                        </Link> */}
+                    </>) 
             }
         </div>
     </div>
