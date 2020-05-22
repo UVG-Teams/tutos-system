@@ -1,0 +1,12 @@
+.tutor-tutos-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.tutos-container-column{
+  display: flex;
+  flex-direction: column;
+  
+}
