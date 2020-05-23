@@ -6,8 +6,9 @@
     font-size: 18px;
     outline: none;
     padding-right: 25px;
-    text-decoration: underline;
+    text-decoration: none;
 }
+
 .input-login {
     margin-left: 30px;
 }
