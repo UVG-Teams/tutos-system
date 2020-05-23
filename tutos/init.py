@@ -1193,8 +1193,8 @@ def create_initial_data(request):
     print('Languages are done!')
 
     #USER
-    admin= User(username="admin",email="admin@uvg.edu.gt", is_superuser = True, is_staff = True)
-    admin.set_password("admin99")
+    admin= User(username="admin",email="admin@admin.com", is_superuser = True, is_staff = True)
+    admin.set_password("admin")
     admin.save()
 
     jgblock= User(username="JBlock",first_name="José Gabriel", last_name="Block Staackmann",email="blockmann3@gmail.com")
