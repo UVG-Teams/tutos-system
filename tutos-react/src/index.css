@@ -47,6 +47,14 @@ body {
   color: red;
 }
 
+.white-text {
+  color: whitesmoke;
+}
+
+.black-text {
+  color: black;
+}
+
 .pending {
   opacity: 0.5;
 }
