@@ -59,27 +59,27 @@ function slides(){
 
 function column(img, header) {
     return(
-        <div className = "column" >
+        <div className = "column white-text" >
             <img src = {img} className  = "img0"/>
             <h2 align = 'center'> {header} </h2>
         </div>
     )
 }
-const header1 = 'Clases individuales o grupales'
+
 function columns () {
     return(
         <div className = "columns">
-            {column(teacher, header1)}
+            {column(teacher, 'Clases individuales o grupales')}
             {column(idea, 'Expande tus conocimientos')}
             {column(money, 'Conoce nuestras tarifas')}
         </div>
     )
 }
 
-function buttons () {
+function registerBtns () {
     return(
         <div className = 'index-buttons-sl'>
-            <h3>¡Registrate!</h3>
+            <h1>¡Registrate!</h1>
             <div className = 'index-buttons-buttons'>
                 <Link to = 'signup'>
                     <div className = 'index-button-bottom'>
@@ -99,24 +99,22 @@ function buttons () {
 const Index = () => {
     return (
         <Fragment>
-            <div className="front_screen">
-                <Navbar/>
-            </div>
+            <Navbar/>
             <div className = "Slides">
                 {slides()}
             </div>
-            < div className = "parrafito" >
+            < div className = "parrafito white-text" >
                 <h2>
                     ¡Nos adaptamos a ti!
                 </h2>
-                <div className = 'index-descripcion'>
+                <div className = 'index-descripcion white-text'>
                     <h4>
                         {'En Tuto\'s puesdes organizar una tutoría individual o grupal. Tú decides la hora y el lugar, nosotros llegamos a ti. Refuerza tus conocimientos y mejora tus notas, a un precio accesible. '}
                     </h4>
                 </div>
             </div >
             {columns()}
-            {buttons()}
+            {registerBtns()}
             <Footer />
         </Fragment>
     );
