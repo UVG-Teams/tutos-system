@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class Tutoria(models.Model):
     tutor = models.ForeignKey(
-        'tutorias.Tutor',
+        User,
         null = False,
         on_delete = models.CASCADE,
     )
@@ -12,6 +12,7 @@ class Tutoria(models.Model):
         User,
         null = False,
         on_delete = models.CASCADE,
+        related_name = 'tutorado'
     )
     location = models.ForeignKey(
         'locations.Location',
