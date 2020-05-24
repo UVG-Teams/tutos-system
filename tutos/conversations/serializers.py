@@ -1,9 +1,12 @@
 from rest_framework import serializers
 
 from conversations.models import Conversation, Message
+from users.serializers import UserSerializer
 
 
 class ConversationSerializer(serializers.ModelSerializer):
+    user1 = UserSerializer()
+    user2 = UserSerializer()
     class Meta:
         model = Conversation
         fields = (

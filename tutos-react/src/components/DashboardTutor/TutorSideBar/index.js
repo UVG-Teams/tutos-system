@@ -4,8 +4,8 @@ import { Link, useRouteMatch } from 'react-router-dom'
 // const match = useRouteMatch(); 
 
 import './styles.css'; 
-import '../../index.css';
-// import '../../normalize.css';
+import './../../../index.css';
+import '../../../normalize.css';
 
 const sideBar = () => (
 

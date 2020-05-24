@@ -15,6 +15,7 @@ const Footer = () => (
             <img src={ twitter } className="Footer-img" />
         </div>
         <a href="https://www.youtube.com">{'TODO'}</a>
+        <a>&copy; Tuto's 2020</a>
     </div>
 );
 

@@ -5,7 +5,7 @@ from institutions.models import Institution, Career, Course
 from subjects.models import Subject, Topic
 from locations.models import Location, Language
 from schedules.models import Schedule, Period
-from tutorias.models import Tutor
+from tutorias.models import Tutor, Tutoria
 from workflows.models import Workflow, Status
 
 def create_initial_data(request):
@@ -1193,8 +1193,8 @@ def create_initial_data(request):
     print('Languages are done!')
 
     #USER
-    admin= User(username="admin",email="admin@uvg.edu.gt", is_superuser = True, is_staff = True)
-    admin.set_password("admin99")
+    admin= User(username="admin",email="admin@admin.com", is_superuser = True, is_staff = True)
+    admin.set_password("admin")
     admin.save()
 
     jgblock= User(username="JBlock",first_name="José Gabriel", last_name="Block Staackmann",email="blockmann3@gmail.com")
@@ -1252,6 +1252,9 @@ def create_initial_data(request):
     ststutoria1= Status(name="aparted", is_initial=True, is_final=False, workflow=wftutoria)
     ststutoria1.save()
     print('Statuses are done!')
+
+    #TUTORIA
+    tutoria1 = Tutoria.objects.create(tutor=marcfuents, tutorado=jgblock, total_price=100, datetime='00:00:00:21/05/2020')
 
     data= {
         'Status': 'Ok',

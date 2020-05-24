@@ -1,15 +1,24 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { routerActions } from 'react-router-redux';
 import { configureStore } from '../../store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { 
+    connectedRouterRedirect,
+    connectedReduxRedirect,
+} from 'redux-auth-wrapper/history4/redirect';
 
-import './styles.css'; 
-import '../../index.css';
-import '../../normalize.css';
+import './styles.css';
+import {
+    tokenReviewTime,
+} from '../../settings';
+
+import * as selectors from '../../reducers';
+
+import TokenRefresh from '../TokenRefresh';
 
 import Index from '../Index';
-import Login from '../Login';
-
 import SignUpTutor from '../SignUpTutor';
 import SignUpTutorado from '../SignUpTutorado';
 import SignUpTutorWizard from '../SignUpTutorWizard';
@@ -17,76 +26,101 @@ import SignUpTutorWizard from '../SignUpTutorWizard';
 import DashboardTutor from '../DashboardTutor';
 import Construction from '../Construction';
 
-import QuickRecommendationSubject from '../QuickRecommendation/Subject';
-import QuickRecommendationLocation from '../QuickRecommendation/Location';
-import QuickRecommendationSchedule from '../QuickRecommendation/Schedule';
-import QuickRecommendationEducationLevel from '../QuickRecommendation/EducationLevel';
+// import QuickRecommendation from '../QuickRecommendation';
 import Schedule from '../Schedule';
+import Inbox from '../Views/Inbox';
 
 
-const store = configureStore();
+const UserIsAuthenticated = connectedRouterRedirect({
+    redirectPath: '/',
+    authenticatedSelector: selectors.isAuthenticated,
+    redirectAction: routerActions.replace,
+    wrapperDisplayName: 'userIsAuthenticated',
+});
+
+const routes = [
+    {
+        path: '/',
+        exact: true,
+        component: Index,
+    },
+    {
+        path: '/inbox',
+        exact: true,
+        component: UserIsAuthenticated(Inbox),
+    },
+    {
+        path: '/dashboardTutor',
+        exact: true,
+        component: UserIsAuthenticated(DashboardTutor),
+    },
+    {
+        path: '/signup',
+        exact: true,
+        component: UserIsAuthenticated(SignUpTutor),
+    },
+    {
+        path: '/signupTutorado',
+        exact: true,
+        component: UserIsAuthenticated(SignUpTutorado),
+    },
+    {
+        path: '/dashboardTutor',
+        exact: true,
+        component: UserIsAuthenticated(DashboardTutor),
+    },
+    {
+        path: '/calendar',
+        exact: true,
+        component: UserIsAuthenticated(Construction),
+    },
+    {
+        path: '/messages',
+        exact: true,
+        component: UserIsAuthenticated(Construction),
+    },
+    {
+        path: '/profile',
+        exact: true,
+        component: UserIsAuthenticated(Construction),
+    },
+    {
+        path: '/quick-recommendation',
+        exact: true,
+        component: UserIsAuthenticated(Construction),
+    },
+    {
+        path: '/schedule',
+        exact: true,
+        component: UserIsAuthenticated(Schedule),
+    },
+];
+
+const { store, persistor } = configureStore();
 
 const App = () => (
     <div className = "App">
         <Provider store = {store}>
-            <Router>
-                <Switch>
-                    <Route path='/signupTutorado'>
-                        <SignUpTutorado/>
-                    </Route>
-
-                    <Route path='/dashboardTutor'>
-                        <DashboardTutor />
-                    </Route>
-                    
-                    <Route path='/calendar'>
-                        <Construction />
-                    </Route>
-                    
-                    <Route path='/messages'>
-                        <Construction />
-                    </Route>
-                    
-                    <Route path='/profile'>
-                        <Construction />
-                    </Route>
-                    
-                    <Route path='/signup'>
-                        <SignUpTutor/>
-                    </Route>
-
-                    <Route path='/wizard'>
-                        <SignUpTutorWizard/>
-                    </Route>
-                    
-                    <Route path = '/quick-recommendation/subject'>
-                        <QuickRecommendationSubject/>
-                    </Route>
-
-                    <Route path = '/quick-recommendation/location'>
-                        <QuickRecommendationLocation/>
-                    </Route>
-                    
-                    <Route path = '/quick-recommendation/education-level'>
-                        <QuickRecommendationEducationLevel/>
-                    </Route>
-                    
-                    <Route path = '/quick-recommendation/schedule'>
-                        <QuickRecommendationSchedule/>
-                    </Route>
-                    
-                    <Route path = '/schedule'>
-                        <Schedule/>
-                    </Route>
-
-                    <Route path = '/'>
-                        <Index/>
-                    </Route>
-                </Switch>
-            </Router>
+            <PersistGate loading = { null } persistor = { persistor }>
+                <TokenRefresh reviewTime={tokenReviewTime}/>
+                <Router>
+                    <Switch>
+                        {
+                            routes.map( route => (
+                                <Route
+                                    // exact
+                                    key={route.path}
+                                    path={route.path}
+                                    exact={route.exact}
+                                    component={route.component}
+                                />
+                            ))
+                        }
+                    </Switch>
+                </Router>
+            </PersistGate>
         </Provider>
     </div>
 );
 
 export default App;
-

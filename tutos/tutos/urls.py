@@ -24,7 +24,7 @@ from rest_framework_jwt.views import (
     verify_jwt_token,
 )
 
-from users.views import UserDetailViewSet
+from users.views import UserViewSet, UserDetailViewSet
 from subjects.views import SubjectViewSet, TopicViewSet
 from tutorias.views import TutoriaViewSet, TutorViewSet
 from schedules.views import ScheduleViewSet, PeriodViewSet
@@ -36,6 +36,7 @@ from institutions.views import InstitutionViewSet, CareerViewSet, CourseViewSet
 from init import create_initial_data
 
 router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
 router.register(r'userdetails', UserDetailViewSet)
 router.register(r'subjects', SubjectViewSet)
 router.register(r'topics', TopicViewSet)
@@ -57,8 +58,8 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace = 'rest_framework')),
     url(r'^api/', include(router.urls)),
-    url(r'^api/token/auth/', obtain_jwt_token),
-    url(r'^api/token/refresh/', refresh_jwt_token),
-    url(r'^api/token/verify/', verify_jwt_token),
-    path('admin/initial-data/', create_initial_data),
+    url(r'^api/token-auth/', obtain_jwt_token),
+    url(r'^api/token-refresh/', refresh_jwt_token),
+    url(r'^api/token-verify/', verify_jwt_token),
+    url(r'^admin/initial-data/', create_initial_data),
 ]

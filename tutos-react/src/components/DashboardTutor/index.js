@@ -14,12 +14,11 @@ import '../../index.css';
 // import '../../normalize.css';
 
 import Navbar from '../Navbar'
-import TutoCard from './../TutoCard'
-import StudentCard from './../StudentCard'
+import TutoCard from './TutoCard'
+import StudentCard from './TutoCard';
 
 import * as selectors from './../../reducers/mainPage';
-import SideBar from './../TutorSideBar'
-
+import SideBar from './TutorSideBar'
 function DashboardTutor( {recentTutos, favStudents} ){
   const match = useRouteMatch();
   return (

@@ -1,9 +1,10 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { Fade } from 'react-slideshow-image';
-import slide0 from '../../static/slide0.jpg';
-import slide1 from '../../static/slide1.jpg';
+import slide0 from '../../static/img01.png';
+import slide1 from '../../static/img01.png';
 import school24px from '../../static/baseline_school_black_18dp.png';
 import teacher from '../../static/teacher.png';
 import idea from '../../static/idea.png';
@@ -28,7 +29,7 @@ const fadeProperties = {
     infinite: true,
     indicators: false,
     onChange: (oldIndex, newIndex) => {
-        console.log(`fade transition from ${oldIndex} to ${newIndex}`);
+        // console.log(`fade transition from ${oldIndex} to ${newIndex}`);
     }
 }
 
@@ -56,12 +57,11 @@ function slides(){
     )
 }
 
-function column(img, header, text) {
+function column(img, header) {
     return(
-        <div className = "column" >
+        <div className = "column white-text" >
             <img src = {img} className  = "img0"/>
-            <h3> {header} </h3>
-            <h2>{text}</h2>
+            <h2 align = 'center'> {header} </h2>
         </div>
     )
 }
@@ -69,9 +69,29 @@ function column(img, header, text) {
 function columns () {
     return(
         <div className = "columns">
-            {column(teacher, 'Imageeeen','hola')}
-            {column(idea, 'tst', 'hola')}
-            {column(money, 'tst', 'hola')}
+            {column(teacher, 'Clases individuales o grupales')}
+            {column(idea, 'Expande tus conocimientos')}
+            {column(money, 'Conoce nuestras tarifas')}
+        </div>
+    )
+}
+
+function registerBtns () {
+    return(
+        <div className = 'index-buttons-sl'>
+            <h1>¡Registrate!</h1>
+            <div className = 'index-buttons-buttons'>
+                <Link to = 'signup'>
+                    <div className = 'index-button-bottom'>
+                        <a>Tutor</a>
+                    </div>
+                </Link>
+                <Link to = 'signupTutorado'>
+                    <div className = 'index-button-bottom'>
+                        <a>Tutorado</a>
+                    </div>
+                </Link>
+            </div>
         </div>
     )
 }
@@ -79,21 +99,22 @@ function columns () {
 const Index = () => {
     return (
         <Fragment>
-            <div className="front_screen">
-                <Navbar/>
-            </div>
+            <Navbar/>
             <div className = "Slides">
                 {slides()}
             </div>
-            < div className = "parrafito" >
+            < div className = "parrafito white-text" >
                 <h2>
-                    {'Hola algo'}
+                    ¡Nos adaptamos a ti!
                 </h2>
-                <p>
-                    {'Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. Este es un parrafito. '}
-                </p>
+                <div className = 'index-descripcion white-text'>
+                    <h4>
+                        {'En Tuto\'s puesdes organizar una tutoría individual o grupal. Tú decides la hora y el lugar, nosotros llegamos a ti. Refuerza tus conocimientos y mejora tus notas, a un precio accesible. '}
+                    </h4>
+                </div>
             </div >
             {columns()}
+            {registerBtns()}
             <Footer />
         </Fragment>
     );

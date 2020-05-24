@@ -1,18 +1,12 @@
-.front_screen{
-    position:fixed;
-    height: 100%;
-    top:0px;
-    z-index: 999;
-}
 
 .Slides{
     width: 100%;
     /* margin-top: 10vh; */
     /* height: 1000px; */
+    z-index : 998;
 }
 
 .slidesContainer{
-    margin-top: 10vh;
     height: 90vh;
     width: 100%;
 }
@@ -22,6 +16,7 @@
     height: 100%;
     align-items: center;
     align-self: center;
+    
 }
 
 .img{
@@ -59,3 +54,31 @@
     height: auto;
     filter: grayscale(100%)
 }
+
+.index-buttons-sl{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    border-radius: 5vw;
+    color: whitesmoke;
+    margin: 5rem 15rem;
+}
+
+.index-buttons-buttons{
+    display: flex;
+    flex-direction: row;
+}
+.index-button-bottom{
+    padding: 1rem;
+    margin:1rem;
+    background-color: #078f0e;
+    border-radius: 1.5rem;
+    color: whitesmoke;
+}
+
+.index-descripcion{
+    width: 60vw;
+    margin: 2rem;
+}
+

@@ -1,0 +1,41 @@
+
+.general-button {
+    width: auto;
+    height: auto;
+    border-radius: 12.5px;
+    padding: 0.5rem 1rem;
+    background-color: #acadb0;
+    color: white;
+    border: 0.15rem solid rgba(245, 245, 245, 0.6);
+    margin: 0.25rem;
+}
+
+.success-button {
+    width: auto;
+    height: auto;
+    border-radius: 12.5px;
+    padding: 0.5rem 1rem;
+    background-color: #078f0e;
+    color: white;
+    border: 0.15rem solid rgba(245, 245, 245, 0.6);
+    margin: 0.25rem;
+}
+
+.danger-button {
+    width: auto;
+    height: auto;
+    border-radius: 12.5px;
+    padding: 0.5rem 1rem;
+    background-color: #d61818;
+    color: white;
+    border: 0.15rem solid rgba(245, 245, 245, 0.6);
+    margin: 0.25rem;
+}
+
+.general-button:hover, .success-button:hover, .danger-button:hover {
+    opacity: 80%;
+}
+
+.general-button:active, .success-button:active, .danger-button:active {
+    opacity: 200%;
+}

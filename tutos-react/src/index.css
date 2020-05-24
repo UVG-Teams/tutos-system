@@ -4,6 +4,59 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #5581ef;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.div-display {
+  display: flex;
+  align-items: flex-start;
+}
+
+.div-display-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-display-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-space-between {
+  justify-content: space-between;
+}
+
+.error-text {
+  color: red;
+}
+
+.white-text {
+  color: whitesmoke;
+}
+
+.black-text {
+  color: black;
+}
+
+.pending {
+  opacity: 0.5;
 }
 
 code {
