@@ -6,6 +6,12 @@ import {
 } from './auth';
 
 import {
+  watchFetchConversations,
+  watchAddConversation,
+  watchRemoveConversation,
+} from './conversations';
+
+import {
   watchFetchMessages,
   watchAddMessage,
   watchRemoveMessage,
@@ -16,6 +22,9 @@ function* mainSaga() {
   yield all([
     fork(watchLoginStarted),
     fork(watchRefreshTokenStarted),
+    fork(watchFetchConversations),
+    fork(watchAddConversation),
+    fork(watchRemoveConversation),
     fork(watchFetchMessages),
     fork(watchAddMessage),
     fork(watchRemoveMessage),
