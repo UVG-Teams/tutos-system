@@ -8,7 +8,7 @@ import * as actions from '../../actions/signUpTutor';
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+
 
 const labelInput = (labelText, value, onChange) => {
     return (<p className="p-input-tutor">
@@ -28,7 +28,7 @@ const SignUpTutor = ({onSubmit, isLoading}) => {
   const [lastname, changeLastname] = useState('');
   const [mail, changeMail] = useState('');
   const [confirmPassword, changeConfirmPassword] = useState('');
-  const [language, changeLanguage] = useState('');
+  const [language, changeLanguage] = useState(''); //---aqui
   const [location, changeLocation] = useState('');
   const [phone, changePhone] = useState('');
   const [institution, changeInstitution] = useState('');

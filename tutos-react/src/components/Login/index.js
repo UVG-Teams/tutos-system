@@ -14,7 +14,7 @@ import * as actions from '../../actions/auth';
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+// import '../../normalize.css';
 
 
 const Login = ({ onSubmit, isLoading }) => {

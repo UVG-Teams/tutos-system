@@ -11,7 +11,7 @@ import money from '../../static/money.png';
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+// import '../../normalize.css';
 
 import Navbar from '../Navbar';
 import Footer from '../Footer';

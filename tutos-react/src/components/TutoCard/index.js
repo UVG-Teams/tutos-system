@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+// import '../../normalize.css';
 
 const card = ({clase, date, time, students, location, totalCost} )=> {
     return (

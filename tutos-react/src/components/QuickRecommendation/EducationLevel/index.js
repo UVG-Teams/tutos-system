@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './styles.css'; 
 import '../../../index.css';
-import '../../../normalize.css';
+// import '../../../normalize.css';
 
 import Navbar from '../../Navbar';
 
@@ -28,7 +28,7 @@ const QuickRecommendationEducationLevel = ({state}) => {
                     <label for="noSpecification">Sin especificar</label>
                 </div>
 
-                <div className="links">
+                <div>
                 <Link to='/quick-recommendation/location'>
                     <a className="back">Atrás</a>
                 </Link>

@@ -5,7 +5,7 @@ import { Link, useRouteMatch } from 'react-router-dom'
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+// import '../../normalize.css';
 
 const sideBar = () => (
 

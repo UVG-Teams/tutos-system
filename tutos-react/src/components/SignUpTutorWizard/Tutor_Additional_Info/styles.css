@@ -1,0 +1,48 @@
+.form-additionalinfo-tutor {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    background: white;
+    padding: 3rem 3rem 3rem 5rem;
+    border-radius: 15px;
+}
+
+.phone-date-tutor, .institution-career-tutor, .language-price-tutor, .location-tutor {
+    display: flex;
+    flex-direction: row;
+}
+
+.date-tutor {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-fecha-tutor {
+    font-size: 20px;
+    padding-bottom: 0.5rem;
+}
+
+
+.react-date-picker__wrapper {
+    width: 17rem;
+    font-size: 20px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: solid 1px !important;
+    margin-right: 2rem;
+}
+
+.input-location-tutor {
+    width: 35rem;
+    font-size: 20px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: solid 1px;
+    margin-right: 2rem;
+}
+
+.label-tutor-location {
+    font-size: 20px;
+    padding-bottom: 1rem;
+}
