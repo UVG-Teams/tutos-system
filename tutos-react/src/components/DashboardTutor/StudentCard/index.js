@@ -2,7 +2,7 @@ import React , { Fragment } from 'react'
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+// import '../../normalize.css';
 
 import social from './../../static/social.png'
 

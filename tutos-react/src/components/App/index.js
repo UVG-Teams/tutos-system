@@ -21,6 +21,8 @@ import TokenRefresh from '../TokenRefresh';
 import Index from '../Index';
 import SignUpTutor from '../SignUpTutor';
 import SignUpTutorado from '../SignUpTutorado';
+import SignUpTutorWizard from '../SignUpTutorWizard';
+
 import DashboardTutor from '../DashboardTutor';
 import Construction from '../Construction';
 

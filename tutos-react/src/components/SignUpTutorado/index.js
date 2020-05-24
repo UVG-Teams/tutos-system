@@ -7,7 +7,7 @@ import * as actions from '../../actions/signUpTutorado';
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+// import '../../normalize.css';
 
 import slide0 from '../../static/slide0.jpg';
 

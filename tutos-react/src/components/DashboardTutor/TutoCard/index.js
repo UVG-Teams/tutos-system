@@ -2,7 +2,6 @@ import React , { Fragment } from 'react';
 import { connect } from 'react-redux';
 
 import './styles.css'; 
-// import './../../../index.css';
 import './../../../index.css'
 import './../../../normalize.css';
 
