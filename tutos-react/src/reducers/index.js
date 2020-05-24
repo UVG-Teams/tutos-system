@@ -2,11 +2,13 @@ import { combineReducers } from 'redux';
 import mainPage, * as mainPageSelectors from './mainPage'
 
 import auth, * as authSelectors from './auth';
+import messages, * as messagesSelectors from './messages';
 import signUpTutorado, * as signUpTutoradoSelectors from './signUpTutorado';
 import signUpTutor, * as signUpTutorSelectors from './signUpTutor';
 
 const reducer = combineReducers({ 
   auth,
+  messages,
   signUpTutorado,
   mainPage,
 });
@@ -27,6 +29,10 @@ export const getAuthExpiration = state => authSelectors.getAuthExpiration(state.
 export const getIsRefreshingToken = state => authSelectors.getIsRefreshingToken(state.auth);
 export const getRefreshingError = state => authSelectors.getRefreshingError(state.auth);
 
+export const getMessage = (state, id) => messagesSelectors.getMessage(state.messages, id);
+export const getMessages = state => messagesSelectors.getMessages(state.messages);
+export const isFetchingMessages = state => messagesSelectors.isFetchingMessages(state.messages);
+export const getMessageError = state => messagesSelectors.getMessageError(state.messages);
 
 export const getIsSigningUpTutorado = state => signUpTutoradoSelectors.getIsSigningUp(state.signUpTutorado);
 export const getSignUpErrorTutorado = state => signUpTutoradoSelectors.getSignUpError(state.signUpTutorado);
