@@ -10,6 +10,13 @@ import {
     watchDeleteTutorias
 } from './tutorias'
 
+import {
+  watchFetchMessages,
+  watchAddMessage,
+  watchRemoveMessage,
+} from './messages';
+
+
 function* mainSaga() {
   yield all([
     fork(watchLoginStarted),
@@ -17,6 +24,9 @@ function* mainSaga() {
     fork(watchGetTutorias),
     fork(watchAddTutorias),
     fork(watchDeleteTutorias)
+    fork(watchFetchMessages),
+    fork(watchAddMessage),
+    fork(watchRemoveMessage),
   ]);
 }
 
