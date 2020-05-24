@@ -44,7 +44,7 @@ const byid = (state = {}, action) => {
 const order = (state = [] , action) => {
   switch (action.type){
     case types.GET_TUTOS_COMPLETED: {
-        console.log('ENTRAMOOOOS')
+        // console.log('ENTRAMOOOOS')
         return [
             ...state, 
             ...action.payload.order

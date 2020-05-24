@@ -6,7 +6,6 @@ import './../../normalize.css'
 
 const Card = ({image, header, backgroundColor, body}) => 
     {
-        console.log('EN LA CARTA',body)
         return(
             <Fragment>
             <div className = 'Card' style = {{backgroundColor : backgroundColor}}>
