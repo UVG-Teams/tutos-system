@@ -32,6 +32,6 @@ export const getIsSigningUpTutor = state => signUpTutorSelectors.getIsSigningUp(
 export const getSignUpErrorTutor = state => signUpTutorSelectors.getSignUpError(state.signUpTutor);
 
 export const getTutoria = (state, id) => tutoriasSelectors.getTutoria(state.tutorias , id)
-export const getTutorias = (state) => tutoriasSelectors.getTutoria(state.tutorias )
-export const isFetchingTutorias = (state) => tutoriasSelectors.getTutoria(state.tutorias )
-export const getTutoriaError = (state) => tutoriasSelectors.getTutoria(state.tutorias )
+export const getTutorias = (state) => tutoriasSelectors.getTutorias(state.tutorias )
+export const isFetchingTutorias = (state) => tutoriasSelectors.isFetchingTutorias(state.tutorias )
+export const getTutoriaError = (state) => tutoriasSelectors.getTutoriaError(state.tutorias )

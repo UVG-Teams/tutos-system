@@ -20,6 +20,7 @@ function* getTutorias(action){
         const isAuth = yield select(selectors.isAuthenticated)
         if (isAuth){
             const token = yield select(selectors.getToken)
+            console.log('TOKEN: ',token)
             const response = yield call(
                 fetch,
                 `${API_BASE_URL}/tutorias/`,
@@ -27,10 +28,11 @@ function* getTutorias(action){
                     method: 'GET',
                     headers : {
                         'Content-Type' : 'application/json',
-                        'Authentication': `JWT ${token}`,
+                        'Authorization': `JWT ${token}`,
                     }
                 }
             )
+            console.log('RESPONSE', response)
             if(http.isSuccessful(response.status)){
                 const jsonResult = yield response.json();
                 const {
@@ -68,7 +70,7 @@ function* addTutorias(action) {
                     body : JSON.stringify(action.payload),
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authentication': `JWT ${token}`,
+                        'Authorization': `JWT ${token}`,
                     },
                 }
             )
@@ -107,7 +109,7 @@ function* deleteTutorias(action) {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authentication': `JWT ${token}`,
+                        'Authorization': `JWT ${token}`,
                     },
                 }
             )

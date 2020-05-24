@@ -1,10 +1,10 @@
 import * as types from '../types/tutorias.js'
 
-export const startGetTutos  = (tutorid) => ({
+export const startGetTutos  = (/*tutorid = 1*/) => ({
   type : types.GET_TUTOS_STARTED,
-  payload : {
-    tutorid: tutorid,
-  },
+//   payload : {
+//     tutorid: tutorid,
+//   },
 })
 
 export const completeGetTutos = (entities, order) => ({

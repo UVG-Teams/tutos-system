@@ -1,4 +1,4 @@
-import React , { Fragment } from 'react'
+import React , { Fragment , useEffect } from 'react'
 import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
@@ -21,9 +21,12 @@ import Card from './../Card'
 import image from './../../static/idea.png'
 import SideBar from './TutorSideBar'
 
-import * as selectors from './../../reducers/tutorias';
+import * as selectors from './../../reducers';
+import * as actions from './../../actions/tutorias';
 
-function DashboardTutor( {recentTutos, favStudents} ){
+function DashboardTutor( {state, recentTutos, favStudents, onLoad} ){
+  useEffect(onLoad , [])
+  console.log(state)
   const match = useRouteMatch();
   return (
   <Fragment>
@@ -71,38 +74,46 @@ function DashboardTutor( {recentTutos, favStudents} ){
 }
 
 export default connect(
-  state => ({
-    recentTutos : [{
-      clase : 'Calculo',
-      date: 'Miércoles, 13 de mayo',
-      time : '15:00-17:30',
-      students: 'Marco Fuentes, Jose Lima',
-      location  : 'Uvg',
-      totalCost : 500.00,
-    },
-      {
-        clase: 'Calculo',
-        date: 'Miércoles, 13 de mayo',
-        time: '15:00-17:30',
-        students: 'Marco',
-        location: 'Uvg',
-        totalCost: 500.00,
-      }
-  ],
-    favStudents : [
-      { name: 'Marco Fuentes', 
-        clases: ['Calculo', 'Fisica'], 
-        recent: 'Miercoles,10 de agosto' }, 
-      { name: 'Marco Lima', 
-        clases: ['Discreta', 'Fisica'], 
-        recent: 'Miercoles,25 de agosto'},
-      { name: 'Jose Fuentes', 
-        clases: ['Calculo', 'Assembler'], 
-        recent: 'Jueves,10 de agosto'}
-    ]
-    //selectors.getFavStudents(state)
-  }),
-  dispatch => ({
-
-  })
+    state => ({
+        state, 
+      recentTutos : selectors.getTutorias(state),
+      favStudents : []
+    }),
+    dispatch => ({
+        onLoad(){
+        dispatch(actions.startGetTutos())
+    } 
+})
 )(DashboardTutor);
+
+
+
+//     recentTutos : [{
+//       clase : 'Calculo',
+//       date: 'Miércoles, 13 de mayo',
+//       time : '15:00-17:30',
+//       students: 'Marco Fuentes, Jose Lima',
+//       location  : 'Uvg',
+//       totalCost : 500.00,
+//     },
+//       {
+//         clase: 'Calculo',
+//         date: 'Miércoles, 13 de mayo',
+//         time: '15:00-17:30',
+//         students: 'Marco',
+//         location: 'Uvg',
+//         totalCost: 500.00,
+//       }
+//   ],
+//     favStudents : [
+//       { name: 'Marco Fuentes', 
+//         clases: ['Calculo', 'Fisica'], 
+//         recent: 'Miercoles,10 de agosto' }, 
+//       { name: 'Marco Lima', 
+//         clases: ['Discreta', 'Fisica'], 
+//         recent: 'Miercoles,25 de agosto'},
+//       { name: 'Jose Fuentes', 
+//         clases: ['Calculo', 'Assembler'], 
+//         recent: 'Jueves,10 de agosto'}
+//     ]
+//     //selectors.getFavStudents(state)
