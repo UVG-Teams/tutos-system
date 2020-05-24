@@ -14,7 +14,7 @@
 .cardslist {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .studentslist {
@@ -29,4 +29,10 @@
     border : 1px solid black;
     width: 90%;
     box-shadow: white  5px;
+}
+
+.tuto-estado{
+    border:0.1rem solid black;
+    border-radius: 1rem;
+    margin: 1rem;
 }

@@ -1,0 +1,38 @@
+.Card {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width : 15vw;
+    height: fit-content;
+    margin : 1rem;
+    padding: 0rem;
+    border-radius: 1rem;
+    border: 0.1rem solid black;
+}
+
+.Card:hover{
+    box-shadow: 0 4px 8px 0
+     rgba(0, 0, 0, 0.2), 
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.Card-Header {
+    display: flex;
+    flex-direction: row;
+    padding: 0rem;
+    margin: 1rem;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 0.1rem solid black;
+}
+
+.Card-Body{
+    display: flex;
+    flex-direction: column;
+}
+
+.Card-body-item{
+    padding-left: 1rem;
+    margin:0.2rem
+}

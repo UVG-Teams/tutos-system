@@ -1,21 +1,18 @@
 import { combineReducers } from 'redux';
-import mainPage, * as mainPageSelectors from './mainPage'
 
 import auth, * as authSelectors from './auth';
 import signUpTutorado, * as signUpTutoradoSelectors from './signUpTutorado';
 import signUpTutor, * as signUpTutorSelectors from './signUpTutor';
-
+import tutorias, * as tutoriasSelectors from './tutorias'
 const reducer = combineReducers({ 
   auth,
   signUpTutorado,
-  mainPage,
+  tutorias
 });
 
 export default reducer;
 
 
-export const getMainPageTutos = state => mainPageSelectors.getTutos(state.mainPage)
-export const getMainPageFavStudents = state => mainPageSelectors.getFavStudents(state.mainPage)
 
 export const getToken = state => authSelectors.getToken(state.auth);
 export const getIsAuthenticating = state => authSelectors.getIsAuthenticating(state.auth);
@@ -34,3 +31,7 @@ export const getSignUpErrorTutorado = state => signUpTutoradoSelectors.getSignUp
 export const getIsSigningUpTutor = state => signUpTutorSelectors.getIsSigningUp(state.signUpTutor);
 export const getSignUpErrorTutor = state => signUpTutorSelectors.getSignUpError(state.signUpTutor);
 
+export const getTutoria = (state, id) => tutoriasSelectors.getTutoria(state.tutorias , id)
+export const getTutorias = (state) => tutoriasSelectors.getTutoria(state.tutorias )
+export const isFetchingTutorias = (state) => tutoriasSelectors.getTutoria(state.tutorias )
+export const getTutoriaError = (state) => tutoriasSelectors.getTutoria(state.tutorias )

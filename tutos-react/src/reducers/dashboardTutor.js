@@ -1,4 +1,4 @@
-import * as types from './../types/mainPage'
+import * as types from '../types/dashboardTutor'
 import { combineReducers } from 'redux';
 
 const recentTutos = (state = [] , action) => {
@@ -33,12 +33,12 @@ const favStudents = (state = [ ] , action) => {
   } 
 }
 
-const mainPage = combineReducers({
+const dashboardTutor = combineReducers({
   recentTutos,
   favStudents
 })
 
-export default mainPage;
+export default dashboardTutor;
 
 export const getTutos = state => state.reccentTutos;
 export const getFavStudents = state => state.favStudents;
