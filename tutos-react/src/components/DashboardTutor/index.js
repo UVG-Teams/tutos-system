@@ -11,7 +11,7 @@ import {
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+// import '../../normalize.css';
 
 import Navbar from '../Navbar'
 import Card from './../Card'

@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import omit from 'lodash/omit';
 
-import * as types from '../types/messages';
+import * as types from '../types/conversations';
 
 
 const byId = (state = {}, action) => {
     switch(action.type) {
-        case types.FETCH_MESSAGES_COMPLETED: {
+        case types.FETCH_CONVERSATIONS_COMPLETED: {
             const newState = { ...state };
             const { entities, order } = action.payload;
             order.forEach(id => {
@@ -17,7 +17,7 @@ const byId = (state = {}, action) => {
             });
             return newState;
         }
-        case types.ADD_MESSAGE_STARTED: {
+        case types.ADD_CONVERSATION_STARTED: {
             const newState = { ...state };
             newState[action.payload.id] = {
                 ...action.payload,
@@ -25,22 +25,22 @@ const byId = (state = {}, action) => {
             }
             return newState;
         }
-        case types.ADD_MESSAGE_COMPLETED: {
-            const { tempId, message } = action.payload;
+        case types.ADD_CONVERSATION_COMPLETED: {
+            const { tempId, conversation } = action.payload;
             const newState = omit(state, tempId);
-            newState[message.id] = {
-                ...message,
+            newState[conversation.id] = {
+                ...conversation,
                 isConfirmed: true,
             }
             return newState;
         }
-        case types.REMOVE_MESSAGE_STARTED: {
+        case types.REMOVE_CONVERSATION_STARTED: {
             return omit(state, action.payload.id);
         }
         default: {
             return state;
         }
-        // case types.REMOVE_MESSAGE_COMPLETED: {
+        // case types.REMOVE_CONVERSATION_COMPLETED: {
         //     return 
         // }
     }
@@ -48,23 +48,23 @@ const byId = (state = {}, action) => {
 
 const order = (state = [], action) => {
     switch(action.type) {
-        case types.FETCH_MESSAGES_COMPLETED: {
+        case types.FETCH_CONVERSATIONS_COMPLETED: {
             return [
                 ...state,
                 ...action.payload.order
             ];
         }
-        case types.ADD_MESSAGE_STARTED: {
+        case types.ADD_CONVERSATION_STARTED: {
             return [
                 ...state,
                 ...action.payload.id
             ];
         }
-        case types.ADD_MESSAGE_COMPLETED: {
-            const { tempId, message } = action.payload;
-            return state.map(id => id === tempId ? message.id : id);
+        case types.ADD_CONVERSATION_COMPLETED: {
+            const { tempId, conversation } = action.payload;
+            return state.map(id => id === tempId ? conversation.id : id);
         }
-        case types.REMOVE_MESSAGE_STARTED: {
+        case types.REMOVE_CONVERSATION_STARTED: {
             return state.filter(id => id !== action.payload.id);
         }
         default: {
@@ -75,13 +75,13 @@ const order = (state = [], action) => {
 
 const isFetching = (state = false, action) => {
     switch(action.type) {
-        case types.FETCH_MESSAGES_STARTED: {
+        case types.FETCH_CONVERSATIONS_STARTED: {
             return true;
         }
-        case types.FETCH_MESSAGES_COMPLETED: {
+        case types.FETCH_CONVERSATIONS_COMPLETED: {
             return false;
         }
-        case types.FETCH_MESSAGES_FAILED: {
+        case types.FETCH_CONVERSATIONS_FAILED: {
             return false;
         }
         default: {
@@ -92,16 +92,16 @@ const isFetching = (state = false, action) => {
 
 const error = (state = null, action) => {
     switch(action.type) {
-        case types.FETCH_MESSAGES_STARTED:
-        case types.FETCH_MESSAGES_COMPLETED:
-        case types.ADD_MESSAGE_STARTED:
-        case types.ADD_MESSAGE_COMPLETED:
-        case types.REMOVE_MESSAGE_STARTED:
-        case types.REMOVE_MESSAGE_COMPLETED:
+        case types.FETCH_CONVERSATIONS_STARTED:
+        case types.FETCH_CONVERSATIONS_COMPLETED:
+        case types.ADD_CONVERSATION_STARTED:
+        case types.ADD_CONVERSATION_COMPLETED:
+        case types.REMOVE_CONVERSATION_STARTED:
+        case types.REMOVE_CONVERSATION_COMPLETED:
             return null;
-        case types.FETCH_MESSAGES_FAILED: 
-        case types.ADD_MESSAGE_FAILED:
-        case types.REMOVE_MESSAGE_FAILED:
+        case types.FETCH_CONVERSATIONS_FAILED: 
+        case types.ADD_CONVERSATION_FAILED:
+        case types.REMOVE_CONVERSATION_FAILED:
             return action.payload.error;
         default: {
             return state;
@@ -117,7 +117,7 @@ export default combineReducers({
     error,
 })
 
-export const getMessage = (state, id) => state.byId[id];
-export const getMessages = state => state.order.map(id => getMessage(state, id));
-export const isFetchingMessages = state => state.isFetching;
-export const getMessageError = state => state.error;
+export const getConversation = (state, id) => state.byId[id];
+export const getConversations = state => state.order.map(id => getConversation(state, id));
+export const isFetchingConversations = state => state.isFetching;
+export const getConversationError = state => state.error;

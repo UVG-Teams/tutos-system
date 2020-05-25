@@ -11,6 +11,12 @@ import {
 } from './tutorias'
 
 import {
+  watchFetchConversations,
+  watchAddConversation,
+  watchRemoveConversation,
+} from './conversations';
+
+import {
   watchFetchMessages,
   watchAddMessage,
   watchRemoveMessage,
@@ -24,6 +30,9 @@ function* mainSaga() {
     fork(watchGetTutorias),
     fork(watchAddTutorias),
     fork(watchDeleteTutorias),
+    fork(watchFetchConversations),
+    fork(watchAddConversation),
+    fork(watchRemoveConversation),
     fork(watchFetchMessages),
     fork(watchAddMessage),
     fork(watchRemoveMessage),

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './styles.css'; 
 import '../../index.css';
-import '../../normalize.css';
+// import '../../normalize.css';
 
 import instagram from '../../static/instagram.png';
 import twitter from '../../static/twitter.png';

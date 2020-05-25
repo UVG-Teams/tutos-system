@@ -21,12 +21,15 @@ import TokenRefresh from '../TokenRefresh';
 import Index from '../Index';
 import SignUpTutor from '../SignUpTutor';
 import SignUpTutorado from '../SignUpTutorado';
+import SignUpTutorWizard from '../SignUpTutorWizard';
+
 import DashboardTutor from '../DashboardTutor';
 import DashboardTutorado from '../DashboardTutorado';
 import Construction from '../Construction';
 
 // import QuickRecommendation from '../QuickRecommendation';
 import Schedule from '../Schedule';
+import Inbox from '../Views/Inbox';
 
 
 const UserIsAuthenticated = connectedRouterRedirect({
@@ -41,6 +44,11 @@ const routes = [
         path: '/',
         exact: true,
         component: Index,
+    },
+    {
+        path: '/inbox',
+        exact: true,
+        component: UserIsAuthenticated(Inbox),
     },
     {
         path: '/dashboardTutor',

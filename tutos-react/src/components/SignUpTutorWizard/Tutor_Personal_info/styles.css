@@ -1,0 +1,44 @@
+.p-input-tutorW {
+    display: flex;
+    flex-direction: row;
+}
+
+.div-input-containerW {
+    display: flex;
+    flex-direction: column;
+}
+
+.Label-tutorW {
+    font-size: 20px;
+    padding-bottom: 1rem;
+}
+
+.input-tutorW {
+    width: 16rem;
+    font-size: 20px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: solid 1px;
+    margin-right: 2rem;
+}
+
+.container-tutorW {
+    /* margin-top:13vh; */
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    background: white;
+    padding: 3rem 3rem 3rem 5rem;
+    border-radius: 15px;
+}
+
+.tutor-name, .tutor-userEmail, .tutor-password {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+

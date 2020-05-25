@@ -31,7 +31,10 @@ const Navbar = ({
                     <Link to='/dashboardTutor'>
                         <a className="navbar-text"> Dashboard </a>
                     </Link>
-                    <h3 className='navbar-text'>{'TODO BUSCADOR'}</h3>
+                    <Link to='/inbox'>
+                        <a className="navbar-text"> Inbox </a>
+                    </Link>
+                    <h3 className='navbar-text'>{'BUSCADOR'}</h3>
                     <div className='div-display-row'>
                         <div className='div-display-column'>
                             <img src = {profile} className = 'navbar-image'></img>
