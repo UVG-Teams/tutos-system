@@ -1,16 +1,17 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 
-import * as selectors from './../../../reducers';
-import * as actions from './../../../actions/tutorias';
+import * as selectors from '../../reducers';
+import * as actions from '../../actions/tutorias';
 
-import image from './../../../static/idea.png'
+import image from './../../static/idea.png'
 
-import Card from './../../Card'
+import Card from '../Card'
 
 import './styles.css'
 
 const Container = ({state,recentTutos, changeStatus}) => {
+    //TODO VER SI ES TUTOR O TUTORADO
     const apartadas = recentTutos.filter( value => value.status === 1)
     const agendadas = recentTutos.filter(value => value.status === 2)
     const en_curso = recentTutos.filter(value => value.status === 3)

@@ -17,9 +17,9 @@ import Navbar from '../Navbar'
 import Card from './../Card'
 
 import image from './../../static/idea.png'
-import SideBar from './TutorSideBar'
-
-import TutosContainer from './TutosContainer'
+import SideBar from './../SideBar'
+//../TutorSideBar
+import TutosContainer from './../TutosContainer'
 
 import * as selectors from './../../reducers';
 import * as actions from './../../actions/tutorias';
