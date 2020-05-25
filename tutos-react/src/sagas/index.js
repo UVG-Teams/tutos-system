@@ -23,7 +23,7 @@ function* mainSaga() {
     fork(watchRefreshTokenStarted),
     fork(watchGetTutorias),
     fork(watchAddTutorias),
-    fork(watchDeleteTutorias)
+    fork(watchDeleteTutorias),
     fork(watchFetchMessages),
     fork(watchAddMessage),
     fork(watchRemoveMessage),

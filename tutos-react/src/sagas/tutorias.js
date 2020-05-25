@@ -32,13 +32,19 @@ function* getTutorias(action){
                     }
                 }
             )
-            console.log('RESPONSE', response)
             if(http.isSuccessful(response.status)){
                 const jsonResult = yield response.json();
                 const {
-                    entities: { tutorias }, 
+                    entities: { tutorias , users , location, topic, course }, 
                     result,
                 } = normalize(jsonResult, schemas.tutorias)
+                console.log({tutorias, users})
+                // console.log(result)
+                result.map(index => {
+                    tutorias[index]['tutor'] = users[tutorias[index]['tutor']]
+                    tutorias[index]['tutorado'] = users[tutorias[index]['tutorado']]
+                })
+                console.log(tutorias)
                 yield put (actions.completeGetTutos(tutorias, result))
             }else{
                 const {non_field_errors } = yield response.json()

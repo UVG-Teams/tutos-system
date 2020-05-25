@@ -14,22 +14,14 @@ tutorias:
     isConfirmed
 */
 
-const user = new schema.Entity(
-    'user',
-)
+const user = new schema.Entity('users')
 // const tutorado = new
 
-const location = new schema.Entity(
-    'location'
-)
+const location = new schema.Entity('location')
 
-const course = new schema.Entity(
-    'course'
-)
+const course = new schema.Entity('course')
 
-const topic = new schema.Entity(
-    'topic'
-)
+const topic = new schema.Entity('topic')
 
 export const tutoria = new schema.Entity(
     'tutorias',

@@ -1,5 +1,25 @@
 import * as types from '../types/tutorias.js'
 
+export const startChangeTutoriaStatus = (tutoriaid) => ({
+    type : types.CHANGE_TUTORIA_STATUS_STARTED ,
+    payload: {
+        tutoriaid 
+    }
+})
+export const completeChangeTutoriaStatus = (entities, order) => ({
+    type : types.CHANGE_TUTORIA_STATUS_COMPLETED ,
+    payload: {
+        entities,
+        order
+    }
+})
+export const failChangeTutoriaStatus = error => ({
+    type : types.CHANGE_TUTORIA_STATUS_FAILED ,
+    payload: {
+        error
+    }
+})
+
 export const startGetTutos  = (/*tutorid = 1*/) => ({
   type : types.GET_TUTOS_STARTED,
 //   payload : {

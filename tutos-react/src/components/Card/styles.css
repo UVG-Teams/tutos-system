@@ -5,9 +5,10 @@
     width : 15vw;
     height: fit-content;
     margin : 1rem;
-    padding: 0rem;
+    padding-bottom: 1rem;
     border-radius: 1rem;
     border: 0.1rem solid black;
+    width: 15vw;
 }
 
 .Card:hover{

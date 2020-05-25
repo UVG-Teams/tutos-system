@@ -2,7 +2,7 @@ import * as types from '../types/tutorias'
 import { combineReducers } from 'redux';
 import omit from 'lodash/omit'
 
-const byid = (state = {}, action) => {
+const byid = (state = {} , action) => {
     switch(action.type){
         case types.GET_TUTOS_COMPLETED :{
             const newState = {...state};
@@ -34,6 +34,18 @@ const byid = (state = {}, action) => {
         }
         case types.DELETE_TUTOS_STARTED:{
             return omit(state,action.payload.id)
+        }
+        case types.CHANGE_TUTORIA_STATUS_STARTED : {
+            const newState = {...state}
+            const { tutoriaid } = action.payload
+            newState[tutoriaid].status < 4 ? newState[tutoriaid].status++ : newState[tutoriaid].status = 1
+            return newState
+        }
+        case types.CHANGE_TUTORIA_STATUS_COMPLETED : {
+            //TODO ESPERAR A SAGAS
+        }
+        case types.CHANGE_TUTORIA_STATUS_FAILED : {
+            //TODO ESPERAR A SAGAS
         }
         default :{
             return state
@@ -138,3 +150,4 @@ export const getTutoria = (state, id) =>  state.byid[id]
 export const getTutorias = state => state.order.map(id => getTutoria(state, id))
 export const isFetchingTutorias = (state) => state.isFetching;
 export const getTutoriaError = (state) => state.error
+export const getTutoriaStatus = (state, id ) => state.byid[id].status

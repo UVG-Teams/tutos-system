@@ -41,3 +41,5 @@ export const getTutoria = (state, id) => tutoriasSelectors.getTutoria(state.tuto
 export const getTutorias = (state) => tutoriasSelectors.getTutorias(state.tutorias )
 export const isFetchingTutorias = (state) => tutoriasSelectors.isFetchingTutorias(state.tutorias )
 export const getTutoriaError = (state) => tutoriasSelectors.getTutoriaError(state.tutorias )
+
+export const getTutoriaStatus = (state, id) => tutoriasSelectors.getTutoriaStatus(state.tutorias, id)
