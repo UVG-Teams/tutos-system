@@ -1,0 +1,17 @@
+.tutor-tutos-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tutos-container-column{
+    display: flex;
+    flex-direction: column;
+    border : 0.1rem solid black;
+    border-radius : 1rem;
+    margin: 1rem;
+    width: 18vw;
+    align-items: center;
+    height: fit-content;
+    background-color: lightseagreen;
+}

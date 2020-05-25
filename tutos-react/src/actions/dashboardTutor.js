@@ -1,4 +1,4 @@
-import * as types from '../types/mainPage.js'
+import * as types from '../types/tutorias.js'
 
 export const startGetTutos  = (tutorid) => ({
   type : types.START_GET_TUTOS,
@@ -17,19 +17,19 @@ export const failGetTutos = error => ({
   payload : {...error}
 })
 
-export const StartGetStudents = ( tutorid ) => ({
+export const startGetStudents = ( tutorid ) => ({
   type : types.START_GET_STUDENTS,
   payload: {
     tutorid,
   },
 })
 
-export const CompleteGetStudents = (load) => ({
+export const completeGetStudents = (load) => ({
   type : types.FAIL_GET_STUDENTS,
   payload: {...load},
 })
 
-export const FailGetStudents = (error) => ({
+export const failGetStudents = (error) => ({
   type : types.FAIL_GET_STUDENTS,
   payload: {...error},
 })

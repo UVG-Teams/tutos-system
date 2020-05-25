@@ -24,6 +24,7 @@ import SignUpTutorado from '../SignUpTutorado';
 import SignUpTutorWizard from '../SignUpTutorWizard';
 
 import DashboardTutor from '../DashboardTutor';
+import DashboardTutorado from '../DashboardTutorado';
 import Construction from '../Construction';
 
 // import QuickRecommendation from '../QuickRecommendation';
@@ -65,9 +66,9 @@ const routes = [
         component: UserIsAuthenticated(SignUpTutorado),
     },
     {
-        path: '/dashboardTutor',
+        path: '/dashboardTutorado',
         exact: true,
-        component: UserIsAuthenticated(DashboardTutor),
+        component: UserIsAuthenticated(DashboardTutorado),
     },
     {
         path: '/calendar',

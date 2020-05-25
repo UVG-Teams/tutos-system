@@ -4,10 +4,10 @@ import { Link, useRouteMatch } from 'react-router-dom'
 // const match = useRouteMatch(); 
 
 import './styles.css'; 
-import './../../../index.css';
-import '../../../normalize.css';
+import './../../index.css';
+import '../../normalize.css';
 
-const sideBar = () => (
+const sideBar = ({isTutorado = true}) => (
 
   <div className='sidebar'>
     <h1>{'Tablero'}</h1>
@@ -22,11 +22,17 @@ const sideBar = () => (
       </div>
     </Link>
     <Link to = 'profile'>
-    <div className='options'>
+    <div className='options' >
       Mi cuenta
     </div>
     </Link>
-
+    {isTutorado!==true ? (
+        <Link to = 'newTuto'>
+            <div className = 'options' align = 'center'>
+                Nueva Tutoría
+            </div>
+        </Link>
+    ) : (<></>)}
   </div>
 )
 
