@@ -6,12 +6,14 @@ import messages, * as messagesSelectors from './messages';
 import signUpTutorado, * as signUpTutoradoSelectors from './signUpTutorado';
 import signUpTutor, * as signUpTutorSelectors from './signUpTutor';
 import tutorias, * as tutoriasSelectors from './tutorias'
+
 const reducer = combineReducers({ 
   auth,
   conversations,
   messages,
   signUpTutorado,
-  tutorias
+  tutorias,
+  signUpTutor,
 });
 
 export default reducer;
@@ -43,6 +45,7 @@ export const getSignUpErrorTutorado = state => signUpTutoradoSelectors.getSignUp
 
 export const getIsSigningUpTutor = state => signUpTutorSelectors.getIsSigningUp(state.signUpTutor);
 export const getSignUpErrorTutor = state => signUpTutorSelectors.getSignUpError(state.signUpTutor);
+export const getSignUpUserInfoTutor = state => signUpTutorSelectors.getSignUpUserInfo(state.signUpTutor);
 
 export const getTutoria = (state, id) => tutoriasSelectors.getTutoria(state.tutorias , id)
 export const getTutorias = (state) => tutoriasSelectors.getTutorias(state.tutorias )

@@ -9,6 +9,8 @@ import * as actions from '../../../actions/signUpTutor';
 
 import './styles.css'; 
 import '../../../index.css';
+import '../../../normalize.css';
+
 
 const labelInput = (labelText, value, onChange) => {
     return (
@@ -23,7 +25,7 @@ const labelInput = (labelText, value, onChange) => {
     )
 };
 
-const TutorPersonalInfo = ({onSubmit, isLoading}) => {
+const TutorPersonalInfo = ({state, onSubmit, isLoading}) => {
     const [name, changeName] = useState('');
     const [lastname, changeLastname] = useState('');
     const [username, changeUsername] = useState('');
@@ -45,6 +47,12 @@ const TutorPersonalInfo = ({onSubmit, isLoading}) => {
                 {labelInput("Contraseña",password,changePassword)}
                 {labelInput("Confirmar contraseña",confirmPassword,changeConfirmPassword)}
             </div>
+            <button className="button-save-data" onClick={()=>{
+                onSubmit(username,password,name,lastname,mail);
+                console.log(state);
+                }}>
+                Guardar datos
+            </button>
         </div>
     )
 };
@@ -52,5 +60,12 @@ const TutorPersonalInfo = ({onSubmit, isLoading}) => {
 export default connect(
     (state) => ({
         state: state,
-    })
+    }),
+    dispatch => ({
+        onSubmit(username, password, first_name, last_name, email){
+            dispatch(
+                actions.stepOneSignUpTutor(username,password,first_name,last_name,email),
+            );
+        },
+    }),
 )(TutorPersonalInfo);

@@ -55,12 +55,12 @@ const SignUpTutorado = ({ onSubmit, isLoading }) => {
                                                         {labelInput("Correo",mail,changeMail)}
                             </p>
                             <p className="p-inputs-tutorado">
-                                                        {labelInput("Constraseña",password,changePassword)}
+                                                        {labelInput("Contraseña",password,changePassword)}
                                                         {labelInput("Confirmar contraseña",confirmPassword,changeConfirmPassword)}
                             </p>
                             <p>
                                 <button className="register-tutorado-button" type="submit"
-                                onClick = {() => onSubmit(name, lastname,username,mail,password,confirmPassword)}>
+                                onClick = {() => onSubmit(username, password, name, lastname, mail)}>
                                 {'Crear cuenta de tutorado'}
                                 </button>
                             </p>
@@ -77,8 +77,8 @@ export default connect(
         isLoading: selectors.getIsSigningUpTutorado(state),
     }),
     dispatch => ({
-        onSubmit(name, lastname,username, mail, password, confirmPassword) {
-            dispatch(actions.startSignUpTutorado(name, lastname,username, mail, password,confirmPassword));
+        onSubmit(username, password,name, lastname, mail) {
+            dispatch(actions.startSignUpTutorado(username, password, name, lastname,mail ));
           },
     }),
 )(SignUpTutorado);

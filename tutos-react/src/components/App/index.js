@@ -19,7 +19,6 @@ import * as selectors from '../../reducers';
 import TokenRefresh from '../TokenRefresh';
 
 import Index from '../Index';
-import SignUpTutor from '../SignUpTutor';
 import SignUpTutorado from '../SignUpTutorado';
 import SignUpTutorWizard from '../SignUpTutorWizard';
 
@@ -58,12 +57,12 @@ const routes = [
     {
         path: '/signup',
         exact: true,
-        component: UserIsAuthenticated(SignUpTutorWizard),
+        component: SignUpTutorWizard,
     },
     {
         path: '/signupTutorado',
         exact: true,
-        component: UserIsAuthenticated(SignUpTutorado),
+        component: SignUpTutorado,
     },
     {
         path: '/dashboardTutorado',
