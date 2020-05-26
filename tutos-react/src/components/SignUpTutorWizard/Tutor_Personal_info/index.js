@@ -34,25 +34,27 @@ const TutorPersonalInfo = ({state, onSubmit, isLoading}) => {
     const [confirmPassword, changeConfirmPassword] = useState('');
 
     return (
-        <div className="container-tutorW">
-            <div className="tutor-name">
-                {labelInput("Nombre",name,changeName)}
-                {labelInput("Apellido",lastname,changeLastname)}
+        <div className="personalInfo-tutor-generalContainer">
+            <div className="container-tutorW">
+                <div className="tutor-name">
+                    {labelInput("Nombre",name,changeName)}
+                    {labelInput("Apellido",lastname,changeLastname)}
+                </div>
+                <div className="tutor-userEmail">
+                    {labelInput("Usuario",username,changeUsername)}
+                    {labelInput("Email",mail,changeMail)}
+                </div>
+                <div className="tutor-password">
+                    {labelInput("Contraseña",password,changePassword)}
+                    {labelInput("Confirmar contraseña",confirmPassword,changeConfirmPassword)}
+                </div>
+                <button className="button-save-data" onClick={()=>{
+                    onSubmit(username,password,name,lastname,mail);
+                    console.log(state);
+                    }}>
+                    Guardar datos
+                </button>
             </div>
-            <div className="tutor-userEmail">
-                {labelInput("Usuario",username,changeUsername)}
-                {labelInput("Email",mail,changeMail)}
-            </div>
-            <div className="tutor-password">
-                {labelInput("Contraseña",password,changePassword)}
-                {labelInput("Confirmar contraseña",confirmPassword,changeConfirmPassword)}
-            </div>
-            <button className="button-save-data" onClick={()=>{
-                onSubmit(username,password,name,lastname,mail);
-                console.log(state);
-                }}>
-                Guardar datos
-            </button>
         </div>
     )
 };

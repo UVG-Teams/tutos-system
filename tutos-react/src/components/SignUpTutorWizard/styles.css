@@ -9,3 +9,8 @@
     content: "Prieb"a";
 }
  */
+
+ .multistep__btn--next {
+     background: red;
+     font-size: 50px;
+ }
