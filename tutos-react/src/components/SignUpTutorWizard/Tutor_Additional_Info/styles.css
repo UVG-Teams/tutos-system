@@ -46,3 +46,9 @@
     font-size: 20px;
     padding-bottom: 1rem;
 }
+
+.button-create-tutor {
+    width: 10rem;
+    margin-left: 14rem;
+    border-radius: 5px;
+}

@@ -38,7 +38,11 @@
     flex-direction: row;
 }
 
-
+.button-save-data {
+    width: 10rem;
+    margin-left: 14rem;
+    border-radius: 5px;
+}
 
 
 

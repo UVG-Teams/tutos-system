@@ -1,13 +1,3 @@
-.front-screen-tutorado{
-  position: fixed;
-  height: 15vh;
-  width: 100%;
-  background-color:#061A40 ;
-  color: white;
-  font-size: 3rem;
-  align-items: center;
-}
-
 .img-info-tutorado{
   height: 30rem;
   align-self: center;
@@ -18,31 +8,29 @@
   padding-left: 30rem;
 }
 
-.container-tutorado {
-  margin-top:13vh;
+.all-container-tutorado {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  width:100%;
-  height: 39rem;
-}
-.information-container-tutorado {
-  display: flex;
+  position: fixed;
   justify-content: center;
   align-items: center;
-  flex:1;
-  flex-wrap: wrap;
 }
-.information-tutorado {
+
+.container-tutoradoL {
   background-color: white;
-  height: 30rem;
-  width: 25rem;
+  /* margin-top:13vh; */
+  display: flex;
+  width: 70%;
+  height: auto;
+  border-radius: 15px;
+  padding: 0.5rem;
 }
 .form-container-tutorado {
   display: flex;
-  margin-right: 8rem;
+  /* margin-right: 8rem; */
   justify-content: center;
   align-items: center;
-  flex:1;
   flex-wrap: wrap;
 }
 .form-tutorado {
@@ -51,29 +39,27 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex:1;
-  height: 90%;
+  /* height: 90%; */
 }
 .input-tutorado {
-  height: 2rem;
-  width: 11rem;
-  margin: 3rem;
-  margin-top: 0rem;
-  z-index: 999;
-  border-radius: 5rem;
+  width: 16rem;
+  font-size: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: solid 1px;
+  margin-right: 2rem;
 }
 
 .Label-tutorado {
-  margin-left: 3rem;
   font-size: 20px;
-  padding-bottom: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .register-tutorado-button{
   height: 3rem;
-  width: 8rem;
+  width: 15rem;
   border-radius: 3rem;
-  z-index: 999;
+  border: solid 1px;
 }
 
 .p-inputs-tutorado {

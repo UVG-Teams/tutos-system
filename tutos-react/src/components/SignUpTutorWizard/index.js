@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './styles.css'; 
+import '../../normalize.css';
+
 
 import Multistep from 'react-multistep';
 import Navbar from '../Navbar';
