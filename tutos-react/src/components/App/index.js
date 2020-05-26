@@ -58,7 +58,7 @@ const routes = [
     {
         path: '/signup',
         exact: true,
-        component: UserIsAuthenticated(SignUpTutor),
+        component: UserIsAuthenticated(SignUpTutorWizard),
     },
     {
         path: '/signupTutorado',
