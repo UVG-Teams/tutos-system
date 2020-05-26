@@ -24,6 +24,14 @@ import {
 import { watchSignUpTutoradoStarted,} from './signUpTutorado';
 import {watchSignUpTutorStarted} from './signUpTutor';
 
+import {
+    watchRemoveFavTutor,
+    watchAddFavTutor,
+    fetchFavTutors,
+} from './tutores';
+
+
+
 function* mainSaga() {
   yield all([
     fork(watchLoginStarted),
@@ -39,6 +47,9 @@ function* mainSaga() {
     fork(watchRemoveMessage),
     fork(watchSignUpTutoradoStarted),
     fork(watchSignUpTutorStarted),
+    fork(watchRemoveFavTutor),       
+    fork(watchAddFavTutor),
+    fork(fetchFavTutors)
   ]);
 }
 
