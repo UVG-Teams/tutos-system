@@ -22,6 +22,13 @@ import {
   watchRemoveMessage,
 } from './messages';
 
+import {
+    watchRemoveFavTutor,
+    watchAddFavTutor,
+    fetchFavTutors,
+} from './tutores';
+
+
 
 function* mainSaga() {
   yield all([
@@ -36,6 +43,9 @@ function* mainSaga() {
     fork(watchFetchMessages),
     fork(watchAddMessage),
     fork(watchRemoveMessage),
+    fork(watchRemoveFavTutor),       
+    fork(watchAddFavTutor),
+    fork(fetchFavTutors)
   ]);
 }
 

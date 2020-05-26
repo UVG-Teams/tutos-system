@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import auth, * as authSelectors from './auth';
 import conversations, * as conversationsSelectors from './conversations';
 import messages, * as messagesSelectors from './messages';
+import favTutores, * as favTutoresSelectors from './tutores';
 import signUpTutorado, * as signUpTutoradoSelectors from './signUpTutorado';
 import signUpTutor, * as signUpTutorSelectors from './signUpTutor';
 import tutorias, * as tutoriasSelectors from './tutorias'
@@ -10,6 +11,7 @@ const reducer = combineReducers({
   auth,
   conversations,
   messages,
+  favTutores,
   signUpTutorado,
   tutorias
 });
@@ -37,6 +39,11 @@ export const getMessage = (state, id) => messagesSelectors.getMessage(state.mess
 export const getMessages = state => messagesSelectors.getMessages(state.messages);
 export const isFetchingMessages = state => messagesSelectors.isFetchingMessages(state.messages);
 export const getMessageError = state => messagesSelectors.getMessageError(state.messages);
+
+export const getFavTutor = state => favTutoresSelectors.getFavTutor(state.favTutores, id);
+export const getFavTutores = state => favTutoresSelectors.getFavTutores(state.favTutores);
+export const isFetchigFavTutores = state => favTutoresSelectors.isFetchingFavTutores(state.favTutores);
+export const getFavTutorError = state => favTutoresSelectors.getFavTutorError(state.favTutores);
 
 export const getIsSigningUpTutorado = state => signUpTutoradoSelectors.getIsSigningUp(state.signUpTutorado);
 export const getSignUpErrorTutorado = state => signUpTutoradoSelectors.getSignUpError(state.signUpTutorado);
