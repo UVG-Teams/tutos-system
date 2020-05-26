@@ -1,7 +1,14 @@
+.tutor-additionalinfo-generalContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
 .form-additionalinfo-tutor {
     display: flex;
     flex-direction: column;
-    width: auto;
+    width: fit-content;
     height: auto;
     background: white;
     padding: 3rem 3rem 3rem 5rem;
@@ -16,6 +23,7 @@
 .date-tutor {
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
 }
 
 .label-fecha-tutor {

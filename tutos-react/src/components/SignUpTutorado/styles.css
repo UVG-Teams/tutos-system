@@ -21,7 +21,8 @@
   background-color: white;
   /* margin-top:13vh; */
   display: flex;
-  width: 70%;
+  /* width: 70%; */
+  width: fit-content;
   height: auto;
   border-radius: 15px;
   padding: 0.5rem;
@@ -70,4 +71,10 @@
 .input-container-tutorado {
   display: flex;
   flex-direction: column;
+}
+
+.information-tutorado {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
 }

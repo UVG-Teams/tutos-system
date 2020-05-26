@@ -1,0 +1,14 @@
+.tutor-successMessage-generalContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.tutor-successMessage-container {
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    padding: 10rem 3rem 10rem 3rem;
+    width: fit-content;
+}
