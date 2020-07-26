@@ -1,6 +1,6 @@
 import React , { Fragment } from 'react'
 
-import './styles.css'; 
+import './styles.css';
 import '../../index.css';
 // import '../../normalize.css';
 
