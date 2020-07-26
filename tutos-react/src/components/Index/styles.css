@@ -59,26 +59,84 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
-    border-radius: 5vw;
+    background: #263b5a url('../../static/register.png') no-repeat center/cover;
     color: whitesmoke;
-    margin: 5rem 15rem;
+    padding: 2.5rem;
 }
 
 .index-buttons-buttons{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    padding: 5rem ;
 }
-.index-button-bottom{
+.index-button-bottom1{
     padding: 1rem;
     margin:1rem;
-    background-color: #078f0e;
+    background-color: #80a4df;
     border-radius: 1.5rem;
-    color: whitesmoke;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 8rem;
+}
+
+.index-button-bottom2{
+    padding: 1rem;
+    margin:1rem;
+    background-color: #ffffff;
+    border-radius: 1.5rem;
+    color: #80a4df;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 5rem;
+}
+
+a {
+    text-decoration: none;
 }
 
 .index-descripcion{
     width: 60vw;
     margin: 2rem;
 }
+
+.container-signup-tutorado{
+    background-color:#ffffff;
+    padding: 3rem 3rem 3rem 2.5rem;
+    color: #a9acbb;
+    text-align: center;
+    max-width: 25%;
+}
+
+.container-signup-tutorado h1{
+    color: #80a4df;
+}
+
+ul {
+    list-style: none;
+    font-size: 20px;
+    list-style-type: "✓ ";
+    padding: 0.5;
+    text-align: left;
+}
+
+ul li{
+    margin-top: 1rem;
+}
+  
+/* ul li:before {
+    content: '✓ ';
+    font-weight: bolder;
+} */
+
+.container-signup-tutor{
+    background-color:#80a4df;
+    padding: 3rem 3rem 3rem 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-left: 2rem;
+    max-width: 25%;
+}
+
 
