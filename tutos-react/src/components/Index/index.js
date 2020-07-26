@@ -59,7 +59,7 @@ function slides(){
 
 function column(img, header) {
     return(
-        <div className = "column white-text" >
+        <div className = "column" >
             <img src = {img} className  = "img0"/>
             <h2 align = 'center'> {header} </h2>
         </div>
@@ -93,7 +93,7 @@ function registerBtns () {
                     </ul>
                     <Link to = 'signupTutorado'>
                         <div className = 'index-button-bottom1'>
-                            <a className="aReg">Tutorado</a>
+                            <a className="aReg">Registrarme</a>
                         </div>
                     </Link>
                 </div>
@@ -109,7 +109,7 @@ function registerBtns () {
                     </ul>
                     <Link to = 'signup'>
                         <div className = 'index-button-bottom2'>
-                            <a className="aReg">Tutor</a>
+                            <a className="aReg">Registrarme</a>
                         </div>
                     </Link>
                 </div>
@@ -125,16 +125,6 @@ const Index = () => {
             <div className = "Slides">
                 {slides()}
             </div>
-            < div className = "parrafito white-text" >
-                <h2>
-                    ¡Nos adaptamos a ti!
-                </h2>
-                <div className = 'index-descripcion white-text'>
-                    <h4>
-                        {'En Tuto\'s puesdes organizar una tutoría individual o grupal. Tú decides la hora y el lugar, nosotros llegamos a ti. Refuerza tus conocimientos y mejora tus notas, a un precio accesible. '}
-                    </h4>
-                </div>
-            </div >
             {columns()}
             {registerBtns()}
             <Footer />
