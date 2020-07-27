@@ -58,3 +58,4 @@ class UserDetail(models.Model):
 
     def __str__(self):
         return User.objects.get( pk = self.user ).first_name
+

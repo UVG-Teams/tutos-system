@@ -27,6 +27,7 @@ import DashboardTutorado from '../DashboardTutorado';
 import Profile from '../Profile'
 import Construction from '../Construction';
 
+
 // import QuickRecommendation from '../QuickRecommendation';
 import Schedule from '../Schedule';
 import Inbox from '../Views/Inbox';

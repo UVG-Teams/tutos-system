@@ -20,3 +20,4 @@ class UserDetailSerializer(serializers.ModelSerializer):
         model = UserDetail
         fields = '__all__'
 
+
