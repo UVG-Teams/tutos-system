@@ -1,0 +1,115 @@
+.Profile-parent-div{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.Profile-footer{
+  bottom: 0;
+  width: 100%;
+}
+.Profile-name-{
+  display: flex;
+  flex-direction: width;
+  color: white;
+  height: 6rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-image: url('../../static/header.jpg');
+}
+.Profile-name0{
+  display: flex;
+  flex-direction: width;
+  color: white;
+  height: 6rem;
+  margin: 1rem;
+  padding: 1rem;
+  background-image: url('../../static/header0.jpg');
+}
+.Profile-name1{
+  display: flex;
+  flex-direction: width;
+  color: white;
+  height: 6rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid white ;
+  background-image: url('../../static/header1.jpg');
+}
+
+.profile-body{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-achievements{
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  margin:1rem ;
+  margin-left: 2rem;
+  padding-right: 1rem;
+  border-right: 1px solid black;
+}
+
+.profile-varios{
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-info{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-horario-semana{
+  margin : 1rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  background-color: #355196;
+  padding:1rem;
+  border: 1px solid black;
+  width: 25vw;
+}
+
+.profile-horario-semana:hover{
+  -webkit-box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+  -moz-box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+  box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+}
+
+.profile-username-email{
+  color: white;
+}
+
+.profile-materias{
+  margin : 1rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  background-color: #355196;
+  padding:1rem;
+  border: 1px solid black;
+  width: 25vw;
+}
+.profile-materias:hover{
+  -webkit-box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+  -moz-box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+  box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+}
+
+.profile-comentario{
+  margin : 1rem;
+  background-color: #355196;
+  border-radius: 1rem;
+  padding : 1rem;
+  border : 1px solid black;
+}
+.profile-comentario:hover{
+  -webkit-box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+  -moz-box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+  box-shadow: 10px 10px 24px -8px rgba(0,0,0,0.54);
+}

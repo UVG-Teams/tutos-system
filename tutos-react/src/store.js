@@ -7,6 +7,8 @@ import {
 import storage from 'redux-persist/lib/storage';
 // NATIVE: @react-native-community/async-storage
 
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 import reducer from './reducers';
 import mainSaga from './sagas';
 
@@ -27,7 +29,9 @@ export const configureStore = () => {
 
     const store = createStore(
         persistedReducer,
-        applyMiddleware(sagaMiddleware),
+        composeWithDevTools(
+            applyMiddleware(sagaMiddleware),
+        )
     );
         
     const persistor = persistStore(store);
