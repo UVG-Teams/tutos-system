@@ -21,6 +21,13 @@ import {
   watchAddMessage,
   watchRemoveMessage,
 } from './messages';
+
+import {
+    watchRemoveFavTutor,
+    watchAddFavTutor,
+    watchFetchFavTutors,
+} from './tutores';
+
 import { watchSignUpTutoradoStarted,} from './signUpTutorado';
 import {watchSignUpTutorStarted} from './signUpTutor';
 
@@ -45,6 +52,9 @@ function* mainSaga() {
     fork(watchFetchMessages),
     fork(watchAddMessage),
     fork(watchRemoveMessage),
+    fork(watchRemoveFavTutor),       
+    fork(watchAddFavTutor),
+    fork(watchFetchFavTutors),
     fork(watchSignUpTutoradoStarted),
     fork(watchSignUpTutorStarted),
     fork(watchRemoveFavTutor),       
