@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import './styles.css'; 
+import './styles.css';
 
 import {
     DangerBtn,
@@ -34,7 +34,10 @@ const Navbar = ({
                     <Link to='/inbox'>
                         <a className="navbar-text"> Inbox </a>
                     </Link>
-                    <h3 className='navbar-text'>{'BUSCADOR'}</h3>
+                    <Link to='/search'>
+                        <a className='navbar-text'> Buscador </a>
+                    </Link>
+                    {/* <h3 className='navbar-text'>{'BUSCADOR'}</h3> */}
                     <div className='div-display-row'>
                         <div className='div-display-column'>
                             <img src = {profile} className = 'navbar-image'></img>

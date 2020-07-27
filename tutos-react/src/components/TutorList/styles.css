@@ -1,0 +1,28 @@
+.inputs-container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20vw;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  width: 60vw;
+  align-items: center;
+}
+.search-input{
+  width: 60%;
+  border-radius: 5px;
+  margin: auto;
+  color: rgba(6, 26, 64, 0.9);
+}
+.search-selector{
+  margin: auto;
+  width: 15%;
+  border-radius: 5px;
+  color: rgba(6, 26, 64, 0.9);
+}
+.search-button{
+  margin: auto;
+  width: 10%;
+  border-radius: 5px;
+  color: whitesmoke;
+  background-color: rgba(6, 26, 64, 0.9);
+}

@@ -29,6 +29,7 @@ import Construction from '../Construction';
 // import QuickRecommendation from '../QuickRecommendation';
 import Schedule from '../Schedule';
 import Inbox from '../Views/Inbox';
+import TutorList from '../TutorList';
 
 
 const UserIsAuthenticated = connectedRouterRedirect({
@@ -93,6 +94,11 @@ const routes = [
         path: '/schedule',
         exact: true,
         component: UserIsAuthenticated(Schedule),
+    },
+    {
+        path: '/search',
+        exact: true,
+        component: UserIsAuthenticated(TutorList),
     },
 ];
 
