@@ -25,7 +25,6 @@ import SignUpTutorWizard from '../SignUpTutorWizard';
 import DashboardTutor from '../DashboardTutor';
 import DashboardTutorado from '../DashboardTutorado';
 import Construction from '../Construction';
-import FavTutores from '../FavTutores';
 
 // import QuickRecommendation from '../QuickRecommendation';
 import Schedule from '../Schedule';
