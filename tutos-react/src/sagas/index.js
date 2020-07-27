@@ -23,19 +23,13 @@ import {
 } from './messages';
 
 import {
-    watchRemoveFavTutor,
-    watchAddFavTutor,
-    watchFetchFavTutors,
+    watchRemoveTutor,
+    watchAddTutor,
+    watchFetchTutors,
 } from './tutores';
 
 import { watchSignUpTutoradoStarted,} from './signUpTutorado';
 import {watchSignUpTutorStarted} from './signUpTutor';
-
-import {
-    watchRemoveFavTutor,
-    watchAddFavTutor,
-    fetchFavTutors,
-} from './tutores';
 
 
 
@@ -52,14 +46,11 @@ function* mainSaga() {
     fork(watchFetchMessages),
     fork(watchAddMessage),
     fork(watchRemoveMessage),
-    fork(watchRemoveFavTutor),       
-    fork(watchAddFavTutor),
-    fork(watchFetchFavTutors),
+    fork(watchRemoveTutor),       
+    fork(watchAddTutor),
+    fork(watchFetchTutors),
     fork(watchSignUpTutoradoStarted),
-    fork(watchSignUpTutorStarted),
-    fork(watchRemoveFavTutor),       
-    fork(watchAddFavTutor),
-    fork(fetchFavTutors)
+    fork(watchSignUpTutorStarted)
   ]);
 }
 

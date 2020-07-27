@@ -1,62 +1,62 @@
 import * as types from '../types/tutores';
 
 
-export const startFetchingFavTutor = () => ({
-  type: types.FETCH_FAVORITE_TUTORS_STARTED,
+export const startFetchingTutor = () => ({
+  type: types.FETCH_TUTORS_STARTED,
 });
 
-export const completeFetchingFavTutor = (entities, order) => ({
-  type: types.FETCH_FAVORITE_TUTORS_COMPLETED,
+export const completeFetchingTutor = (entities, order) => ({
+  type: types.FETCH_TUTORS_COMPLETED,
   payload: {
     entities,
     order
   },
 });
 
-export const failFetchingFavTutor = error => ({
-  type: types.FETCH_FAVORITE_TUTORS_FAILED,
+export const failFetchingTutor = error => ({
+  type: types.FETCH_TUTORS_FAILED,
   payload: {
     error
   },
 });
 
-export const startAddingFavTutor = (userId, favTutor) => ({
-  type: types.ADD_FAVORITE_TUTOR_STARTED,
+export const startAddingTutor = (userId, Tutor) => ({
+  type: types.ADD_TUTOR_STARTED,
   payload: {
     userId,
-    favTutor
+    Tutor
   }
 });
 
-export const completeAddingFavTutor = (tempId, favTutor) => ({
-  type: types.ADD_FAVORITE_TUTOR_COMPLETED,
+export const completeAddingTutor = (tempId, Tutor) => ({
+  type: types.ADD_TUTOR_COMPLETED,
   payload: {
     tempId,
-    favTutor
+    Tutor
   },
 });
 
-export const failAddingFavTutor = (tempId, error) => ({
-  type: types.ADD_FAVORITE_TUTOR_FAILED,
+export const failAddingTutor = (tempId, error) => ({
+  type: types.ADD_TUTOR_FAILED,
   payload: {
     tempId,
     error
   },
 });
 
-export const startRemovingFavTutor = id => ({
-    type: types.REMOVE_FAVORITE_TUTOR_STARTED,
+export const startRemovingTutor = id => ({
+    type: types.REMOVE_TUTOR_STARTED,
     payload: {
       id
     },
 });
 
-export const completeRemovingFavTutor = () => ({
-  type: types.REMOVE_FAVORITE_TUTOR_COMPLETED,
+export const completeRemovingTutor = () => ({
+  type: types.REMOVE_TUTOR_COMPLETED,
 });
 
-export const failRemovingFavTutor = (id, error) => ({
-    type: types.REMOVE_FAVORITE_TUTOR_FAILED,
+export const failRemovingTutor = (id, error) => ({
+    type: types.REMOVE_TUTOR_FAILED,
     payload: {
       id,
       error

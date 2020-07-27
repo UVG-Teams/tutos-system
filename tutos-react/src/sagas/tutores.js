@@ -9,21 +9,21 @@ import {normalize} from 'normalizr';
 import * as types from '../types/tutores';
 import * as actions from '../actions/tutores';
 import * as selectors from '../reducers';
-import * as schemas from '../schemas/favTutors';
+import * as schemas from '../schemas/tutors';
 
 import * as http from '../utils/http';
 import{
     API_BASE_URL,
 }from '../settings';
 
-function* fetchFavTutors(action){
+function* fetchTutor(action){
     try{
         const isAuth = yield select(selectors.isAuthenticated)
         if(isAuth){
             const token = yield select(selectors.getToken)
             const response = yield call(
                 fetch,
-                `${API_BASE_URL}/favTutors/`,
+                `${API_BASE_URL}/tutors/`,
                 {
                     method: 'GET',
                     headers: {
@@ -35,35 +35,35 @@ function* fetchFavTutors(action){
             if(http.isSuccessful(response.status)){
                 const jsonResult = yield response.json();
                 const {
-                    entitie:{favTutors},
+                    entitie:{Tutors},
                     result,
-                } = normalize(jsonResult, schemas.favTutors);
-                yield put(actions.completeFetchingFavTutor(schemas.favTutors, result));
+                } = normalize(jsonResult, schemas.tutors);
+                yield put(actions.completeFetchingTutor(schemas.tutors, result));
             }else{
                 const {non_field_errors} = yield response.json;
-                yield put(actions.failFetchingFavTutor(non_field_errors[0]));
+                yield put(actions.failFetchingTutor(non_field_errors[0]));
             }
         }
     } catch (error){
-        yield put(actions.failFetchingFavTutor('Connection failed!'))
+        yield put(actions.failFetchingTutor('Connection failed!'))
     }
 
 }
-export function* watchFetchFavTutors(){
+export function* watchFetchTutors(){
     yield takeEvery(
-        types.FETCH_FAVORITE_TUTORS_STARTED,
-        fetchFavTutors,
+        types.FETCH_TUTORS_STARTED,
+        fetchTutor,
     )
 }
 
-function* addFavTutor(action){
+function* addTutor(action){
     try{
         const isAuth = yield select(selectors.isAuthenticated)
         if(isAuth){
             const token = yield select(selectors.getToken)
             const response = yield call(
                 fetch,
-                `${API_BASE_URL}/favTutors/`,
+                `${API_BASE_URL}/tutors/`,
                 {
                     method: 'POST',
                     body: JSON.stringify(action.payload),
@@ -75,35 +75,35 @@ function* addFavTutor(action){
             )
             if(http.isSuccessful(response.status)){
                 const jsonResult = yield response.json();
-                yield put(actions.completeAddingFavTutor(
-                    action.payload.favTutor.id, 
+                yield put(actions.completeAddingTutor(
+                    action.payload.tutor.id, 
                     jsonResult,
                     ));
             }else{
                 const {non_field_errors} = yield response.json;
-                yield put(actions.failAddingFavTutor(non_field_errors[0]));
+                yield put(actions.failAddingTutor(non_field_errors[0]));
             }
         }
     } catch (error){
-        yield put(actions.failAddingFavTutor('Connection failed!'))
+        yield put(actions.failAddingTutor('Connection failed!'))
     }
 }
 
-export function* watchAddFavTutor(){
+export function* watchAddTutor(){
     yield takeEvery(
-        types.ADD_FAVORITE_TUTOR_STARTED,
-        addFavTutor,
+        types.ADD_TUTOR_STARTED,
+        addTutor,
     )
 }
 
-function* removeFavTutor(action){
+function* removeTutor(action){
     try{
         const isAuth = yield select(selectors.isAuthenticated)
         if(isAuth){
             const token = yield select(selectors.getToken)
             const response = yield call(
                 fetch,
-                `${API_BASE_URL}/favTutors/${action.payload.id}`,
+                `${API_BASE_URL}/tutors/${action.payload.id}`,
                 {
                     method: 'DELETE',
                     headers: {
@@ -113,20 +113,20 @@ function* removeFavTutor(action){
                 }
             )
             if(http.isSuccessful(response.status)){
-                yield put(actions.completeRemovingFavTutor());
+                yield put(actions.completeRemovingTutor());
             }else{
                 const {non_field_errors} = yield response.json;
-                yield put(actions.failRemovingFavTutor(non_field_errors[0]));
+                yield put(actions.failRemovingTutor(non_field_errors[0]));
             }
         }
     } catch (error){
-        yield put(actions.failRemovingFavTutor('Connection failed!'))
+        yield put(actions.failRemovingTutor('Connection failed!'))
     }
 }
 
-export function* watchRemoveFavTutor(){
+export function* watchRemoveTutor(){
     yield takeEvery(
-        types.REMOVE_FAVORITE_TUTOR_STARTED,
-        removeFavTutor,
+        types.REMOVE_TUTOR_STARTED,
+        removeTutor,
     )
 }
