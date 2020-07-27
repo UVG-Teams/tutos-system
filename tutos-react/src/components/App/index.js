@@ -24,6 +24,7 @@ import SignUpTutorWizard from '../SignUpTutorWizard';
 
 import DashboardTutor from '../DashboardTutor';
 import DashboardTutorado from '../DashboardTutorado';
+import Profile from '../Profile'
 import Construction from '../Construction';
 
 // import QuickRecommendation from '../QuickRecommendation';
@@ -83,7 +84,7 @@ const routes = [
     {
         path: '/profile',
         exact: true,
-        component: UserIsAuthenticated(Construction),
+        component: UserIsAuthenticated(Profile),
     },
     {
         path: '/quick-recommendation',

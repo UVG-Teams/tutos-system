@@ -45,6 +45,6 @@ export default connect(
     dispatch => ({
         onLoad(){
             dispatch(actions.startGetTutos())
-    } 
-})
+        } 
+    })
 )(DashboardTutor);
