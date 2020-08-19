@@ -1213,12 +1213,12 @@ def create_initial_data(request):
     print('User Details are done!')
 
     #TUTOR
-    tutormarcfuent= Tutor(user=marcfuents, description="Hola soy Marco", individual_price= 100, grupal_price=50)
-    tutormarcfuent.save()
+    tutormarcfuent= Tutor(user_ptr=marcfuents, description="Hola soy Marco", individual_price= 100, grupal_price=50)
+    tutormarcfuent.save_base(raw=True)
     print('Tutors are done!')
 
     #SCHEDULES
-    schfuentesmarcos = Schedule(user=marcfuents )
+    schfuentesmarcos = Schedule(user=marcfuents)
     schfuentesmarcos.save()
     print('Schedules are done!')
 
