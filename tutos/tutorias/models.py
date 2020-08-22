@@ -35,7 +35,7 @@ class Tutoria(models.Model):
         null = True,
         on_delete = models.SET_NULL,
     )
-    datetime = models.TimeField(
+    datetime = models.DateTimeField(
         auto_now = False,
         auto_now_add = False,
         null = False,
