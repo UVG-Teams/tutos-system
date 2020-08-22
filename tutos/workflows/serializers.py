@@ -20,7 +20,7 @@ class StatusSerializer(serializers.ModelSerializer):
             'name',
             'is_initial',
             'is_final',
-            'prev',
-            'next',
+            # 'prev',
+            # 'next',
             'workflow',
         )
