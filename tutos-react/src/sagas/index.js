@@ -22,6 +22,16 @@ import {
   watchRemoveMessage,
 } from './messages';
 
+import {
+    watchRemoveTutor,
+    watchAddTutor,
+    watchFetchTutors,
+} from './tutores';
+
+import { watchSignUpTutoradoStarted,} from './signUpTutorado';
+import {watchSignUpTutorStarted} from './signUpTutor';
+
+
 
 function* mainSaga() {
   yield all([
@@ -36,6 +46,11 @@ function* mainSaga() {
     fork(watchFetchMessages),
     fork(watchAddMessage),
     fork(watchRemoveMessage),
+    fork(watchRemoveTutor),       
+    fork(watchAddTutor),
+    fork(watchFetchTutors),
+    fork(watchSignUpTutoradoStarted),
+    fork(watchSignUpTutorStarted)
   ]);
 }
 

@@ -19,7 +19,6 @@ import * as selectors from '../../reducers';
 import TokenRefresh from '../TokenRefresh';
 
 import Index from '../Index';
-import SignUpTutor from '../SignUpTutor';
 import SignUpTutorado from '../SignUpTutorado';
 import SignUpTutorWizard from '../SignUpTutorWizard';
 
@@ -28,9 +27,11 @@ import DashboardTutorado from '../DashboardTutorado';
 import Profile from '../Profile'
 import Construction from '../Construction';
 
+
 // import QuickRecommendation from '../QuickRecommendation';
 import Schedule from '../Schedule';
 import Inbox from '../Views/Inbox';
+import TutorList from '../TutorList';
 
 
 const UserIsAuthenticated = connectedRouterRedirect({
@@ -59,12 +60,12 @@ const routes = [
     {
         path: '/signup',
         exact: true,
-        component: UserIsAuthenticated(SignUpTutor),
+        component: SignUpTutorWizard,
     },
     {
         path: '/signupTutorado',
         exact: true,
-        component: UserIsAuthenticated(SignUpTutorado),
+        component: SignUpTutorado,
     },
     {
         path: '/dashboardTutorado',
@@ -95,6 +96,11 @@ const routes = [
         path: '/schedule',
         exact: true,
         component: UserIsAuthenticated(Schedule),
+    },
+    {
+        path: '/search',
+        exact: true,
+        component: UserIsAuthenticated(TutorList),
     },
 ];
 

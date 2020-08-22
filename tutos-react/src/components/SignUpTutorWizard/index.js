@@ -3,18 +3,18 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './styles.css'; 
+import '../../normalize.css';
+
 
 import Multistep from 'react-multistep';
-import Navbar from '../Navbar';
 import PersonalInfo from './Tutor_Personal_info';
 import AdditionalInfo from './Tutor_Additional_Info';
+import SuccessMessage from './Tutor_Success';
 
 const steps = [
-    {name: 'Step1', component: <PersonalInfo/>},
-    {name: 'Step2', component: <AdditionalInfo/>},
-    {name: 'Willi', component: <Navbar/>}
-    // {name: 'Step2', component: <Step2/>},
-    // {name: 'Result', component: <Result/>}
+    {name: 'Personal_Info', component: <PersonalInfo/>},
+    {name: 'Additional_Info', component: <AdditionalInfo/>},
+    {name: 'Done', component: <SuccessMessage/>}
 ]
 
 const Register_Wizard = () => (

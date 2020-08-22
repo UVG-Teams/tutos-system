@@ -59,7 +59,7 @@ function slides(){
 
 function column(img, header) {
     return(
-        <div className = "column white-text" >
+        <div className = "column" >
             <img src = {img} className  = "img0"/>
             <h2 align = 'center'> {header} </h2>
         </div>
@@ -79,18 +79,40 @@ function columns () {
 function registerBtns () {
     return(
         <div className = 'index-buttons-sl'>
-            <h1>¡Registrate!</h1>
+            <h1>Explora Tuto's</h1>
             <div className = 'index-buttons-buttons'>
-                <Link to = 'signup'>
-                    <div className = 'index-button-bottom'>
-                        <a>Tutor</a>
-                    </div>
-                </Link>
-                <Link to = 'signupTutorado'>
-                    <div className = 'index-button-bottom'>
-                        <a>Tutorado</a>
-                    </div>
-                </Link>
+                <div className="container-signup-tutorado">
+                    <p>Regístrate como </p>
+                    <h1>Estudiante</h1>
+                    <ul>
+                        <li>Busca tutores locales</li>
+                        <li>Comunícate con cualquiera de nuestros tutores gratis</li>
+                        <li>Encuentra tutores sobre cualquier materia</li>
+                        <li>Encuentra tutores cerca de ti</li>
+                        <li>Encuentra tutores en todos los niveles academicos</li>
+                    </ul>
+                    <Link to = 'signupTutorado'>
+                        <div className = 'index-button-bottom1'>
+                            <a className="aReg">Registrarme</a>
+                        </div>
+                    </Link>
+                </div>
+                <div className="container-signup-tutor">
+                    <p>Regístrate como </p>
+                    <h1>Tutor</h1>
+                    <ul>
+                        <li>Crea tu propio perfil y publica tus servicios</li>
+                        <li>Crea tu cuenta totalmente gratis</li>
+                        <li>Publica tu horario disponible para dar tutorias</li>
+                        <li>Organiza tu tiempo con nuestro tablero para tutores</li>
+                        <li>Enceuntra una fuente de ingreso economico extra</li>
+                    </ul>
+                    <Link to = 'signup'>
+                        <div className = 'index-button-bottom2'>
+                            <a className="aReg">Registrarme</a>
+                        </div>
+                    </Link>
+                </div>
             </div>
         </div>
     )
@@ -103,16 +125,6 @@ const Index = () => {
             <div className = "Slides">
                 {slides()}
             </div>
-            < div className = "parrafito white-text" >
-                <h2>
-                    ¡Nos adaptamos a ti!
-                </h2>
-                <div className = 'index-descripcion white-text'>
-                    <h4>
-                        {'En Tuto\'s puesdes organizar una tutoría individual o grupal. Tú decides la hora y el lugar, nosotros llegamos a ti. Refuerza tus conocimientos y mejora tus notas, a un precio accesible. '}
-                    </h4>
-                </div>
-            </div >
             {columns()}
             {registerBtns()}
             <Footer />

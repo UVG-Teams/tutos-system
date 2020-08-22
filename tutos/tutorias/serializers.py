@@ -2,12 +2,16 @@ from rest_framework import serializers
 
 from tutorias.models import Tutoria, Tutor
 from users.serializers import UserSerializer
+from workflows.serializers import StatusSerializer
+from institutions.serializers import CourseSerializer
 from django.contrib.auth.models import User
 
 
 class TutoriaSerializer(serializers.ModelSerializer):
-    tutor = UserSerializer(many=False)
-    tutorado = UserSerializer(many=False)
+    tutor = UserSerializer(many = False)
+    tutorado = UserSerializer(many = False)
+    status = StatusSerializer(many = False)
+    course = CourseSerializer(many = False)
 
     class Meta:
         model = Tutoria

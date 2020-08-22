@@ -16,41 +16,43 @@ const Login = ({
     const [username, changeUsername] = useState('');
     const [password, changePassword] = useState('');
     return (
-        <Popup  trigger={<button  className="popup">Login</button>} position="bottom center">
-            <p>
-                <input 
-                    className="input-login"
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={e => changeUsername(e.target.value)}
-                />
-            </p>
-            <p>
-                <input 
-                    className="input-login"
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={e => changePassword(e.target.value)}
-                />
-            </p>
-            <p>
+        <Popup trigger={<button className="popup">Login</button>} position="bottom center">
+            <div className="popup-container">
+                <p>
+                    <input 
+                        className="input-login"
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={e => changeUsername(e.target.value)}
+                    />
+                </p>
+                <p>
+                    <input 
+                        className="input-login"
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={e => changePassword(e.target.value)}
+                    />
+                </p>
+                <p>
+                    {
+                        isLoading ? (
+                            <strong>{'Cargando...'}</strong>
+                        ) : (
+                            <SuccessBtn text={'Login'} action={actions.startLogin(username, password)} />
+                        )
+                    }
+                </p>
                 {
-                    isLoading ? (
-                        <strong>{'Cargando...'}</strong>
-                    ) : (
-                        <SuccessBtn text={'Login'} action={actions.startLogin(username, password)} />
+                    error && (
+                    <p>
+                        <strong className='error-text'>{ error }</strong>
+                    </p>
                     )
                 }
-            </p>
-            {
-                error && (
-                <p>
-                    <strong className='error-text'>{ error }</strong>
-                </p>
-                )
-            }
+            </div>
         </Popup>
     );
 };

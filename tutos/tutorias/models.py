@@ -35,7 +35,7 @@ class Tutoria(models.Model):
         null = True,
         on_delete = models.SET_NULL,
     )
-    datetime = models.TimeField(
+    datetime = models.DateTimeField(
         auto_now = False,
         auto_now_add = False,
         null = False,
@@ -52,13 +52,13 @@ class Tutoria(models.Model):
 
     def __str__(self):
         return "Tutoria: {tutor} > {tutorado} a las {datetime}".format(
-            tutor = User.objects.get(pk = self.tutor).user.first_name,
-            tutorado = User.objects.get(pk = self.tutorado).first_name,
+            tutor = User.objects.get(pk = self.tutor.id).first_name,
+            tutorado = User.objects.get(pk = self.tutorado.id).first_name,
             datetime = self.datetime,
         )
 
 
-class Tutor(models.Model):
+class Tutor(User):
     score = models.DecimalField(
         max_digits = 5,
         decimal_places = 2,
@@ -85,11 +85,3 @@ class Tutor(models.Model):
         default = 40.0,
         null = False,
     )
-    user = models.ForeignKey(
-        User,
-        null = False,
-        on_delete = models.CASCADE,
-    )
-
-    def __str__(self):
-        return User.objects.get(pk = self.user).first_name

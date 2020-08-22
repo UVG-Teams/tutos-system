@@ -1,3 +1,10 @@
+.personalInfo-tutor-generalContainer {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
 .p-input-tutorW {
     display: flex;
     flex-direction: row;
@@ -10,7 +17,7 @@
 
 .Label-tutorW {
     font-size: 20px;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .input-tutorW {
@@ -26,7 +33,8 @@
     /* margin-top:13vh; */
     display: flex;
     flex-direction: column;
-    width: auto;
+    /* width: auto; */
+    width: fit-content;
     height: auto;
     background: white;
     padding: 3rem 3rem 3rem 5rem;
@@ -38,7 +46,11 @@
     flex-direction: row;
 }
 
-
+.button-save-data {
+    width: 10rem;
+    margin-left: 14rem;
+    border-radius: 5px;
+}
 
 
 

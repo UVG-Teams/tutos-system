@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from rest_framework.response import Response
+from rest_framework.decorators import action
 
 from django.contrib.auth.models import User
 from users.models import UserDetail
@@ -23,10 +25,17 @@ class UserViewSet(viewsets.ModelViewSet):
                     'update': True,
                     'partial_update': True,
                     'destroy': True,
+                    'detailData': True
                 }
             }
         ),
     )
+    
+    @action(detail=True, url_path="detail", methods=["get"])
+    def detailData(self, request, pk=None):
+        user = self.get_object()
+        detail = user.userdetail
+        return Response(UserDetailSerializer(detail).data)
 
 
 class UserDetailViewSet(viewsets.ModelViewSet):
