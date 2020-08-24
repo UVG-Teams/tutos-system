@@ -1198,11 +1198,11 @@ def create_initial_data(request):
     admin.save()
 
     jgblock= User(username="JBlock",first_name="José Gabriel", last_name="Block Staackmann",email="blockmann3@gmail.com")
-    jgblock.set_password("Contrasena123")
+    jgblock.set_password("admin")
     jgblock.save()
 
-    marcfuents= User(username="marco10c0",first_name="Marco José", last_name="Fuentes Lima",email="fue18188@uvg.edu.gt")
-    marcfuents.set_password("Contrasena1234")
+    marcfuents= User(username="Marco",first_name="Marco José", last_name="Fuentes Lima",email="fue18188@uvg.edu.gt")
+    marcfuents.set_password("admin")
     marcfuents.save()
 
     andy= User(username="Andy",first_name="Andy", last_name="Castillo",email="cas18040@uvg.edu.gt")
@@ -1210,7 +1210,7 @@ def create_initial_data(request):
     andy.save()
 
     willi= User(username="Willi",first_name="Francisco", last_name="Rosal",email="ros18676@uvg.edu.gt")
-    willi.set_password("admin")
+    willi.set_password("Admin")
     willi.save()
 
     luca= User(username="Luca",first_name="Gian Luca", last_name="Rivera",email="riv18049@uvg.edu.gt")
