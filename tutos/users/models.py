@@ -3,17 +3,17 @@ from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 
 
-class UserDetail(models.Model):
+class UserDetail(User):
 
     class Gender(models.TextChoices):
         male 	= 'M', _('Male')
         female 	= 'F', _('Female') 
 
-    user = models.ForeignKey(
-        User,
-        null = False,
-        on_delete = models.CASCADE,
-    )
+    # user = models.ForeignKey(
+    #     User,
+    #     null = False,
+    #     on_delete = models.CASCADE,
+    # )
     language = models.ForeignKey(
         'locations.Language',
         null = True,
@@ -56,6 +56,5 @@ class UserDetail(models.Model):
         on_delete = models.SET_NULL,
     )
 
-    def __str__(self):
-        return User.objects.get( pk = self.user ).first_name
+    
 

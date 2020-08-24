@@ -1198,27 +1198,51 @@ def create_initial_data(request):
     admin.save()
 
     jgblock= User(username="JBlock",first_name="José Gabriel", last_name="Block Staackmann",email="blockmann3@gmail.com")
-    jgblock.set_password("Contrasena123")
+    jgblock.set_password("admin")
     jgblock.save()
-    marcfuents= User(username="marco10c0",first_name="Marco José", last_name="Fuentes Lima",email="fue18188@uvg.edu.gt")
-    marcfuents.set_password("Contrasena1234")
+
+    marcfuents= User(username="Marco",first_name="Marco José", last_name="Fuentes Lima",email="fue18188@uvg.edu.gt")
+    marcfuents.set_password("admin")
     marcfuents.save()
+
+    andy= User(username="Andy",first_name="Andy", last_name="Castillo",email="cas18040@uvg.edu.gt")
+    andy.set_password("admin")
+    andy.save()
+
+    willi= User(username="Willi",first_name="Francisco", last_name="Rosal",email="ros18676@uvg.edu.gt")
+    willi.set_password("Admin")
+    willi.save()
+
+    luca= User(username="Luca",first_name="Gian Luca", last_name="Rivera",email="riv18049@uvg.edu.gt")
+    luca.set_password("admin")
+    luca.save()
     print('Users are done!')
 
     #USER DETAIL
-    joseblock = UserDetail(user= jgblock,birthdate="1999-12-29", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
-    joseblock.save()
-    marcofuentes = UserDetail(user= marcfuents,birthdate="1999-7-16", language= spanish, phone= 54131389, gender="M", is_tutor= True, institution= uvg, career= computerscience, location= mixco)
-    marcofuentes.save()
+    joseblock = UserDetail(user_ptr= jgblock,birthdate="1999-12-29", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
+    joseblock.save_base(raw=True)
+
+    marcofuentes = UserDetail(user_ptr= marcfuents,birthdate="1999-7-16", language= spanish, phone= 54131389, gender="M", is_tutor= True, institution= uvg, career= computerscience, location= mixco)
+    marcofuentes.save_base(raw=True)
+
+    andycas = UserDetail(user_ptr= andy,birthdate="1999-09-21", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= mixco)
+    andycas.save_base(raw=True)
+
+    williros = UserDetail(user_ptr= willi,birthdate="1998-12-17", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
+    williros.save_base(raw=True)
+
+    lucariv = UserDetail(user_ptr= luca,birthdate="1999-10-11", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location=snlcssctpqz)
+    lucariv.save_base(raw=True)
+
     print('User Details are done!')
 
     #TUTOR
-    tutormarcfuent= Tutor(user=marcfuents, description="Hola soy Marco", individual_price= 100, grupal_price=50)
-    tutormarcfuent.save()
+    tutormarcfuent= Tutor(user_ptr=marcfuents, description="Hola soy Marco", individual_price= 100, grupal_price=50)
+    tutormarcfuent.save_base(raw=True)
     print('Tutors are done!')
 
     #SCHEDULES
-    schfuentesmarcos = Schedule(user=marcfuents )
+    schfuentesmarcos = Schedule(user=marcfuents)
     schfuentesmarcos.save()
     print('Schedules are done!')
 
@@ -1249,12 +1273,14 @@ def create_initial_data(request):
     ststutoria3.save()
     ststutoria2= Status(name="scheduled", is_initial=False, is_final=False, workflow=wftutoria)
     ststutoria2.save()
-    ststutoria1= Status(name="aparted", is_initial=True, is_final=False, workflow=wftutoria)
-    ststutoria1.save()
     print('Statuses are done!')
 
     #TUTORIA
-    tutoria1 = Tutoria.objects.create(tutor=marcfuents, tutorado=jgblock, total_price=100, datetime='00:00:00:21/05/2020')
+    tutoria1 = Tutoria.objects.create(tutor=marcfuents, tutorado=jgblock, total_price=100, datetime='2020-05-21 13:00', course=fisica3)
+    tutoria2 = Tutoria.objects.create(tutor=marcfuents, tutorado=andy, total_price=100, datetime='2020-08-25 17:00', status=ststutoria2, course=ipc)
+    tutoria3 = Tutoria.objects.create(tutor=marcfuents, tutorado=willi, total_price=100, datetime='2020-08-25 20:00', status=ststutoria4, course=gtcntxtmuni)
+    tutoria4 = Tutoria.objects.create(tutor=marcfuents, tutorado=luca, total_price=100, datetime='2020-08-25 19:30', status=ststutoria3, course=fisica3)
+    tutoria5 = Tutoria.objects.create(tutor=marcfuents, tutorado=willi, total_price=100, datetime='2020-08-25 13:30', status=ststutoria2, course=stdstica)
 
     data= {
         'Status': 'Ok',
