@@ -1219,6 +1219,9 @@ def create_initial_data(request):
     print('Users are done!')
 
     #USER DETAIL
+    admindetail = UserDetail(user_ptr= admin,birthdate="1999-12-29", language= spanish, phone= 66666666, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
+    admindetail.save_base(raw=True)
+
     joseblock = UserDetail(user_ptr= jgblock,birthdate="1999-12-29", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
     joseblock.save_base(raw=True)
 
