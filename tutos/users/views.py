@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from users.models import UserDetail
 from users.serializers import UserSerializer, UserDetailSerializer
 from permissions.services import APIPermissionClassFactory
-
+from tutorias.serializers import TutorSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -26,7 +26,7 @@ class UserViewSet(viewsets.ModelViewSet):
                     'update': True,
                     'partial_update': True,
                     'destroy': True,
-                    'detailData': True
+                    'detaielData': True
                 }
             }
         ),
@@ -73,3 +73,9 @@ class UserDetailViewSet(viewsets.ModelViewSet):
             }
         ),
     )
+
+    @action(detail=True, url_path="tutor-detail", methods=["get"])
+    def detailData(self, request, pk=None):
+        user = self.get_object()
+        detail = user.userdetail
+        return Response(TutorSerializer(detail).data)
