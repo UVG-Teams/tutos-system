@@ -8,33 +8,14 @@ from django.contrib.auth.models import User
 
 
 class TutoriaSerializer(serializers.ModelSerializer):
+    course = CourseSerializer(many = False)
     tutor = UserSerializer(many = False)
     tutorado = UserSerializer(many = False)
     status = StatusSerializer(many = False)
-    course = CourseSerializer(many = False)
 
     class Meta:
         model = Tutoria
-        fields = (
-            'id',
-            'tutor',
-            'tutorado',
-            'location',
-            'status',
-            'topic',
-            'course',
-            'datetime',
-            'hours',
-            'total_price',
-        )
-
-    # def create(self, validated_data):
-    #     print("AAAAAAAAAAAAAAAAAAAAAAAA")
-    #     tutor_data = validated_data.pop('tutor')
-    #     # tutor = User.objects.get(**tutor_data)
-    #     tutor = User.objects.get(id=tutor_data['id'])
-    #     # tutoria = Tutoria.objects.create(**validated_data)
-    #     return self.Meta.model.objects.create(tutor=tutor_data, **validated_data)
+        fields = "__all__"
 
 
 class TutorSerializer(serializers.ModelSerializer):
