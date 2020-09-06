@@ -28,5 +28,5 @@ class TutorSerializer(serializers.ModelSerializer):
             'hours_done',
             'individual_price',
             'grupal_price',
-            'user',
+            # 'user',
         )
