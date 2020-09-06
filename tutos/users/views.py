@@ -26,7 +26,7 @@ class UserViewSet(viewsets.ModelViewSet):
                     'update': True,
                     'partial_update': True,
                     'destroy': True,
-                    'detaielData': True
+                    'detailData': True
                 }
             }
         ),
@@ -63,6 +63,7 @@ class UserDetailViewSet(viewsets.ModelViewSet):
                 'base': {
                     'create': True,
                     'list': True,
+                    'tutoresData': True,
                 },
                 'instance': {
                     'retrieve': True,
@@ -73,9 +74,11 @@ class UserDetailViewSet(viewsets.ModelViewSet):
             }
         ),
     )
-
-    @action(detail=True, url_path="tutor-detail", methods=["get"])
-    def detailData(self, request, pk=None):
-        user = self.get_object()
-        detail = user.userdetail
-        return Response(TutorSerializer(detail).data)
+# Jalar info del tutor
+    # @action(detail=False, url_path="tutor-detail", methods=["get"])
+    # def tutoresData(self, request, pk=None):
+    #     users = User.objects.select_related("userdetail")
+    #     usersResponse = [UserSerializer(user).data for user in users]
+    #     print("Hola", usersResponse)
+    #     # return Response(UserSerializer(detail).data)
+    #     return Response([])
