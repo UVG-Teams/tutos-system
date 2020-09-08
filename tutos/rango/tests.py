@@ -13,7 +13,7 @@ from workflows.models import Workflow, Status
 
 
 class CategoryMethodTests(TestCase):
-  def test_ensure_views_are_positive(self):
+  def userModelHasLanguaje(self):
     """
       Muestra que el idioma de un usuario es el correcto
     """
@@ -52,7 +52,3 @@ class CategoryMethodTests(TestCase):
 
     self.assertEqual((marcofuentes.language == spanish), True)
     self.assertEqual((marcofuentes.language == spanish), False)
-
-    # cat = User(username="admin",email="admin@admin.com", is_superuser = True, is_staff = True)
-    # cat.save()
-    # self.assertEqual((cat.views >= 0), True)
