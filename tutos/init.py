@@ -1193,7 +1193,7 @@ def create_initial_data(request):
     print('Languages are done!')
 
     #USER
-    admin= User(username="admin",email="admin@admin.com", is_superuser = True, is_staff = True)
+    admin= User(username="admin", first_name = "Aministrador", last_name="Apellido",email="admin@admin.com", is_superuser = True, is_staff = True)
     admin.set_password("admin")
     admin.save()
 
