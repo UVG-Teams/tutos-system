@@ -5,6 +5,8 @@ from rest_framework.decorators import action
 
 from django.contrib.auth.models import User
 from users.models import UserDetail
+from tutorias.models import Tutor
+from tutorias.serializers import TutorSerializer
 from users.serializers import UserSerializer, UserDetailSerializer
 from permissions.services import APIPermissionClassFactory
 from tutorias.serializers import TutorSerializer
@@ -42,6 +44,22 @@ class UserViewSet(viewsets.ModelViewSet):
         )
         usuario.set_password(request.data['password'])
         usuario.save()
+
+        usuariodetail = UserDetail(
+            user_ptr=usuario,
+            birthdate= request.data['birthdate'],
+            phone= request.data['phone'],
+            gender= request.data['gender'],
+            is_tutor= request.data['isTutor']
+        )
+        usuariodetail.save_base(raw=True)
+
+        if(request.data['isTutor']):
+            tutorusuario = Tutor(
+                user_ptr=usuario,
+                individual_price= request.data['individualPrice']
+            )
+            tutorusuario.save_base(raw=True)
         return Response({
             'status':'ok'
         })
