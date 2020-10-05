@@ -9,7 +9,7 @@ from tutorias.models import Tutor
 from tutorias.serializers import TutorSerializer
 from users.serializers import UserSerializer, UserDetailSerializer
 from permissions.services import APIPermissionClassFactory
-
+from tutorias.serializers import TutorSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
@@ -81,6 +81,7 @@ class UserDetailViewSet(viewsets.ModelViewSet):
                 'base': {
                     'create': True,
                     'list': True,
+                    'tutoresData': True,
                 },
                 'instance': {
                     'retrieve': True,
@@ -91,3 +92,11 @@ class UserDetailViewSet(viewsets.ModelViewSet):
             }
         ),
     )
+# Jalar info del tutor
+    # @action(detail=False, url_path="tutor-detail", methods=["get"])
+    # def tutoresData(self, request, pk=None):
+    #     users = User.objects.select_related("userdetail")
+    #     usersResponse = [UserSerializer(user).data for user in users]
+    #     print("Hola", usersResponse)
+    #     # return Response(UserSerializer(detail).data)
+    #     return Response([])
