@@ -20,13 +20,15 @@ class UserViewSet(viewsets.ModelViewSet):
                     'create': True,
                     'list': True,
                     'newUser':True,
+                    'detail': True
                 },
                 'instance': {
                     'retrieve': True,
                     'update': True,
                     'partial_update': True,
                     'destroy': True,
-                    'detailData': True
+                    'detailData': True,
+                    'detail' : True
                 }
             }
         ),
@@ -63,12 +65,14 @@ class UserDetailViewSet(viewsets.ModelViewSet):
                 'base': {
                     'create': True,
                     'list': True,
+                    'detail': True
                 },
                 'instance': {
                     'retrieve': True,
                     'update': True,
                     'partial_update': True,
                     'destroy': True,
+                    'detail' : True,
                 }
             }
         ),
