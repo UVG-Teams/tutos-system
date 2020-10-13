@@ -19,7 +19,10 @@ class UserDetail(User):
         null = True,
         on_delete = models.SET_NULL,
     )
-    phone = models.PositiveIntegerField()
+    phone = models.CharField(
+        null = True,
+        max_length = 15, 
+    )
     gender = models.CharField(
         choices = Gender.choices,
         max_length = 30,

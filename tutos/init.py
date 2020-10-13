@@ -1219,19 +1219,22 @@ def create_initial_data(request):
     print('Users are done!')
 
     #USER DETAIL
-    joseblock = UserDetail(user_ptr= jgblock,birthdate="1999-12-29", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
+    admindetail = UserDetail(user_ptr= admin,birthdate="1999-12-29", language= spanish, phone= "66666666", gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
+    admindetail.save_base(raw=True)
+
+    joseblock = UserDetail(user_ptr= jgblock,birthdate="1999-12-29", language= spanish, phone= "59300498", gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
     joseblock.save_base(raw=True)
 
-    marcofuentes = UserDetail(user_ptr= marcfuents,birthdate="1999-7-16", language= spanish, phone= 54131389, gender="M", is_tutor= True, institution= uvg, career= computerscience, location= mixco)
+    marcofuentes = UserDetail(user_ptr= marcfuents,birthdate="1999-7-16", language= spanish, phone= "54131389", gender="M", is_tutor= True, institution= uvg, career= computerscience, location= mixco)
     marcofuentes.save_base(raw=True)
 
-    andycas = UserDetail(user_ptr= andy,birthdate="1999-09-21", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= mixco)
+    andycas = UserDetail(user_ptr= andy,birthdate="1999-09-21", language= spanish, phone= "59300498", gender="M", is_tutor= False, institution= uvg, career= computerscience, location= mixco)
     andycas.save_base(raw=True)
 
-    williros = UserDetail(user_ptr= willi,birthdate="1998-12-17", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
+    williros = UserDetail(user_ptr= willi,birthdate="1998-12-17", language= spanish, phone= "59300498", gender="M", is_tutor= False, institution= uvg, career= computerscience, location= z15)
     williros.save_base(raw=True)
 
-    lucariv = UserDetail(user_ptr= luca,birthdate="1999-10-11", language= spanish, phone= 59300498, gender="M", is_tutor= False, institution= uvg, career= computerscience, location=snlcssctpqz)
+    lucariv = UserDetail(user_ptr= luca,birthdate="1999-10-11", language= spanish, phone= "59300498", gender="M", is_tutor= False, institution= uvg, career= computerscience, location=snlcssctpqz)
     lucariv.save_base(raw=True)
 
     print('User Details are done!')
