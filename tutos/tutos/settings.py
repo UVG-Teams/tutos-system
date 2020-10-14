@@ -29,8 +29,7 @@ SECRET_KEY = '%!yr-7v#+-x@zhir1xj9+%ic8qgkyx@8gl5!8sn5#w&=pjx(#y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.5','192.168.1.22','192.168.1.24','192.168.1.181','192.168.1.21','192.168.1.16']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.5','192.168.1.22','192.168.1.181','192.168.1.16', '192.168.1.8' , '192.168.1.9', '192.168.1.24','192.168.1.21']
 
 
 
@@ -156,7 +155,6 @@ LOGOUT_REDIRECT_URL = "/"
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        # 'rest_framework.permissions.AllowAny',
         'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -168,7 +166,7 @@ REST_FRAMEWORK = {
 
 JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=1800),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(seconds=604800),
 }
 
 AUTHENTICATION_BACKENDS = (
