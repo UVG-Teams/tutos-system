@@ -23,7 +23,5 @@ class UserSerializer(serializers.ModelSerializer):
             'last_name',
             'email',
             'userdetail',
-            # 'tutor',
         )
-        # fields = '__all__'
 
