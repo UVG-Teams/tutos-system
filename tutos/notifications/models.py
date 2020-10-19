@@ -4,11 +4,11 @@ from django.contrib.auth.models import User
 class Notification(models.Model):
     title = models.CharField(
         max_length = 50,
-		null = False,
+        null = False,
     )
     description = models.CharField(
         max_length = 200,
-		null = False,
+        null = False,
     )
     date = models.DateTimeField(
         auto_now = False,
