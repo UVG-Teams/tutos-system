@@ -7,8 +7,8 @@ from permissions.services import APIPermissionClassFactory
 
 
 class NotificationViewSet(viewsets.ModelViewSet):
-    queryset = Conversation.objects.all()
-    serializer_class = ConversationSerializer
+    queryset = Notification.objects.all()
+    serializer_class = NotificationSerializer
     permission_classes = (
         APIPermissionClassFactory(
             name='NotificationPermission',
