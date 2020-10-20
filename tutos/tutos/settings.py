@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'tutorias.apps.TutoriasConfig',
     'users.apps.UsersConfig',
     'workflows.apps.WorkflowsConfig',
+    'notifications.apps.NotificationsConfig',
 ]
 
 MIDDLEWARE = [
