@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'workflows.apps.WorkflowsConfig',
     'notifications.apps.NotificationsConfig',
     'calendars.apps.CalendarsConfig',
+    'audits.apps.AuditsConfig',
 ]
 
 MIDDLEWARE = [
