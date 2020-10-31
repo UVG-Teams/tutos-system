@@ -32,6 +32,7 @@ from workflows.views import WorkflowViewSet, StatusViewSet
 from locations.views import LocationViewSet, LanguageViewSet
 from conversations.views import ConversationViewSet, MessageViewSet
 from institutions.views import InstitutionViewSet, CareerViewSet, CourseViewSet
+from notifications.views import NotificationViewSet
 
 from init import create_initial_data
 
@@ -53,6 +54,8 @@ router.register(r'messages', MessageViewSet)
 router.register(r'institutions', InstitutionViewSet)
 router.register(r'careers', CareerViewSet)
 router.register(r'courses', CourseViewSet)
+router.register(r'notifications', NotificationViewSet)
+
 
 urlpatterns = [
     url('admin/', admin.site.urls),
