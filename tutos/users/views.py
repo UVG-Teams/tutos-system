@@ -155,6 +155,10 @@ class UserDetailViewSet(viewsets.ModelViewSet):
             print('careerId',careerId)
             career = Career.objects.get(id=careerId)
             user.career = career
+        if (body.__contains__('password')):
+            newPw = body['password']
+            if newPw!='':
+                user.set_password(newPw)
         user.save()
         return Response(UserDetailSerializer(user).data)
 
