@@ -27,4 +27,4 @@ jobs:
         pip install -r tutos/requirements.txt
     - name: Run Tests
       run: |
-        python manage.py test
+        python tutos/manage.py test
