@@ -1288,8 +1288,21 @@ def create_initial_data(request):
     print('Tutorias are done!')
 
     #NOTIFICATION
-    noti1= Notification(title="Init Notification", description="Esto es una notificacion prueba, esperamos un buen funcionamiento.", date='2020-10-28 23:58', user=willi)
+    noti1= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=willi)
     noti1.save()
+    noti2= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=admin)
+    noti2.save()
+    noti3= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=jgblock)
+    noti3.save()
+    noti4= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=marcfuents)
+    noti4.save()
+    noti5= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=luca)
+    noti5.save()
+    noti6= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=andy)
+    noti6.save()
+    noti7= Notification(title="Actualización", description="Traemos nuevas mejoras para Tuto's, para mayor información visita: https://www.youtube.com/watch?v=5AkDqm-cEgg", date='2020-10-28 23:58', user=willi)
+    noti7.save()
+    
     print('Notifications are done!')
     
     data= {
