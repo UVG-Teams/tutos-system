@@ -1302,7 +1302,6 @@ def create_initial_data(request):
     noti6.save()
     noti7= Notification(title="Actualización", description="Traemos nuevas mejoras para Tuto's, para mayor información visita: https://www.youtube.com/watch?v=5AkDqm-cEgg", date='2020-10-28 23:58', user=willi)
     noti7.save()
-    
     print('Notifications are done!')
     
     data= {
