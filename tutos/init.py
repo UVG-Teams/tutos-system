@@ -7,6 +7,7 @@ from locations.models import Location, Language
 from schedules.models import Schedule, Period
 from tutorias.models import Tutor, Tutoria
 from workflows.models import Workflow, Status
+from notifications.models import Notification
 
 def create_initial_data(request):
     #LOCATION:
@@ -1284,7 +1285,13 @@ def create_initial_data(request):
     tutoria3 = Tutoria.objects.create(tutor=marcfuents, tutorado=willi, total_price=100, datetime='2020-08-25 20:00', status=ststutoria4, course=gtcntxtmuni)
     tutoria4 = Tutoria.objects.create(tutor=marcfuents, tutorado=luca, total_price=100, datetime='2020-08-25 19:30', status=ststutoria3, course=fisica3)
     tutoria5 = Tutoria.objects.create(tutor=marcfuents, tutorado=willi, total_price=100, datetime='2020-08-25 13:30', status=ststutoria2, course=stdstica)
+    print('Tutorias are done!')
 
+    #NOTIFICATION
+    noti1= Notification(title="Init Notification", description="Esto es una notificacion prueba, esperamos un buen funcionamiento.", date='2020-10-28 23:58', user=willi)
+    noti1.save()
+    print('Notifications are done!')
+    
     data= {
         'Status': 'Ok',
         'Data': 'Data imported'

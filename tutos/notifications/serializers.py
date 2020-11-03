@@ -10,4 +10,5 @@ class NotificationSerializer(serializers.ModelSerializer):
             'title',
             'description',
             'date',
+            'user',
         )
