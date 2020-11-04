@@ -33,6 +33,7 @@ from locations.views import LocationViewSet, LanguageViewSet
 from conversations.views import ConversationViewSet, MessageViewSet
 from institutions.views import InstitutionViewSet, CareerViewSet, CourseViewSet
 from notifications.views import NotificationViewSet
+from calendars.views import EventViewSet
 
 from init import create_initial_data
 
@@ -55,6 +56,7 @@ router.register(r'institutions', InstitutionViewSet)
 router.register(r'careers', CareerViewSet)
 router.register(r'courses', CourseViewSet)
 router.register(r'notifications', NotificationViewSet)
+router.register(r'events', EventViewSet)
 
 
 urlpatterns = [
