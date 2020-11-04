@@ -8,6 +8,7 @@ from schedules.models import Schedule, Period
 from tutorias.models import Tutor, Tutoria
 from workflows.models import Workflow, Status
 from notifications.models import Notification
+from calendars.models import Calendar
 
 def create_initial_data(request):
     #LOCATION:
@@ -1303,6 +1304,21 @@ def create_initial_data(request):
     noti7= Notification(title="Actualización", description="Traemos nuevas mejoras para Tuto's, para mayor información visita: https://www.youtube.com/watch?v=5AkDqm-cEgg", date='2020-10-28 23:58', user=willi)
     noti7.save()
     print('Notifications are done!')
+
+    #CALENDARS
+    calendar1 = Calendar(user=admin)
+    calendar1.save()
+    calendar2 = Calendar(user=jgblock)
+    calendar2.save()
+    calendar3 = Calendar(user=marcfuents)
+    calendar3.save()
+    calendar4 = Calendar(user=andy)
+    calendar4.save()
+    calendar5 = Calendar(user=willi)
+    calendar5.save()
+    calendar6 = Calendar(user=luca)
+    calendar6.save()
+    print('Calendars are done!')
     
     data= {
         'Status': 'Ok',

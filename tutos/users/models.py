@@ -1,19 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
+from calendars.models import Calendar
 
 
 class UserDetail(User):
-
     class Gender(models.TextChoices):
         male 	= 'M', _('Male')
         female 	= 'F', _('Female') 
 
-    # user = models.ForeignKey(
-    #     User,
-    #     null = False,
-    #     on_delete = models.CASCADE,
-    # )
     language = models.ForeignKey(
         'locations.Language',
         null = True,
@@ -59,5 +54,9 @@ class UserDetail(User):
         on_delete = models.SET_NULL,
     )
 
+    # def save(self, *args, **kwargs):
+    #     mainuser = super(UserDetail, self).save(*args, **kwargs)
+    #     calendar = Calendar(user = mainuser)
+    #     calendar.save()
     
 
