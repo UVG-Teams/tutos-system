@@ -25,7 +25,12 @@ class LocationsModelTestCase(TestCase):
     loc1 = Location.objects.get(name="zona 16")
     self.assertEqual(loc0.parent, loc1.parent)
 
-    def test_location_have_type(self):
-      institution0 = Location.objects.get(name="zona 15")
-      institution1 = Location.objects.get(name="zona 16")
-      self.assertEqual(institution0.type, institution1.type)
+  def test_location_have_type(self):
+    institution0 = Location.objects.get(name="zona 15")
+    institution1 = Location.objects.get(name="zona 16")
+    self.assertEqual(institution0.location_type, institution1.location_type)
+
+  def test_location_departament_has_parent(self):
+    dept = Location.objects.get(name="Guatemala", location_type='department')
+    country = Location.objects.get(name="Guatemala" , location_type='country')
+    self.assertEqual(dept.parent, country)
