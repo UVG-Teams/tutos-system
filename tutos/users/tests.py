@@ -12,7 +12,19 @@ class UserModelTestCase(TestCase):
 
   def test_create_user(self):
     c = self.client
-    response = c.post('/api/users/create_user/', {'username' : 'testUser1', 'firstName' : 'test', 'lastName' : 'user', 'email' : 'test@test.c', 'password' : 'testpassword'  })
+    response = c.post('/api/users/create_user/', {
+      'username' : 'testUser1', 
+      'firstName' : 'test', 
+      'lastName' : 'user', 
+      'email' : 'test@test.c', 
+      'password' : 'testpassword',
+      'birthdate' : '1999-07-16',
+      'phone' : '12345678',
+      'gender' : 'M',
+      'isTutor' : True,
+      'individualPrice' : 50
+      }
+    )
     user = User.objects.get(username='testUser1')
     self.assertEqual(user.first_name , 'test')
 

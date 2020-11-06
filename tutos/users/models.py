@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
-
+import datetime
 
 class UserDetail(User):
 
@@ -34,6 +34,7 @@ class UserDetail(User):
     #     null = True,
     # )
     birthdate = models.DateField(
+        default=datetime.date.today,
         null = False,
     )
     location = models.ForeignKey(
