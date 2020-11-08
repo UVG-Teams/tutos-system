@@ -29,9 +29,25 @@ SECRET_KEY = '%!yr-7v#+-x@zhir1xj9+%ic8qgkyx@8gl5!8sn5#w&=pjx(#y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.5','192.168.1.22','192.168.1.181','192.168.1.16', '192.168.1.8' , '192.168.1.9', '192.168.1.24','192.168.1.21']
-
-
+ALLOWED_HOSTS = [
+    'localhost',
+    '0.0.0.0',
+    '127.0.0.1',
+    '192.168.1.5',
+    '192.168.1.6',
+    '192.168.1.8',
+    '192.168.1.9',
+    '192.168.1.15',
+    '192.168.1.16',
+    '192.168.1.18',
+    '192.168.1.21',
+    '192.168.1.23',
+    '192.168.1.22',
+    '192.168.1.24',
+    '192.168.1.13'
+    '192.168.1.32',
+    '192.168.1.181'
+]
 
 # Application definition
 
@@ -56,6 +72,9 @@ INSTALLED_APPS = [
     'tutorias.apps.TutoriasConfig',
     'users.apps.UsersConfig',
     'workflows.apps.WorkflowsConfig',
+    'notifications.apps.NotificationsConfig',
+    'calendars.apps.CalendarsConfig',
+    'audits.apps.AuditsConfig',
 ]
 
 MIDDLEWARE = [

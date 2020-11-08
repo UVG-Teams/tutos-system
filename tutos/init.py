@@ -7,6 +7,8 @@ from locations.models import Location, Language
 from schedules.models import Schedule, Period
 from tutorias.models import Tutor, Tutoria
 from workflows.models import Workflow, Status
+from notifications.models import Notification
+from calendars.models import Calendar
 
 def create_initial_data(request):
     #LOCATION:
@@ -1284,7 +1286,40 @@ def create_initial_data(request):
     tutoria3 = Tutoria.objects.create(tutor=marcfuents, tutorado=willi, total_price=100, datetime='2020-08-25 20:00', status=ststutoria4, course=gtcntxtmuni)
     tutoria4 = Tutoria.objects.create(tutor=marcfuents, tutorado=luca, total_price=100, datetime='2020-08-25 19:30', status=ststutoria3, course=fisica3)
     tutoria5 = Tutoria.objects.create(tutor=marcfuents, tutorado=willi, total_price=100, datetime='2020-08-25 13:30', status=ststutoria2, course=stdstica)
+    print('Tutorias are done!')
 
+    #NOTIFICATION
+    noti1= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=willi)
+    noti1.save()
+    noti2= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=admin)
+    noti2.save()
+    noti3= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=jgblock)
+    noti3.save()
+    noti4= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=marcfuents)
+    noti4.save()
+    noti5= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=luca)
+    noti5.save()
+    noti6= Notification(title="Bienvenida", description="Te damos la bienvenida a Tuto's, un app que te provee los tutores que quieras. Tambien te invitamos a contribuir y a la vez generar ingresos dando tutorías.", date='2020-10-28 23:58', user=andy)
+    noti6.save()
+    noti7= Notification(title="Actualización", description="Traemos nuevas mejoras para Tuto's, para mayor información visita: https://www.youtube.com/watch?v=5AkDqm-cEgg", date='2020-10-28 23:58', user=willi)
+    noti7.save()
+    print('Notifications are done!')
+
+    #CALENDARS
+    calendar1 = Calendar(user=admin)
+    calendar1.save()
+    calendar2 = Calendar(user=jgblock)
+    calendar2.save()
+    calendar3 = Calendar(user=marcfuents)
+    calendar3.save()
+    calendar4 = Calendar(user=andy)
+    calendar4.save()
+    calendar5 = Calendar(user=willi)
+    calendar5.save()
+    calendar6 = Calendar(user=luca)
+    calendar6.save()
+    print('Calendars are done!')
+    
     data= {
         'Status': 'Ok',
         'Data': 'Data imported'
