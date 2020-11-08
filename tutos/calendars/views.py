@@ -89,7 +89,15 @@ class EventViewSet(viewsets.ModelViewSet):
             url = '/events/',
             user = request.user
         )
-        return super().create(request)
+        calendar = Calendar.objects.get(user=request.user)
+        event = Event.objects.create(
+            calendar = calendar,
+            title = request.data['title'],
+            description = request.data['description'],
+            date = request.data['date'],
+            typeEvent = request.data['typeEvent'],
+        )
+        return Response(EventSerializer(event).data)
 
     def destroy(self, request, *args, **kwargs):
         try:
