@@ -75,9 +75,9 @@ class EventViewSet(viewsets.ModelViewSet):
                 },
                 'instance': {
                     'retrieve': lambda user, obj, req: user.is_authenticated,
-                    'update': False,
-                    'partial_update': False,
-                    'destroy': False,
+                    'update': lambda user, obj, req: user.is_authenticated,
+                    'partial_update': lambda user, obj, req: user.is_authenticated,
+                    'destroy': lambda user, obj, req: user.is_authenticated,
                 }
             }
         ),

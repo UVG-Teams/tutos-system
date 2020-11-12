@@ -14,14 +14,14 @@ class SubjectViewSet(viewsets.ModelViewSet):
             name='SubjectPermission',
             permission_configuration={
                 'base': {
-                    'create': True,
-                    'list': True,
+                    'create': lambda user, req: user.is_authenticated,
+                    'list': lambda user, req: user.is_authenticated,
                 },
                 'instance': {
-                    'retrieve': True,
-                    'update': True,
-                    'partial_update': True,
-                    'destroy': True,
+                    'retrieve': lambda user, obj, req: user.is_authenticated,
+                    'update': lambda user, obj, req: user.is_authenticated,
+                    'partial_update': lambda user, obj, req: user.is_authenticated,
+                    'destroy': lambda user, obj, req: user.is_authenticated,
                 }
             }
         ),
@@ -36,14 +36,14 @@ class TopicViewSet(viewsets.ModelViewSet):
             name='TopicPermission',
             permission_configuration={
                 'base': {
-                    'create': True,
-                    'list': True,
+                    'create': lambda user, req: user.is_authenticated,
+                    'list': lambda user, req: user.is_authenticated,
                 },
                 'instance': {
-                    'retrieve': True,
-                    'update': True,
-                    'partial_update': True,
-                    'destroy': True,
+                    'retrieve': lambda user, obj, req: user.is_authenticated,
+                    'update': lambda user, obj, req: user.is_authenticated,
+                    'partial_update': lambda user, obj, req: user.is_authenticated,
+                    'destroy': lambda user, obj, req: user.is_authenticated,
                 }
             }
         ),

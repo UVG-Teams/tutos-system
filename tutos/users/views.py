@@ -27,18 +27,16 @@ class UserViewSet(viewsets.ModelViewSet):
             permission_configuration={
                 'base': {
                     'create': True,
-                    'list': True,
-                    'newUser':True,
-                    'detail': True,
-                    'partial_update': True,
+                    'list': lambda user, req: user.is_authenticated,
+                    'newUser': True,
                 },
                 'instance': {
-                    'retrieve': True,
-                    'update': True,
-                    'partial_update': True,
-                    'destroy': True,
-                    'detailData': True,
-                    'detail' : True
+                    'retrieve': lambda user, obj, req: user.is_authenticated,
+                    'update': lambda user, obj, req: user.is_authenticated,
+                    'partial_update': lambda user, obj, req: user.is_authenticated,
+                    'destroy': lambda user, obj, req: user.is_authenticated,
+                    'detailData': lambda user, obj, req: user.is_authenticated,
+                    'detail': lambda user, obj, req: user.is_authenticated
                 }
             }
         ),
@@ -90,17 +88,15 @@ class UserDetailViewSet(viewsets.ModelViewSet):
             permission_configuration={
                 'base': {
                     'create': True,
-                    'list': True,
-                    'detail': True,
-                    'partial_update' : True,
-                    'tutoresData': True,
+                    'list': lambda user, req: user.is_authenticated,
+                    'tutoresData': lambda user, req: user.is_authenticated,
                 },
                 'instance': {
-                    'retrieve': True,
-                    'update': True,
-                    'partial_update': True,
-                    'destroy': True,
-                    'detail' : True,
+                    'retrieve': lambda user, obj, req: user.is_authenticated,
+                    'update': lambda user, obj, req: user.is_authenticated,
+                    'partial_update': lambda user, obj, req: user.is_authenticated,
+                    'destroy': lambda user, obj, req: user.is_authenticated,
+                    'detail' : lambda user, obj, req: user.is_authenticated,
                 }
             }
         ),
