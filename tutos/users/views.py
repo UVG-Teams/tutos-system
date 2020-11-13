@@ -7,6 +7,7 @@ from rest_framework_jwt.utils import jwt_decode_handler
 from rest_framework.permissions import AllowAny, IsAuthenticated
 
 from django.contrib.auth.models import User
+from django.core.files.images import ImageFile
 from users.models import UserDetail
 from tutorias.models import Tutor
 from tutorias.serializers import TutorSerializer
@@ -106,6 +107,18 @@ class UserDetailViewSet(viewsets.ModelViewSet):
     def parUpdate(self, request):
         body = request.data
         decoded = jwt_decode_handler(request.headers['Authorization'].split(' ')[1])
+        print("HOLA")
+        print(request.FILES)
+        image_profile = body['image']
+        # print(image_profile)
+
+        for key in image_profile:
+            print(key)
+        image = ImageFile(image_profile)
+        print("===============")
+        print(image)
+        print("===============")
+
         user = UserDetail.objects.get(username = decoded['username'])
         if (body.__contains__('username')):
             username = body['username']
