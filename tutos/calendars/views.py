@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.http import Http404
+from django.http import Http404, HttpResponseServerError
 
 from calendars.models import Calendar, Event
 from calendars.serializers import CalendarSerializer, EventSerializer
@@ -84,19 +84,22 @@ class EventViewSet(viewsets.ModelViewSet):
     )
 
     def create(self, request):
-        Audit.objects.create(
-            httpMethod = request.method,
-            url = '/events/',
-            user = request.user
-        )
-        calendar = Calendar.objects.get(user=request.user)
-        event = Event.objects.create(
-            calendar = calendar,
-            title = request.data['title'],
-            description = request.data['description'],
-            date = request.data['date'],
-            typeEvent = request.data['typeEvent'],
-        )
+        try:
+            calendar = Calendar.objects.get(user=request.user)
+            event = Event.objects.create(
+                calendar = calendar,
+                title = request.data['title'],
+                description = request.data['description'],
+                date = request.data['date'],
+                typeEvent = request.data['typeEvent'],
+            )
+            Audit.objects.create(
+                httpMethod = request.method,
+                url = '/events/',
+                user = request.user
+            )
+        except HttpResponseServerError:
+            return Response(status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         return Response(EventSerializer(event).data)
 
     def destroy(self, request, *args, **kwargs):
@@ -109,5 +112,5 @@ class EventViewSet(viewsets.ModelViewSet):
                 user = request.user
             )
         except Http404:
-            pass
+            return Response(status=status.HTTP_404_NOT_FOUND)
         return Response(status=status.HTTP_204_NO_CONTENT)
