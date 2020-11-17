@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from rest_framework import viewsets
-from rest_framework import status
+from rest_framework import viewsets, views, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework_jwt.utils import jwt_decode_handler
@@ -107,17 +106,7 @@ class UserDetailViewSet(viewsets.ModelViewSet):
     def parUpdate(self, request):
         body = request.data
         decoded = jwt_decode_handler(request.headers['Authorization'].split(' ')[1])
-        print("HOLA")
         print(request.FILES)
-        image_profile = body['image']
-        # print(image_profile)
-
-        for key in image_profile:
-            print(key)
-        image = ImageFile(image_profile)
-        print("===============")
-        print(image)
-        print("===============")
 
         user = UserDetail.objects.get(username = decoded['username'])
         if (body.__contains__('username')):
@@ -143,25 +132,23 @@ class UserDetailViewSet(viewsets.ModelViewSet):
             # user.birthdate = birthdate
         if (body.__contains__('is_tutor')):
             is_tutor = body['is_tutor']
+            if not bool(is_tutor):
+                is_tutor = True if is_tutor == 'true' else False
             user.is_tutor = is_tutor
         if (body.__contains__('language')):
             languageId = body['language'] # Trae el id
-            print('languageId',languageId)
             language = Language.objects.get(id=languageId)
             user.language = language
         if (body.__contains__('location')):
             locationId = body['location']
-            print('locationId',locationId)
             location = Location.objects.get(id=locationId)
             user.location = location
         if (body.__contains__('institution')):
             institutionId = body['institution']
-            print('institutionId',institutionId)
             institution = Institution.objects.get(id=institutionId)
             user.institution = institution
         if (body.__contains__('career')):
             careerId = body['career']
-            print('careerId',careerId)
             career = Career.objects.get(id=careerId)
             user.career = career
         if (body.__contains__('password')):
