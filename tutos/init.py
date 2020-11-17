@@ -1211,8 +1211,8 @@ def create_initial_data(request):
     andy.set_password("admin")
     andy.save()
 
-    willi= User(username="Willi",first_name="Francisco", last_name="Rosal",email="ros18676@uvg.edu.gt")
-    willi.set_password("Admin")
+    willi= User(username="willi",first_name="Francisco", last_name="Rosal",email="ros18676@uvg.edu.gt")
+    willi.set_password("admin")
     willi.save()
 
     luca= User(username="Luca",first_name="Gian Luca", last_name="Rivera",email="riv18049@uvg.edu.gt")
