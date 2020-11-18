@@ -12,46 +12,29 @@
     $ sudo apt install python3-env
     ```
 * Clonar repo
-* Crear, activar y desactivar python env
+* Crear, activar python env
     ```shell
     $ python3 -m venv venv
     $ source venv/bin/activate
-    $ deactivate
     ```
-* [Instalar Django](https://docs.djangoproject.com/en/3.0/topics/install/)
+* Instalar dependencias (dentro de la carpeta /tutos/)
     ```shell
-    $ python -m pip install Django
+    $ pip install -r requirements.txt
     ```
-* [Instalar psycopg2](https://www.psycopg.org/)
-    * Instalar y comprobar instalación
-    ```shell
-    $ pip install psycopg2
-    $ python -c "import psycopg2" --verbose
-    ```
-* Instalar ipython 
-    ```shell
-    $ pip install ipython
-    ```
+* [Si necesita ayuda para instalar psycopg2](https://www.psycopg.org/)
 
 ## Configuración de Base de Datos
-
-* Conexión a Interfaz Postgres
-    ```shell
-    $ psql -h localhost -U postgres -W
-    ```
-
 * Crear archivo /tutos/credentials.py
     ```python
-        DEVELOPMENT_DATABASE = {
-            'NAME': 'tutos_dev_db',
-            'USER': 'tu-usuario',
-            'PASSWORD': 'tu-contraseña',
-            'HOST': 'tu-host',
-            'PORT': 'tu-puerto',
-        }
+    DEVELOPMENT_DATABASE = {
+        'NAME': 'tutos_dev_db',
+        'USER': 'tu-usuario',
+        'PASSWORD': 'tu-contraseña',
+        'HOST': 'tu-host',
+        'PORT': 'tu-puerto',
+    }
     ```
-
-* Resetear db y cargar data
+* Crear/resetear db y correr migrations
     ```shell
     $ python load_data.py
     ```
@@ -60,14 +43,5 @@
 
 * Run Server
     ```shell
-    $ python manage.py runserver
-    ```
-* Crear project y app
-    ```shell
-    $ django-admin startproject tutos
-    $ python manage.py startapp myapp
-    ```
-* Abrir shell
-    ```shell
-    $ python manage.py shell
+    $ python manage.py runserver 0.0.0.0:3000
     ```
